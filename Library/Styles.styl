@@ -19,8 +19,22 @@ deep-inset()
     background-color:   shadow-color(light, semifaded);
     shadow:             10px inset normal normal;
 
+/* SHADOW - Sets a standardized box shadow style for any widget class or selector.
+ *
+ *  SYNTAX:
+ *      shadow:     size
+ *      shadow:     size direction
+ *      shadow:     size direction strength
+ *      shadow:     size direction strength opacity
+ *
+ *  INPUT:
+ *      size:
+ */
 shadow(size, direction = outset, strength = normal, opacity = normal)
-    box-shadow:         direction size size size (- size) shadow-color(strength, opacity);
+    if (direction == inset)
+        box-shadow:        inset size size size (- size) shadow-color(strength, opacity);
+    else
+        box-shadow:        size size size (- size) shadow-color(strength, opacity);
 
 shallow-outset()
     bevel:              1px outset darker faded;
@@ -33,6 +47,15 @@ button-outset()
     background-image:   gradient(gloss-color(lighter, faded), gloss-color(darker, faded));
     box-shadow:         inset 0px 0px 2px shadow-color(normal, semifaded);
 
+/* BUTTON-TEXT-COLOR - Sets parameters controlling the color of text and colorized images that are children of buttons.
+ *
+ *  SYNTAX:
+ *      button-text-color:  c
+ *
+ *  INPUT:
+ *      c:      RGBA
+ *              The desired color of button text and colorized images.
+ */
 button-text-color(c)
     & GtkBox GtkImage,
     & GtkBox GtkLabel,
