@@ -1,5 +1,5 @@
 
-
+/* BUTTON - Controls all button widgets. */
 .button
     @extends GtkWidget;
 
@@ -33,3 +33,47 @@
     &:hover, &:prelight
         background-image:           gradient(shade(HighlightColor, lighter), shade(HighlightColor, darker));
         button-text-color:          HighlightTextColor;
+
+    &.spinbutton
+        @extends GtkWidget;
+        border-width:               0px 0px 0px 0.25px;
+        box-shadow:                 none;
+
+        &:hover
+            button-text-color:      SelectionColor;
+        &:last-child
+            border-radius:          0px 20px 20px 0px;
+
+    .linked &
+        border-radius:              0px;
+        border-left-width:          0.25px;
+        border-right-width:         0.25px;
+
+        &:first-child,
+        &:active:first-child,
+        &:backdrop:first-child,
+        &:insensitive:first-child,
+        &:active:backdrop:first-child
+            border-radius:          5px 0px 0px 5px;
+            border-right-width:     0.25px;
+        &:last-child
+            border-radius:          0px 5px 5px 0px;
+            border-left-width:      0.25px;
+        &:only-child
+            border-radius:          5px;
+            border-width:           1px;
+
+
+
+column-header
+    .button
+        @extends .button.flat
+        background-color:   gloss-color(lighter, faded);
+        background-clip:    padding-box;
+        border-radius:      0px
+        border: none;
+
+    &:first-child .button
+        border-radius:      2.5px 0px 0px 0px;
+    &:last-child .button
+        border-radius:      0px 2.5px 0px 0px;
