@@ -1,10 +1,4 @@
-/* COLORS -
- *
- */
-
-/* CHANGELOG
- * Written by Josh Grooms on 20151012
- */
+/* COLORS - A library of theme-related colors. */
 
 
 
@@ -134,38 +128,32 @@ WindowColorLight                    = LightGray;
 
 /** COLOR RETRIEVAL FUNCTIONS **/
 
-/* SHADOW-COLOR - Gets a particular shadow color.
+/* SHADOW-COLOR - Gets standardized variations of the theme's shadow color.
  *
  *      SYNTAX:
+ *          c = shadow-color()
  *          c = shadow-color(strength)
+ *          c = shadow-color(strength, opacity)
  *
  *      OUTPUT:
- *          c:          RGBA
- *                      The requested shadow color.
+ *          c:              RGBA
+ *                          The requested shadow color variation.
  *
  *      OPTIONAL INPUT:
- *          strength:   OPTION
- *                      The strength of the shadow color to be returned.
- *                      DEFAULT: normal
- *                      OPTIONS:
- *                          light       - A more transparent, and thus lighter, shadow color.
- *                          normal      - The standard, default shadow color.
- *                          dark        - A less transparent, and thus darker, shadow color.
+ *          strength:       OPTION
+ *                          The shade, or in this case lightness, of the shadow color to be returned.
+ *                          DEFAULT: normal
+ *                          OPTIONS:
+ *                              normal      - The standard, default shadow color shade.
+ *                              semilight   -
+ *                              light       - A more transparent, and thus lighter, shadow color.
+ *                              lighter     -
+ *
+ *          opacity:        OPTION
  */
 shadow-color(strength = normal, opacity = normal)
     opacify(shade(Black, strength), opacity);
 
+/* GLOSS-COLOR - Gets standardized variations of the theme's gloss color. */
 gloss-color(strength = normal, opacity = normal)
     opacify(shade(Silver, strength), opacity);
-//
-// gloss-color(strength = normal)
-//     if (strength == darker)
-//         alpha(Black, 0.25);
-//     else if (strength == dark)
-//         alpha(Black, 0.125);
-//     else if (strength == normal)
-//         alpha(LightBlack, 0.125);
-//     else if (strength == light)
-//         alpha(Silver, 0.125);
-//     else
-//         alpha(White, 0.125);
