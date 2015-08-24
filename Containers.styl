@@ -1,14 +1,7 @@
-/* CONTAINERS - Styles for top-level container widgets used in applications.
- *
- */
-
-/* CHANGELOG
- * Written by Josh Grooms on 20151012
- */
+/* CONTAINERS - Styles for top-level container widgets used in applications. */
 
 
 
-/** TOP-LEVEL WINDOWS **/
 .background,
 GtkApplicationWindow,
 GtkWindow
@@ -27,26 +20,43 @@ GtkWindow
     &.titlebar.header-bar
         bevel:              10px outset normal;
 
-    /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side.
-     *
-     */
+    /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side. */
     &.window-frame
         border-radius:      5px;
-        shadow:             10px;
         // box-shadow:         2.5px 2.5px 10px ShadowColor;
+        shadow:             10px;
 
     &.background, .background
         border-radius:      0px 0px 5px 5px;
         // box-shadow:         2.5px 2.5px 10px ShadowColor;
         padding:            5px;
 
-
 /* POPUP - Controls the base windows used for context, drop-down, and combo-box menus. */
 .popup,
 .popup.background
-    @extends .csd.window-frame;
     shallow-outset();
     border-radius:          5px;
+
+/* SCROLLBAR - Controls the appearance of scrollbars in container widgets. */
+.scrollbar
+    -GtkScrollbar-has-backward-stepper:     0;
+    -GtkScrollbar-has-forward-stepper:      0;
+
+    border: 1px solid transparent;
+    border-radius: 2em;
+
+    &.slider
+        border: 2px solid transparent;
+        &.vertical,
+        &.vertical:hover
+            background-image:   hgradient(shade(VibrantBlue, lighter), shade(VibrantBlue, darker));
+
+        &.horizontal,
+        &.horizontal:hover
+            background-image:   VibrantBlueGradient;
+
+    &.trough
+        shallow-inset();
 
 /* TOOLTIP - Controls the appearance of tooltip messages. */
 .tooltip,
