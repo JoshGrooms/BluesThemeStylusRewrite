@@ -1,0 +1,313 @@
+/** DEFAULTS **/
+*,
+GtkWidget,
+.view,
+GtkPaned,
+.sidebar,
+GtkPlacesSidebar,
+.button,
+.button.flat,
+.primary-toolbar .button,
+.button.spinbutton,
+column-header .button {
+  -GtkWidget-background-color: transparent;
+  -GtkWidget-focus-padding: 0;
+  -GtkWidget-focus-line-width: 0;
+  -GtkWidget-link-color: #00c864;
+  -GtkWidget-margin: 0;
+  -GtkWidget-separator-height: 1;
+  -GtkWidget-separator-width: 1;
+  -GtkWidget-visited-link-color: #00c864;
+  -GtkWidget-wide-separators: false;
+  background-color: transparent;
+  background-clip: padding-box;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  color: #bbb;
+  outline-color: transparent;
+  outline-offset: 0px;
+}
+*:backdrop,
+GtkWidget:backdrop,
+.view:backdrop,
+GtkPaned:backdrop,
+.sidebar:backdrop,
+GtkPlacesSidebar:backdrop,
+.button:backdrop,
+.button.flat:backdrop,
+.primary-toolbar .button:backdrop,
+.button.spinbutton:backdrop,
+column-header .button:backdrop {
+  color: #a2a2a2;
+}
+.background,
+GtkApplicationWindow,
+GtkWindow,
+.csd {
+  background-color: #4b4b4b;
+  background-clip: border-box;
+  background-image: none;
+}
+.background:backdrop,
+GtkApplicationWindow:backdrop,
+GtkWindow:backdrop,
+.csd:backdrop {
+  background-color: #3e3e3e;
+}
+.csd.titlebar.header-bar {
+  background-clip: border-box;
+  border-color: rgba(162,162,162,0.125);
+  border-bottom-color: rgba(0,0,0,0.125);
+  border-right-color: rgba(0,0,0,0.125);
+  border-style: solid;
+  border-width: 10px;
+}
+.csd.window-frame {
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px -10px rgba(0,0,0,0.5);
+}
+.csd.background,
+.csd .background {
+  border-radius: 0px 0px 5px 5px;
+  padding: 5px;
+}
+.popup,
+.popup.background,
+.tooltip,
+.tooltip.background {
+  background-clip: border-box;
+  border-color: rgba(126,126,126,0.25);
+  border-bottom-color: rgba(0,0,0,0.25);
+  border-right-color: rgba(0,0,0,0.25);
+  border-style: solid;
+  border-width: 1px;
+  background-color: #242424;
+  box-shadow: 0px 0px 0px 1px rgba(36,36,36,0.875), 3px 3px 5px rgba(0,0,0,0.5);
+  border-radius: 5px;
+}
+.scrollbar {
+  -GtkScrollbar-has-backward-stepper: 0;
+  -GtkScrollbar-has-forward-stepper: 0;
+  border: 1px solid transparent;
+  border-radius: 2em;
+}
+.scrollbar.slider {
+  border: 2px solid transparent;
+}
+.scrollbar.slider.vertical,
+.scrollbar.slider.vertical:hover {
+  background-image: -gtk-gradient(linear, left top, right top, from(#49d8ff), to(#008fb6));
+}
+.scrollbar.slider.horizontal,
+.scrollbar.slider.horizontal:hover {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
+}
+.scrollbar.trough {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(0,0,0,0.25);
+  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.5);
+}
+.view,
+.sidebar,
+GtkPlacesSidebar {
+  -GtkTreeView-expander-size: 10;
+  -GtkTreeView-indent-expanders: true;
+  -GtkTreeView-vertical-separator: 0;
+  padding: 2px 5px 2px 5px;
+}
+.view .cell:selected,
+.sidebar .cell:selected,
+GtkPlacesSidebar .cell:selected,
+.view row:selected,
+.sidebar row:selected,
+GtkPlacesSidebar row:selected {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
+  color: #323232;
+}
+.view .cell:selected:backdrop,
+.sidebar .cell:selected:backdrop,
+GtkPlacesSidebar .cell:selected:backdrop,
+.view row:selected:backdrop,
+.sidebar row:selected:backdrop,
+GtkPlacesSidebar row:selected:backdrop {
+  background-color: #a2a2a2;
+  background-image: none;
+}
+GtkPaned {
+  -GtkPaned-handle-size: 5;
+}
+NautilusWindow GtkPaned {
+  -GtkPaned-handle-size: 1;
+}
+.sidebar,
+GtkPlacesSidebar {
+  font: bold;
+  padding: 0px;
+}
+.sidebar .view,
+GtkPlacesSidebar .view {
+  padding: 5px;
+}
+GtkScrolledWindow {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(24,24,24,0.375);
+  box-shadow: inset 10px 10px 10px -10px rgba(0,0,0,0.5);
+  -GtkScrolledWindow-scrollbar-spacing: 0;
+  -GtkScrolledWindow-scrollbars-within-bevel: true;
+  border-radius: 2.5px;
+  padding: 1px;
+}
+.nautilus-canvas-item {
+  border-radius: 5px;
+}
+.nautilus-canvas-item:active {
+  background-color: #9632ff;
+}
+.nautilus-canvas-item:prelight,
+.nautilus-canvas-item:selected {
+  background-color: rgba(0,200,255,0.75);
+  color: #323232;
+}
+.nautilus-canvas-item.nautilus-desktop,
+.nautilus-canvas-item.nautilus-desktop:backdrop {
+  color: #fff;
+}
+.rubberband {
+  background-color: rgba(162,162,162,0.5);
+  border: 1px solid #a2a2a2;
+  border-radius: 2.5px;
+}
+.button {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(rgba(198,198,198,0.25)), to(rgba(126,126,126,0.25)));
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.375);
+  padding: 10px;
+}
+.button:checked {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#008fb6), to(#49d8ff));
+  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.5);
+}
+.button:checked GtkBox GtkImage,
+.button:checked GtkBox GtkLabel,
+.button:checked > GtkImage,
+.button:checked > GtkLabel {
+  color: #323232;
+}
+.button:checked:backdrop,
+.button:checked:hover,
+.button:checked:prelight {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#7e7e7e), to(#c6c6c6));
+  color: #323232;
+}
+.button:checked:backdrop GtkBox GtkImage,
+.button:checked:hover GtkBox GtkImage,
+.button:checked:prelight GtkBox GtkImage,
+.button:checked:backdrop GtkBox GtkLabel,
+.button:checked:hover GtkBox GtkLabel,
+.button:checked:prelight GtkBox GtkLabel,
+.button:checked:backdrop > GtkImage,
+.button:checked:hover > GtkImage,
+.button:checked:prelight > GtkImage,
+.button:checked:backdrop > GtkLabel,
+.button:checked:hover > GtkLabel,
+.button:checked:prelight > GtkLabel {
+  color: #323232;
+}
+.button.flat,
+.primary-toolbar .button,
+column-header .button {
+  border-radius: 2.5px;
+}
+.button.flat:hover,
+.primary-toolbar .button:hover,
+column-header .button:hover,
+.button.flat:prelight,
+.primary-toolbar .button:prelight,
+column-header .button:prelight {
+  background-color: #a2a2a2;
+  background-image: none;
+}
+.button:focus GtkBox GtkImage,
+.button:focus GtkBox GtkLabel,
+.button:focus > GtkImage,
+.button:focus > GtkLabel {
+  color: #00c8ff;
+}
+.button:hover,
+.button:prelight {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#c6c6c6), to(#7e7e7e));
+}
+.button:hover GtkBox GtkImage,
+.button:prelight GtkBox GtkImage,
+.button:hover GtkBox GtkLabel,
+.button:prelight GtkBox GtkLabel,
+.button:hover > GtkImage,
+.button:prelight > GtkImage,
+.button:hover > GtkLabel,
+.button:prelight > GtkLabel {
+  color: #323232;
+}
+.button.spinbutton {
+  border-width: 0px 0px 0px 0.25px;
+  box-shadow: none;
+}
+.button.spinbutton:hover GtkBox GtkImage,
+.button.spinbutton:hover GtkBox GtkLabel,
+.button.spinbutton:hover > GtkImage,
+.button.spinbutton:hover > GtkLabel {
+  color: #00c8ff;
+}
+.button.spinbutton:last-child {
+  border-radius: 0px 20px 20px 0px;
+}
+.linked .button {
+  border-radius: 0px;
+  border-left-width: 0.25px;
+  border-right-width: 0.25px;
+}
+.linked .button:first-child,
+.linked .button:active:first-child,
+.linked .button:backdrop:first-child,
+.linked .button:insensitive:first-child,
+.linked .button:active:backdrop:first-child {
+  border-radius: 5px 0px 0px 5px;
+  border-right-width: 0.25px;
+}
+.linked .button:last-child {
+  border-radius: 0px 5px 5px 0px;
+  border-left-width: 0.25px;
+}
+.linked .button:only-child {
+  border-radius: 5px;
+  border-width: 1px;
+}
+column-header .button {
+  background-color: rgba(198,198,198,0.25);
+  background-clip: padding-box;
+  border-radius: 0px;
+  border: none;
+}
+column-header:first-child .button {
+  border-radius: 2.5px 0px 0px 0px;
+}
+column-header:last-child .button {
+  border-radius: 0px 2.5px 0px 0px;
+}
