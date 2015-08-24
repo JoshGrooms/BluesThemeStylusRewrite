@@ -1,0 +1,35 @@
+
+
+.button
+    @extends GtkWidget;
+
+    background-image:               gradient(gloss-color(lighter, faded), gloss-color(darker, faded));
+    bevel:                          1px inset;
+    border-radius:                  5px;
+    box-shadow:                     inset 0px 0px 2px shadow-color(normal, semifaded);
+    padding:                        10px;
+
+    &:checked
+        background-image:           gradient(shade(SelectionColor, darker), shade(SelectionColor, lighter));
+        button-text-color:          SelectionTextColor;
+        box-shadow:                 inset 1px 2px 3px shadow-color(normal);
+
+        &:backdrop, &:hover, &:prelight
+            background-image:       gradient(shade(HighlightColor, darker), shade(HighlightColor, lighter));
+            button-text-color:      SelectionTextColor;
+            color:                  HighlightTextColor;
+
+    &.flat,
+    .primary-toolbar &
+        @extends GtkWidget;
+        border-radius:              2.5px;
+        &:hover, &:prelight
+            background-color:       HighlightColor;
+            background-image:       none;
+
+    &:focus
+        button-text-color:          SelectionColor;
+
+    &:hover, &:prelight
+        background-image:           gradient(shade(HighlightColor, lighter), shade(HighlightColor, darker));
+        button-text-color:          HighlightTextColor;

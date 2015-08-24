@@ -1,0 +1,171 @@
+/* COLORS -
+ *
+ */
+
+/* CHANGELOG
+ * Written by Josh Grooms on 20151012
+ */
+
+
+
+/** COLOR DEFINITIONS **/
+Black                               = #000000;    // [  0,   0,   0]
+LightBlack                          = #191919;    // [ 25,  25,  25]
+
+VeryDarkGray                        = #252525;    // [ 37,  37,  37]
+DarkGray                            = #323232;    // [ 50,  50,  50]
+SemiDarkGray                        = #3E3E3E;    // [ 62,  62,  62]
+Gray                                = #4B4B4B;    // [ 75,  75,  75]
+SemiLightGray                       = #575757;    // [ 87,  87,  87]
+LightGray                           = #646464;    // [100, 100, 100]
+VeryLightGray                       = #707070;    // [112, 112, 112]
+
+VeryDarkSilver                      = #7D7D7D;    // [125, 125, 125]
+DarkSilver                          = #898989;    // [137, 137, 137]
+SemiDarkSilver                      = #969696;    // [150, 150, 150]
+Silver                              = #A2A2A2;    // [162, 162, 162]
+SemiLightSilver                     = #AFAFAF;    // [175, 175, 175]
+LightSilver                         = #BBBBBB;    // [187, 187, 187]
+VeryLightSilver                     = #C8C8C8;    // [200, 200, 200]
+
+VeryDarkWhite                       = #D4D4D4;    // [212, 212, 212]
+DarkWhite                           = #E1E1E1;    // [225, 225, 225]
+SemiDarkWhite                       = #EDEDED;    // [237, 237, 237]
+White                               = #FFFFFF;    // [255, 255, 255]
+
+
+
+Aqua                                = #00C8C8;    // [  0, 200, 200]
+DarkBlue                            = #3296FF;    // [ 50, 150, 255]
+
+LightGreen                          = #00C864;    // [  0, 200, 100]
+
+Orchid                              = #9632FF;    // [150,  50, 255]
+LightOrchid                         = #AF64FF;    // [175, 100, 255]
+
+Red                                 = #FF0000;
+
+Slate                               = #647D96;    // [100, 125, 150]
+
+VibrantBlue                         = #00C8FF;    // [  0, 200, 255]
+
+
+
+
+/** GRADIENT DEFINITIONS **/
+SilverGradient                      = gradient(shade(Silver, lighter), shade(Silver, darker));
+SilverGradientInverse               = gradient(shade(Silver, darker), shade(Silver, lighter));
+VibrantBlueGradient                 = gradient(shade(VibrantBlue, lighter), shade(VibrantBlue, darker));
+VibrantBlueGradientInverse          = gradient(shade(VibrantBlue, darker), shade(VibrantBlue, lighter));
+
+
+
+/** FUNCTIONAL COLOR DEFINITIONS **/
+ButtonCloseColor                    = VibrantBlue;
+ButtonCloseColorHighlight           = lighten(ButtonCloseColor, 50%);
+ButtonMinimizeColor                 = Aqua;
+ButtonMinimizeColorHighlight        = lighten(ButtonMinimizeColor, 50%);
+ButtonMaximizeColor                 = LightGreen;
+ButtonMaximizeColorHighlight        = lighten(ButtonMaximizeColor, 50%);
+ButtonSearchColor                   = LightOrchid;
+ButtonSearchColorHighlight          = lighten(ButtonSearchColor, 25%);
+
+ButtonColor                         = transparent;
+ButtonColorDim                      = transparent;
+ButtonCheckedColor                  = VibrantBlueGradientInverse;
+ButtonCheckedColorDim               = SilverGradientInverse;
+
+GlossColorDarker                    = alpha(Black, 0.25);
+GlossColorDark                      = alpha(Black, 0.125);
+GlossColorSemiDark                  = alpha(LightBlack, 0.125);
+GlossColorLight                     = alpha(Silver, 0.125);
+GlossColorLighter                   = alpha(White, 0.125);
+
+HighlightColor                      = Silver;
+HighlightTextColor                  = DarkGray;
+
+IconColor                           = Orchid;
+
+InsetBackgroundColor                = alpha(Black, 0.125);
+
+LinkColor                           = LightGreen;
+
+MenuColor                           = VeryDarkGray;
+MenuBorderColor                     = DarkWhite;
+MenuTextColor                       = TextColorLight;
+MenuAcceleratorColor                = TextColorDim;
+MenuTextColorDisabled               = LightGray;
+
+ScrollbarColor                      = VibrantBlue;
+ScrollbarColorDim                   = WindowColorLight;
+
+SelectionColor                      = VibrantBlue;
+SelectionTextColor                  = DarkGray;
+
+ShadowColorDarker                   = alpha(Black, 0.75);
+ShadowColorDark                     = alpha(Black, 0.5);
+ShadowColorSemiDark                 = alpha(Black, 0.25);
+ShadowColor                         = ShadowColorSemiDark;
+
+TroughColor                         = SemiDarkGray;
+
+TooltipColor                        = White;
+TooltipTextColor                    = TextColorDark;
+
+TextColorDark                       = DarkGray;
+TextColorDim                        = Silver;
+TextColorDisabled                   = LightGray;
+TextColor                           = LightSilver;
+
+UnityDecoratorColor                 = WindowColor;
+UnityDecoratorColorDim              = WindowColorDim;
+UnityDecoratorTextColor             = TextColorLight;
+UnityDecoratorTextColorDim          = TextColorDim;
+UnityLauncherColor                  = VeryDarkGray;
+UnityPanelColor                     = VeryDarkGray;
+UnityPanelTextColor                 = TextColorDim;
+
+WindowColor                         = Gray;
+WindowColorDim                      = SemiDarkGray;
+WindowColorDark                     = DarkGray;
+WindowColorLight                    = LightGray;
+
+
+
+/** COLOR RETRIEVAL FUNCTIONS **/
+
+/* SHADOW-COLOR - Gets a particular shadow color.
+ *
+ *      SYNTAX:
+ *          c = shadow-color(strength)
+ *
+ *      OUTPUT:
+ *          c:          RGBA
+ *                      The requested shadow color.
+ *
+ *      OPTIONAL INPUT:
+ *          strength:   OPTION
+ *                      The strength of the shadow color to be returned.
+ *                      DEFAULT: normal
+ *                      OPTIONS:
+ *                          light       - A more transparent, and thus lighter, shadow color.
+ *                          normal      - The standard, default shadow color.
+ *                          dark        - A less transparent, and thus darker, shadow color.
+ */
+shadow-color(strength = normal, opacity = normal)
+    opacify(shade(Black, strength), opacity);
+
+gloss-color(strength = normal, opacity = normal)
+    opacify(shade(Silver, strength), opacity);
+//
+// gloss-color(strength = normal)
+//     if (strength == darker)
+//         alpha(Black, 0.25);
+//     else if (strength == dark)
+//         alpha(Black, 0.125);
+//     else if (strength == normal)
+//         alpha(LightBlack, 0.125);
+//     else if (strength == light)
+//         alpha(Silver, 0.125);
+//     else
+//         alpha(White, 0.125);

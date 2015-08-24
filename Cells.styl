@@ -1,0 +1,89 @@
+/* CONTAINERS - Styles for top-level container widgets used in applications.
+ *
+ */
+
+/* CHANGELOG
+ * Written by Josh Grooms on 20151013
+ */
+
+
+
+/** INNER WINDOWS & CONTENTS **/
+
+/* VIEW - Controls individual elements of a list or table.
+ *
+ *  The ".view" selector generally belongs to lists or tables of data. It specifically controls the individual elements that
+ *  are present within those lists (e.g. a single cell within a table). Common examples associated with this selector
+ *  include:
+ *
+ *      - The file chooser side bar in GEdit
+ *      - The various lists found throughout Unity Tweak Tool
+ *      - Files within Nautilus (only when viewing items as a list)
+ */
+.view
+    @extends                            GtkWidget;
+    -GtkTreeView-expander-size:         10;
+    -GtkTreeView-indent-expanders:      true;
+    -GtkTreeView-vertical-separator:    0;
+    padding:                            2px 5px 2px 5px;
+    .cell,
+    row
+        &:selected
+            background-image:           VibrantBlueGradient;
+            color:                      SelectionTextColor;
+            &:backdrop
+                background-color:       HighlightColor;
+                background-image:       none;
+
+
+GtkPaned
+    @extends                    GtkWidget;
+    -GtkPaned-handle-size:      5;
+    NautilusWindow &
+        -GtkPaned-handle-size:  1;
+
+
+/* SIDEBAR - Controls panels docked to the sides of a window.
+ *
+ *  The ".sidebar" selector is most typically found in file chooser windows and, by extension, Nautilus. As its name implies,
+ *  it controls a bar or panel that resides on one side (usually the left) of the window.
+ */
+.sidebar,
+GtkPlacesSidebar
+    @extends                    .view;
+
+    font:                       bold;
+    padding:                    0px;
+
+    .view
+        padding:                5px;
+
+
+GtkScrolledWindow
+    deep-inset();
+    -GtkScrolledWindow-scrollbar-spacing:           0;
+    -GtkScrolledWindow-scrollbars-within-bevel:     true;
+
+    border-radius:              2.5px;
+    padding:                    1px;
+    // GtkScrolledWindow
+    //     @extends                GtkWidget;
+    //     padding:                0px;
+
+
+.nautilus-canvas-item
+    border-radius:              5px;
+    &:active
+        background-color:       Orchid;
+    &:prelight, &:selected
+        background-color:       alpha(SelectionColor, 0.75);
+        color:                  SelectionTextColor;
+    &.nautilus-desktop, &.nautilus-desktop:backdrop
+        color:                  White;
+
+
+/* RUBBERBAND - Controls the scalable rectangle drawn when selecting multiple icons using the mouse. */
+.rubberband
+    background-color:           alpha(HighlightColor, 0.5);
+    border:                     1px solid HighlightColor;
+    border-radius:              2.5px;
