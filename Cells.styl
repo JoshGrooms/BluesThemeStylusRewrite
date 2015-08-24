@@ -1,10 +1,4 @@
-/* CONTAINERS - Styles for top-level container widgets used in applications.
- *
- */
-
-/* CHANGELOG
- * Written by Josh Grooms on 20151013
- */
+/* CELLS - Styles for the elements held within high-level container widgets. */
 
 
 
@@ -36,6 +30,11 @@
                 background-image:       none;
 
 
+/* GTKPANED - Controls the widget used for separated, multipane UI views.
+ *
+ *  The GtkPaned widget is often behind multi-view UIs found in explorer-like applications. More specifically, it holds
+ *  multiple resizeable member panes that themselves can hold essentially any widget.
+ */
 GtkPaned
     @extends                    GtkWidget;
     -GtkPaned-handle-size:      5;
@@ -66,9 +65,6 @@ GtkScrolledWindow
 
     border-radius:              2.5px;
     padding:                    1px;
-    // GtkScrolledWindow
-    //     @extends                GtkWidget;
-    //     padding:                0px;
 
 
 .nautilus-canvas-item
