@@ -23,11 +23,12 @@
     .cell,
     row
         &:selected
-            background-image:           VibrantBlueGradient;
-            color:                      SelectionTextColor;
+            background-image:           SelectionGradientVertical;
+            color:                      TextColorSelected;
             &:backdrop
                 background-color:       HighlightColor;
                 background-image:       none;
+                color:                  TextColorHighlighted;
 
 
 /* GTKPANED - Controls the widget used for separated, multipane UI views.
@@ -50,30 +51,27 @@ GtkPaned
 .sidebar,
 GtkPlacesSidebar
     @extends                    .view;
-
     font:                       bold;
     padding:                    0px;
-
     .view
         padding:                5px;
 
 
 GtkScrolledWindow
-    deep-inset();
     -GtkScrolledWindow-scrollbar-spacing:           0;
     -GtkScrolledWindow-scrollbars-within-bevel:     true;
-
+    deeper-inset();
     border-radius:              2.5px;
     padding:                    1px;
 
 
 .nautilus-canvas-item
     border-radius:              5px;
-    &:active
-        background-color:       Orchid;
+    &:active                    { background-color: Orchid; }
     &:prelight, &:selected
         background-color:       alpha(SelectionColor, 0.75);
-        color:                  SelectionTextColor;
+        color:                  TextColorSelected;
+
     &.nautilus-desktop, &.nautilus-desktop:backdrop
         color:                  White;
 
