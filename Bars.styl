@@ -1,0 +1,119 @@
+/* CHANGELOG
+ * Written by Josh Grooms on 20151206
+ */
+
+
+
+/* TROUGH - Governs the inset area that appears underneath many bar-like controls. */
+.trough
+    shallow-inset();
+    background-image:   none;
+    border-radius:      2em;
+    padding:            0.125em;
+
+/* GTKPROGRESSBAR - Governs ordinary vertical and horizontal progress bar controls. */
+GtkProgressBar,
+GtkProgressBar.progressbar
+    -GtkProgressBar-min-horizontal-bar-height:  15;
+    -GtkProgressBar-min-vertical-bar-width:     15;
+
+    border:                     2px solid transparent;
+    border-radius:              2em;
+
+    &.horizontal
+        background-image:       ProgressBarGradientVertical;
+        &:backdrop
+            background-color:   ProgressBarColorDim;
+            background-image:   none;
+        &.trough, &.trough:backdrop
+            @extends .trough;
+    &.vertical
+        background-image:       ProgressBarGradientHorizontal;
+        &:backdrop
+            background-color:   ProgressBarColorDim;
+            background-image:   none;
+        &.trough, &.trough:backdrop
+            @extends .trough;
+
+/* GTKLEVELBAR - Governs progress-bar-like controls generally meant for displaying discretized levels or statuses.
+ *
+ *      Password strength indicators are probably the most common example of this control.
+ */
+.level-bar,
+GtkLevelBar,
+GtkLevelBar.level-bar
+
+    &.horizontal
+        -GtkLevelBar-min-block-height:      15;
+        -GtkLevelBar-min-block-width:       3;
+    &.vertical
+        -GtkLevelBar-min-block-height:      3;
+        -GtkLevelBar-min-block-width:       15;
+
+    /* These behave pretty much exactly like progress bars, as far as I can tell. */
+    &.indicator-continuous
+        &.fill-block
+            border-radius:                  2em;
+            &.horizontal
+                background-image:           ProgressBarGradientVertical;
+                &:backdrop
+                    background-color:       ProgressBarColorDim;
+                    background-image:       none;
+                &.empty-fill-block
+                    flat();
+
+    /* These are the discretized level meters. */
+    &.indicator-discrete
+        &.fill-block
+            @extends .trough;
+            &.horizontal
+                &.level-high        { background-image: vgradient(NominalColor); }
+                &.level-low         { background-image: vgradient(ErrorColor); }
+                &.empty-fill-block,
+                &.empty-fill-block:backdrop
+                    background-image: none;
+            &.vertical
+                &.level-high        { background-image: hgradient(NominalColor); }
+                &.level-low         { background-image: hgradient(ErrorColor); }
+                &.empty-fill-block,
+                &.empty-fill-block:backdrop
+                    background-image: none;
+        &.trough
+            flat();
+            padding: 0px;
+
+
+.scale,
+GtkScale,
+GtkScale.scale
+    -GtkRange-slider-width:         20;
+    -GtkRange-trough-border:        0;
+    -GtkScale-slider-length:        20;
+    -GtkWidget-focus-line-width:    0;
+
+    &.horizontal
+        margin: 0.25em 0em 0.25em 0em;
+        &.trough.highlight
+            background-image:       SelectionGradientVerticalInverted;
+
+    &.vertical
+        margin: 0em 0.25em 0em 0.25em;
+        &.trough.highlight
+            background-image:       SelectionGradientHorizontalInverted;
+
+    &.slider
+        border-radius:  2em;
+        // background-image: -gtk-gradient(
+        //     radial,
+        //     0.375 0.375, 0.125,
+        //     0.5 0.5, 0.875,
+        //     color-stop(0.125, shade(HighlightColor, lighter)),
+        //     color-stop(0.5, shade(HighlightColor, semilight)),
+        //     color-stop(0.875, shade(HighlightColor, darker)));
+        background-image: rgradient(White, VeryDarkSilver);
+
+    &.trough
+        @extends .trough;
+        &.highlight:backdrop
+            background-color:       HighlightColor;
+            background-image:       none;
