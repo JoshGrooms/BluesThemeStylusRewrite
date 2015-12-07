@@ -1,4 +1,6 @@
-@import "Library";
+@import 'Standards/Colors/ColorNames';
+@import 'Standards/Colors/UI';
+@import 'Standards/UI/Styles';
 
 
 
@@ -9,7 +11,6 @@ GtkWidget
     -GtkWidget-focus-padding:       0;
     -GtkWidget-focus-line-width:    0;
     -GtkWidget-link-color:          LinkColor;
-    -GtkWidget-margin:              0;
     -GtkWidget-separator-height:    1;
     -GtkWidget-separator-width:     1;
     -GtkWidget-visited-link-color:  LinkColor;
@@ -19,7 +20,7 @@ GtkWidget
     background-clip:                padding-box;
     background-image:               none;
     border:                         none;
-    border-radius:                  0px;
+    border-radius:                  0em;
     box-shadow:                     none;
     color:                          TextColor;
     outline-color:                  transparent;
@@ -29,6 +30,12 @@ GtkWidget
         color:                      TextColorDim;
 
 
-@import "Containers";
-@import "Cells";
-@import "Buttons";
+@import 'Containers';
+@import 'Cells';
+
+@import 'Buttons';
+@import 'Controls';
+@import 'TextEntry';
+@import 'Menus';
+@import 'Notebook';
+@import 'Bars';
