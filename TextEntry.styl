@@ -1,0 +1,74 @@
+/* CHANGELOG
+ * Written by Josh Grooms on 20151205
+ */
+
+
+
+/* GTKENTRY - Governs all single-line text entry bars. */
+.entry,
+GtkEntry,
+GtkEntry.entry
+
+    deep-inset();
+
+    border-radius:          2em;
+    color:                  TextColor;
+    padding:                0.375em 0.75em 0.375em 0.75em;
+    text-shadow:            none;
+
+    &:backdrop              { color: TextColorDim; }
+    &:selected
+        background-color:   HighlightColor;
+        color:              TextColorHighlighted;
+
+    &.progressbar
+        background-color:   ProgressBarColor;
+        &:backdrop          { background-color: ProgressBarColorDim; }
+
+    // Occasionally these are linked to other controls, such as buttons.
+    .linked &
+        &:first-child
+            border-radius:  2em 0em 0em 2em;
+            padding-right:  0.25em;
+        &:last-child
+            border-radius:  0em 2em 2em 0em;
+            padding-left:   0.25em;
+
+    /* IMAGE - Governs any icons that appear inside of a text entry control. */
+    &.image.left
+        padding-left:       0em;
+        padding-right:      0.25em;
+    &.image.right
+        padding-left:       0.25em;
+        padding-right:      0em;
+
+
+
+/* GTKSEARCHENTRY - Governs text entry bars that are meant for performing searches.
+ *
+ *      These particular controls always have the magnifying glass 'Search' icon placed on the left-hand side, which is why
+ *      the padding change seen below is necessary.
+ */
+GtkSearchEntry,
+GtkSearchEntry.entry
+    // padding: 0.375em;
+
+
+GtkTextView
+    -GtkTextView-error-underline-color: ErrorColor;
+    color:                  TextColor;
+    &:backdrop
+        color:              TextColorDim;
+    &:selected
+        background-color:   HighlightColor;
+        color:              TextColorHighlighted;
+
+/* EELEDITABLELABEL - Governs the editable text seen underneath icons (e.g. files, folders).
+ *
+ *      This control is specific to the Nautilus-based desktop environment and file browser that comes with Ubuntu.
+ */
+EelEditableLabel,
+EelEditableLabel.entry
+    border-radius:  0.25em;
+    color:          TextColorLight;
+    padding:        0.125em 0.5em 0.125em 0.5em;
