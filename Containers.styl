@@ -5,6 +5,9 @@
 .background,
 GtkApplicationWindow,
 GtkWindow
+    -GtkWindow-decoration-button-layout:    "close:";
+    -GtkWindow-resize-handle:               5;
+
     background-color:       WindowColor;
     background-clip:        border-box;
     background-image:       none;
@@ -12,51 +15,61 @@ GtkWindow
     &:backdrop
         background-color:   WindowColorDim;
 
-
 /* CSD - Controls windows that undergo decoration on the client side. */
 .csd
     @extends .background
 
-    &.titlebar.header-bar
-        bevel:              10px outset normal;
-
     /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side. */
     &.window-frame
-        border-radius:      5px;
-        // box-shadow:         2.5px 2.5px 10px ShadowColor;
-        shadow:             10px;
+        border-radius:      0.5em;
+        box-shadow:         0.5em 0.5em 1em shadow-color(normal, normal);
 
     &.background, .background
-        border-radius:      0px 0px 5px 5px;
-        // box-shadow:         2.5px 2.5px 10px ShadowColor;
-        padding:            5px;
+        border-bottom:      1px solid shadow-color(lighter, semitransparent);
+        border-left:        1px solid gloss-color(lighter, semitransparent);
+        border-radius:      0em 0em 0.5em 0.5em;
+        border-right:       1px solid shadow-color(lighter, semitransparent);
+        padding:            0.5em;
+        margin: 0em;
 
-/* POPUP - Controls the base windows used for context, drop-down, and combo-box menus. */
-.popup,
+    .titlebar.header-bar
+        background-color:   WindowColor;
+        border-left:        1px solid gloss-color(lighter, semitransparent);
+        border-radius:      0.5em 0.5em 0em 0em;
+        border-right:       1px solid shadow-color(lighter, semitransparent);
+        border-top:         1px solid gloss-color(lighter, semitransparent);
+        padding:            0.25em;
+
+        &:backdrop          { background-color: WindowColorDim; }
+
+.dnd
+    border: 1px solid Blue;
+    background-color: Blue;
+    color: Green;
+
+/* POPUP - Controls the base windows used for context, drop-down, and combo-box menus.
+ *
+ *      NOTES:
+ *          - 'margin' and 'padding' settings have no effect on this class.
+ */
+.popup
 .popup.background
-    shallow-outset();
-    border-radius:          5px;
+    deep-outset();
+    background-color:       MenuColor;
+    border-radius:          0.5em;
+    color:                  MenuTextColor;
 
-/* SCROLLBAR - Controls the appearance of scrollbars in container widgets. */
-.scrollbar
-    -GtkScrollbar-has-backward-stepper:     0;
-    -GtkScrollbar-has-forward-stepper:      0;
-
-    border: 1px solid transparent;
-    border-radius: 2em;
-
-    &.slider
-        border: 2px solid transparent;
-        &.vertical,
-        &.vertical:hover
-            background-image:   hgradient(shade(VibrantBlue, lighter), shade(VibrantBlue, darker));
-
-        &.horizontal,
-        &.horizontal:hover
-            background-image:   VibrantBlueGradient;
-
-    &.trough
-        shallow-inset();
+/* POPOVER - Governs windows that behave similarly to 'popup' instances.
+ *
+ *      So far, I've only seen these used in CSD-type windows.
+ */
+.popover,
+.popover.background
+    bevel:                  1px outset shade(MenuColor, light) LightBlack;
+    background-clip:        border-box;
+    background-color:       MenuColor;
+    border-radius:          0.5em;
+    color:                  MenuTextColor;
 
 /* TOOLTIP - Controls the appearance of tooltip messages. */
 .tooltip,
