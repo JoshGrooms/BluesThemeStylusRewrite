@@ -1,0 +1,40 @@
+/* CHANGELOG
+ * Written by Josh Grooms on 20151208
+ */
+
+
+
+/** EVOLUTION TWEAKS **/
+// Governs the small box at the top of the Evolution sidebar (for all tabs)
+EShellWindow GtkEventBox
+
+    background-image: vgradient(WindowColor, WindowColor);
+    &:backdrop
+        background-image: vgradient(WindowColorDim, WindowColorDim);
+
+// Governs the buttons at the top of each list-view-like element (e.g. e-mail)
+ECanvas.button
+    @extends .button.flat;
+    color: TextColorDark;
+    &:backdrop
+        color:  TextColorDark;
+
+/* ECALENDAR - Governs the calendar control widget found within the program 'Evolution'. */
+ECalendar
+    background-image: none;
+    background-color: InsetColor;
+
+    .button
+        @extends .button.flat;
+        border-radius: 0.125em;
+        GtkArrow
+            color: TextColor;
+        &:hover GtkArrow
+            color: TextColorHighlighted;
+            
+
+
+/** GNOME TERMINAL **/
+TerminalScreen
+    background-color:   WindowColorDark;
+    color:              VibrantBlue;
