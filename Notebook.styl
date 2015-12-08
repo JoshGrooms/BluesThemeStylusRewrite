@@ -12,8 +12,8 @@ GtkNotebook.notebook
     -GtkNotebook-tab-overlap:   -5;
     -GtkNotebook-tab-fill:      true;
 
-    padding-bottom: 0.25em;
-    padding-top:    0.5em;
+    padding-bottom: 0.125em;
+    padding-top:    0.25em;
 
     /* HEADER - Governs the area where tabs are located for the notebook. */
     &.header
@@ -78,6 +78,7 @@ GtkNotebook.notebook
         .button,
         .button.flat
             flat();
+            padding:                        1px;
             > GtkImage                      { color: TextColor; }
             &:backdrop > GtkImage           { color: TextColorDim; }
             &:hover > GtkImage              { color: Red; }
