@@ -8,7 +8,7 @@ GtkMenu.menu
     -GtkMenu-horizontal-offset: -1;
     flat();
     color:      MenuTextColor;
-    padding: 0.125em;
+    padding:    0.125em;
 
 
 .menuitem,
@@ -31,13 +31,13 @@ GtkImageMenuItem
         > * > * > GtkImage
             color: TextColorSelected;
 
-    /* Governs inactive menu items that cannot be selected. */
+    // Governs inactive menu items that cannot be selected.
     &:insensitive,
     &:insensitive .accelerator,
     &:insensitive GtkLabel
         color:                      TextColorDisabled;
 
-    /* Governs the very first menu items, which is what is displayed on menu bars. */
+    // Governs the very first menu items, which is what is displayed on menu bars.
     .menubar > &,
     GtkMenuBar > &,
     GtkMenuBar.menubar > &
