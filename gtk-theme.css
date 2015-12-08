@@ -10,8 +10,9 @@ GtkPlacesSidebar,
 .primary-toolbar .button,
 column-header .button,
 GtkCalendar.button,
-ECalendar .button,
-GtkComboBox .button {
+GtkComboBox .button,
+ECanvas.button,
+ECalendar .button {
   -GtkWidget-background-color: transparent;
   -GtkWidget-focus-padding: 0;
   -GtkWidget-focus-line-width: 0;
@@ -41,8 +42,9 @@ GtkPlacesSidebar:backdrop,
 .primary-toolbar .button:backdrop,
 column-header .button:backdrop,
 GtkCalendar.button:backdrop,
-ECalendar .button:backdrop,
-GtkComboBox .button:backdrop {
+GtkComboBox .button:backdrop,
+ECanvas.button:backdrop,
+ECalendar .button:backdrop {
   color: #898989;
 }
 .background,
@@ -90,6 +92,9 @@ GtkWindow:backdrop,
   background-color: #00f;
   color: #0f0;
 }
+.header-bar {
+  padding: 0.25em;
+}
 .popup,
 .popup.background,
 .tooltip,
@@ -125,7 +130,7 @@ GtkPlacesSidebar {
   -GtkTreeView-expander-size: 10;
   -GtkTreeView-indent-expanders: true;
   -GtkTreeView-vertical-separator: 0;
-  padding: 2px 5px 2px 5px;
+  padding: 0.25em 0.5em 0.25em 0.5em;
 }
 .view .cell:selected,
 .sidebar .cell:selected,
@@ -155,11 +160,11 @@ NautilusWindow GtkPaned {
 .sidebar,
 GtkPlacesSidebar {
   font: bold;
-  padding: 0px;
+  padding: 0em;
 }
 .sidebar .view,
 GtkPlacesSidebar .view {
-  padding: 5px;
+  padding: 0.5em;
 }
 GtkScrolledWindow {
   -GtkScrolledWindow-scrollbar-spacing: 0;
@@ -172,11 +177,11 @@ GtkScrolledWindow {
   border-width: 1px;
   background-color: rgba(24,24,24,0.375);
   box-shadow: inset 10px 10px 10px -10px rgba(0,0,0,0.5);
-  border-radius: 2.5px;
+  border-radius: 0.25em;
   padding: 1px;
 }
 .nautilus-canvas-item {
-  border-radius: 5px;
+  border-radius: 0.5em;
 }
 .nautilus-canvas-item:active {
   background-color: #9632ff;
@@ -193,7 +198,7 @@ GtkScrolledWindow {
 .rubberband {
   background-color: rgba(162,162,162,0.5);
   border: 1px solid #a2a2a2;
-  border-radius: 2.5px;
+  border-radius: 0.25em;
 }
 .button {
   background-image: -gtk-gradient(linear, left top, left bottom, from(rgba(198,198,198,0.25)), to(rgba(126,126,126,0.25)));
@@ -270,22 +275,25 @@ GtkScrolledWindow {
 .primary-toolbar .button,
 column-header .button,
 GtkCalendar.button,
-ECalendar .button,
-GtkComboBox .button {
+GtkComboBox .button,
+ECanvas.button,
+ECalendar .button {
   border-radius: 0.25em;
 }
 .button.flat:hover,
 .primary-toolbar .button:hover,
 column-header .button:hover,
 GtkCalendar.button:hover,
-ECalendar .button:hover,
 GtkComboBox .button:hover,
+ECanvas.button:hover,
+ECalendar .button:hover,
 .button.flat:prelight,
 .primary-toolbar .button:prelight,
 column-header .button:prelight,
 GtkCalendar.button:prelight,
-ECalendar .button:prelight,
-GtkComboBox .button:prelight {
+GtkComboBox .button:prelight,
+ECanvas.button:prelight,
+ECalendar .button:prelight {
   background-color: #a2a2a2;
   background-image: none;
 }
@@ -293,8 +301,9 @@ GtkComboBox .button:prelight {
 .primary-toolbar .button.menuitem,
 column-header .button.menuitem,
 GtkCalendar.button.menuitem,
-ECalendar .button.menuitem,
-GtkComboBox .button.menuitem {
+GtkComboBox .button.menuitem,
+ECanvas.button.menuitem,
+ECalendar .button.menuitem {
   background-color: transparent;
   background-image: none;
   border: none;
@@ -306,68 +315,78 @@ GtkComboBox .button.menuitem {
 .primary-toolbar .button.menuitem GtkBox GtkImage,
 column-header .button.menuitem GtkBox GtkImage,
 GtkCalendar.button.menuitem GtkBox GtkImage,
-ECalendar .button.menuitem GtkBox GtkImage,
 GtkComboBox .button.menuitem GtkBox GtkImage,
+ECanvas.button.menuitem GtkBox GtkImage,
+ECalendar .button.menuitem GtkBox GtkImage,
 .button.flat.menuitem GtkBox GtkLabel,
 .primary-toolbar .button.menuitem GtkBox GtkLabel,
 column-header .button.menuitem GtkBox GtkLabel,
 GtkCalendar.button.menuitem GtkBox GtkLabel,
-ECalendar .button.menuitem GtkBox GtkLabel,
 GtkComboBox .button.menuitem GtkBox GtkLabel,
+ECanvas.button.menuitem GtkBox GtkLabel,
+ECalendar .button.menuitem GtkBox GtkLabel,
 .button.flat.menuitem > GtkImage,
 .primary-toolbar .button.menuitem > GtkImage,
 column-header .button.menuitem > GtkImage,
 GtkCalendar.button.menuitem > GtkImage,
-ECalendar .button.menuitem > GtkImage,
 GtkComboBox .button.menuitem > GtkImage,
+ECanvas.button.menuitem > GtkImage,
+ECalendar .button.menuitem > GtkImage,
 .button.flat.menuitem > GtkLabel,
 .primary-toolbar .button.menuitem > GtkLabel,
 column-header .button.menuitem > GtkLabel,
 GtkCalendar.button.menuitem > GtkLabel,
-ECalendar .button.menuitem > GtkLabel,
-GtkComboBox .button.menuitem > GtkLabel {
+GtkComboBox .button.menuitem > GtkLabel,
+ECanvas.button.menuitem > GtkLabel,
+ECalendar .button.menuitem > GtkLabel {
   color: #a2a2a2;
 }
 .button.flat.menuitem:backdrop,
 .primary-toolbar .button.menuitem:backdrop,
 column-header .button.menuitem:backdrop,
 GtkCalendar.button.menuitem:backdrop,
-ECalendar .button.menuitem:backdrop,
-GtkComboBox .button.menuitem:backdrop {
+GtkComboBox .button.menuitem:backdrop,
+ECanvas.button.menuitem:backdrop,
+ECalendar .button.menuitem:backdrop {
   color: #898989;
 }
 .button.flat.menuitem:backdrop GtkBox GtkImage,
 .primary-toolbar .button.menuitem:backdrop GtkBox GtkImage,
 column-header .button.menuitem:backdrop GtkBox GtkImage,
 GtkCalendar.button.menuitem:backdrop GtkBox GtkImage,
-ECalendar .button.menuitem:backdrop GtkBox GtkImage,
 GtkComboBox .button.menuitem:backdrop GtkBox GtkImage,
+ECanvas.button.menuitem:backdrop GtkBox GtkImage,
+ECalendar .button.menuitem:backdrop GtkBox GtkImage,
 .button.flat.menuitem:backdrop GtkBox GtkLabel,
 .primary-toolbar .button.menuitem:backdrop GtkBox GtkLabel,
 column-header .button.menuitem:backdrop GtkBox GtkLabel,
 GtkCalendar.button.menuitem:backdrop GtkBox GtkLabel,
-ECalendar .button.menuitem:backdrop GtkBox GtkLabel,
 GtkComboBox .button.menuitem:backdrop GtkBox GtkLabel,
+ECanvas.button.menuitem:backdrop GtkBox GtkLabel,
+ECalendar .button.menuitem:backdrop GtkBox GtkLabel,
 .button.flat.menuitem:backdrop > GtkImage,
 .primary-toolbar .button.menuitem:backdrop > GtkImage,
 column-header .button.menuitem:backdrop > GtkImage,
 GtkCalendar.button.menuitem:backdrop > GtkImage,
-ECalendar .button.menuitem:backdrop > GtkImage,
 GtkComboBox .button.menuitem:backdrop > GtkImage,
+ECanvas.button.menuitem:backdrop > GtkImage,
+ECalendar .button.menuitem:backdrop > GtkImage,
 .button.flat.menuitem:backdrop > GtkLabel,
 .primary-toolbar .button.menuitem:backdrop > GtkLabel,
 column-header .button.menuitem:backdrop > GtkLabel,
 GtkCalendar.button.menuitem:backdrop > GtkLabel,
-ECalendar .button.menuitem:backdrop > GtkLabel,
-GtkComboBox .button.menuitem:backdrop > GtkLabel {
+GtkComboBox .button.menuitem:backdrop > GtkLabel,
+ECanvas.button.menuitem:backdrop > GtkLabel,
+ECalendar .button.menuitem:backdrop > GtkLabel {
   color: #898989;
 }
 .button.flat.menuitem:hover,
 .primary-toolbar .button.menuitem:hover,
 column-header .button.menuitem:hover,
 GtkCalendar.button.menuitem:hover,
-ECalendar .button.menuitem:hover,
-GtkComboBox .button.menuitem:hover {
+GtkComboBox .button.menuitem:hover,
+ECanvas.button.menuitem:hover,
+ECalendar .button.menuitem:hover {
   background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
   color: #323232;
 }
@@ -375,26 +394,30 @@ GtkComboBox .button.menuitem:hover {
 .primary-toolbar .button.menuitem:hover GtkBox GtkImage,
 column-header .button.menuitem:hover GtkBox GtkImage,
 GtkCalendar.button.menuitem:hover GtkBox GtkImage,
-ECalendar .button.menuitem:hover GtkBox GtkImage,
 GtkComboBox .button.menuitem:hover GtkBox GtkImage,
+ECanvas.button.menuitem:hover GtkBox GtkImage,
+ECalendar .button.menuitem:hover GtkBox GtkImage,
 .button.flat.menuitem:hover GtkBox GtkLabel,
 .primary-toolbar .button.menuitem:hover GtkBox GtkLabel,
 column-header .button.menuitem:hover GtkBox GtkLabel,
 GtkCalendar.button.menuitem:hover GtkBox GtkLabel,
-ECalendar .button.menuitem:hover GtkBox GtkLabel,
 GtkComboBox .button.menuitem:hover GtkBox GtkLabel,
+ECanvas.button.menuitem:hover GtkBox GtkLabel,
+ECalendar .button.menuitem:hover GtkBox GtkLabel,
 .button.flat.menuitem:hover > GtkImage,
 .primary-toolbar .button.menuitem:hover > GtkImage,
 column-header .button.menuitem:hover > GtkImage,
 GtkCalendar.button.menuitem:hover > GtkImage,
-ECalendar .button.menuitem:hover > GtkImage,
 GtkComboBox .button.menuitem:hover > GtkImage,
+ECanvas.button.menuitem:hover > GtkImage,
+ECalendar .button.menuitem:hover > GtkImage,
 .button.flat.menuitem:hover > GtkLabel,
 .primary-toolbar .button.menuitem:hover > GtkLabel,
 column-header .button.menuitem:hover > GtkLabel,
 GtkCalendar.button.menuitem:hover > GtkLabel,
-ECalendar .button.menuitem:hover > GtkLabel,
-GtkComboBox .button.menuitem:hover > GtkLabel {
+GtkComboBox .button.menuitem:hover > GtkLabel,
+ECanvas.button.menuitem:hover > GtkLabel,
+ECalendar .button.menuitem:hover > GtkLabel {
   color: #323232;
 }
 .button:focus {
@@ -564,19 +587,6 @@ GtkCalendar.highlight:backdrop {
   background-image: -gtk-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(0.875, transparent), color-stop(1, #a2a2a2));
   color: #898989;
 }
-ECalendar {
-  background-image: none;
-  background-color: rgba(0,0,0,0.25);
-}
-ECalendar .button {
-  border-radius: 0.125em;
-}
-ECalendar .button GtkArrow {
-  color: #a2a2a2;
-}
-ECalendar .button:hover GtkArrow {
-  color: #323232;
-}
 GtkComboBox.combobox-entry .entry {
   border-radius: 2em 0em 0em 2em;
 }
@@ -651,12 +661,12 @@ GtkExpander.expander:backdrop {
   background-color: rgba(36,36,36,0.25);
   box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.375);
 }
-.scrollbar-junction,
-.scrollbar-junction:backdrop {
-  border: 1px solid #f00;
-  background-color: #00f;
+.scrollbars-junction,
+.scrollbars-junction:backdrop {
+  background-color: transparent;
   background-image: none;
-  color: #0f0;
+  border: none;
+  box-shadow: none;
 }
 GtkSwitch {
   background-image: -gtk-gradient(radial, 0.375 0.375, 0, 0.5 0.5, 1, from(#fff), to(#7d7d7d));
@@ -784,8 +794,6 @@ GtkImageMenuItem {
   border-radius: 0.25em;
   color: #a2a2a2;
   padding: 1em;
-/* Governs inactive menu items that cannot be selected. */
-/* Governs the very first menu items, which is what is displayed on menu bars. */
 /* GTKACCELLABEL - Governs the text description of each individual menu item.
      *
      *      Although its name would suggest differently, this class does NOT control the accelerators found adjacent to some
@@ -860,8 +868,8 @@ GtkNotebook.notebook {
   -GtkNotebook-initial-gap: 10;
   -GtkNotebook-tab-overlap: -5;
   -GtkNotebook-tab-fill: true;
-  padding-bottom: 0.25em;
-  padding-top: 0.5em;
+  padding-bottom: 0.125em;
+  padding-top: 0.25em;
 /* HEADER - Governs the area where tabs are located for the notebook. */
 /* TAB - Governs the individual tabs for a notebook control.
      *
@@ -1001,6 +1009,7 @@ GtkNotebook.notebook tab .button.flat {
   background-image: none;
   border: none;
   box-shadow: none;
+  padding: 1px;
 }
 .notebook tab .button > GtkImage,
 GtkNotebook tab .button > GtkImage,
@@ -1198,4 +1207,91 @@ GtkScale.trough.highlight:backdrop,
 GtkScale.scale.trough.highlight:backdrop {
   background-color: #a2a2a2;
   background-image: none;
+}
+UnityDecoration {
+  -UnityDecoration-extents: 30px 5px 5px 5px;
+  -UnityDecoration-input-extents: 10px;
+  -UnityDecoration-shadow-offset-x: 2.5px;
+  -UnityDecoration-shadow-offset-y: 2.5px;
+  -UnityDecoration-active-shadow-color: rgba(0,0,0,0.25);
+  -UnityDecoration-active-shadow-radius: 10px;
+  -UnityDecoration-inactive-shadow-color: rgba(0,0,0,0.25);
+  -UnityDecoration-inactive-shadow-radius: 10px;
+  -UnityDecoration-glow-size: 25px;
+  -UnityDecoration-glow-color: #00c8ff;
+  -UnityDecoration-title-indent: 10px;
+  -UnityDecoration-title-fade: 0px;
+  -UnityDecoration-title-alignment: 0;
+  background-clip: border-box;
+  background-color: #4b4b4b;
+  background-image: none;
+  border: none;
+  border-radius: 0em;
+  color: #c8c8c8;
+}
+UnityDecoration:backdrop {
+  background-color: #3e3e3e;
+  color: #898989;
+}
+UnityDecoration.bottom {
+  border-bottom: 1px solid rgba(36,36,36,0.125);
+  border-left: 1px solid rgba(198,198,198,0.125);
+  border-radius: 0em 0em 0.5em 0.5em;
+  border-right: 1px solid rgba(36,36,36,0.125);
+}
+UnityDecoration.left {
+  border-left: 1px solid rgba(198,198,198,0.125);
+}
+UnityDecoration.right {
+  border-right: 1px solid rgba(36,36,36,0.125);
+}
+UnityDecoration.top {
+  border-left: 1px solid rgba(198,198,198,0.125);
+  border-radius: 0.5em 0.5em 0em 0em;
+  border-right: 1px solid rgba(36,36,36,0.125);
+  border-top: 1px solid rgba(198,198,198,0.125);
+  padding: 0.5em;
+}
+UnityDecoration.top .button {
+  border: 1px solid #f00;
+  background-color: #00f;
+  background-image: none;
+  color: #0f0;
+}
+.unity-panel {
+  background-color: #252525;
+  border: none;
+  color: #898989;
+}
+.unity-panel.panel-title {
+  color: transparent;
+}
+EShellWindow GtkEventBox {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#4b4b4b), to(#4b4b4b));
+}
+EShellWindow GtkEventBox:backdrop {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#3e3e3e), to(#3e3e3e));
+}
+ECanvas.button {
+  color: #323232;
+}
+ECanvas.button:backdrop {
+  color: #323232;
+}
+ECalendar {
+  background-image: none;
+  background-color: rgba(0,0,0,0.25);
+}
+ECalendar .button {
+  border-radius: 0.125em;
+}
+ECalendar .button GtkArrow {
+  color: #a2a2a2;
+}
+ECalendar .button:hover GtkArrow {
+  color: #323232;
+}
+TerminalScreen {
+  background-color: #252525;
+  color: #00c8ff;
 }
