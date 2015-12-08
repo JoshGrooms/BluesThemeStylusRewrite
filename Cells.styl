@@ -19,7 +19,7 @@
     -GtkTreeView-expander-size:         10;
     -GtkTreeView-indent-expanders:      true;
     -GtkTreeView-vertical-separator:    0;
-    padding:                            2px 5px 2px 5px;
+    padding:                            0.25em 0.5em 0.25em 0.5em;
     .cell,
     row
         &:selected
@@ -52,21 +52,21 @@ GtkPaned
 GtkPlacesSidebar
     @extends                    .view;
     font:                       bold;
-    padding:                    0px;
+    padding:                    0em;
     .view
-        padding:                5px;
+        padding:                0.5em;
 
 
 GtkScrolledWindow
     -GtkScrolledWindow-scrollbar-spacing:           0;
     -GtkScrolledWindow-scrollbars-within-bevel:     true;
     deeper-inset();
-    border-radius:              2.5px;
+    border-radius:              0.25em;
     padding:                    1px;
 
 
 .nautilus-canvas-item
-    border-radius:              5px;
+    border-radius:              0.5em;
     &:active                    { background-color: Orchid; }
     &:prelight, &:selected
         background-color:       alpha(SelectionColor, 0.75);
@@ -80,4 +80,4 @@ GtkScrolledWindow
 .rubberband
     background-color:           alpha(HighlightColor, 0.5);
     border:                     1px solid HighlightColor;
-    border-radius:              2.5px;
+    border-radius:              0.25em;
