@@ -55,20 +55,6 @@ GtkCalendar
                 color-stop(1.0, HighlightColor));
             color: TextColorDim;
 
-
-/* ECALENDAR - Governs the calendar control widget found within the program 'Evolution'. */
-ECalendar
-    background-image: none;
-    background-color: InsetColor;
-
-    .button
-        @extends .button.flat;
-        border-radius: 0.125em;
-        GtkArrow
-            color: TextColor;
-        &:hover GtkArrow
-            color: TextColorHighlighted;
-
 GtkComboBox
     &.combobox-entry
         .entry
@@ -156,13 +142,9 @@ GtkExpander.expander
     &.trough
         shallow-inset();
 
-.scrollbar-junction,
-.scrollbar-junction:backdrop
-    debug();
-    // flat();
-    // background-color:   transparent;
-
-
+.scrollbars-junction,
+.scrollbars-junction:backdrop
+    flat();
 
 GtkSwitch
     background-image:   rgradient(White, VeryDarkSilver);
