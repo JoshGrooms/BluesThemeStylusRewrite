@@ -36,23 +36,14 @@ GtkNotebook.notebook
 
         /* ACTIVE - Governs the active tab page for the notebook. */
         &:active
-            &.bottom
-                box-shadow:     inset 0px 7px 5px -5px SelectionColor,
-                                inset 0px 1px 1px SelectionColor;
-                &:backdrop
-                    box-shadow: inset 0px 1px 1px HighlightColor;
-            &.left
-                box-shadow:     inset 7px 0px 5px -5px SelectionColor,
-                                inset 1px 0px 1px SelectionColor;
-                &:backdrop
-                    box-shadow: inset 1px 0px 1px HighlightColor;
-            &.right
-                box-shadow:     inset -7px 0px 5px -5px SelectionColor,
-                                inset -1px 0px 1px SelectionColor;
+            &.right, &.left
+                box-shadow: inset -7px 0px 3px -6px SelectionColor,
+                            inset -1px 0px 1px SelectionColor;
                 &:backdrop
                     box-shadow: inset -1px 0px 1px HighlightColor;
-            &.top
-                box-shadow:     inset 0px -7px 5px -5px SelectionColor,
+
+            &.top, &.bottom
+                box-shadow:     inset 0px -7px 3px -6px SelectionColor,
                                 inset 0px -1px 1px SelectionColor;
                 &:backdrop
                     box-shadow: inset 0px -1px 1px HighlightColor;
