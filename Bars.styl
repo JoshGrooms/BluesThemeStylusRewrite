@@ -17,7 +17,7 @@ GtkProgressBar.progressbar
     -GtkProgressBar-min-horizontal-bar-height:  15;
     -GtkProgressBar-min-vertical-bar-width:     15;
 
-    border:                     2px solid transparent;
+    border:                     1px solid transparent;
     border-radius:              2em;
 
     &.horizontal
@@ -96,12 +96,11 @@ GtkScale.scale
         &.trough.highlight
             background-image:       SelectionGradientVerticalInverted;
 
-    &.vertical
-        margin: 0em 0.25em 0em 0.25em;
-        &.trough.highlight
-            background-image:       SelectionGradientHorizontalInverted;
+    &.mark
+        color:      TextColorDim;
 
-    &.slider
+    &.slider.horizontal,
+    &.slider.vertical
         border-radius:  2em;
         // background-image: -gtk-gradient(
         //     radial,
@@ -110,10 +109,16 @@ GtkScale.scale
         //     color-stop(0.125, shade(HighlightColor, lighter)),
         //     color-stop(0.5, shade(HighlightColor, semilight)),
         //     color-stop(0.875, shade(HighlightColor, darker)));
-        background-image: rgradient(White, VeryDarkSilver);
+        background-image:           rgradient(White, VeryDarkSilver);
+        margin:     0.125em;
 
     &.trough
         @extends .trough;
         &.highlight:backdrop
             background-color:       HighlightColor;
             background-image:       none;
+
+    &.vertical
+        margin: 0em 0.25em 0em 0.25em;
+        &.trough.highlight
+            background-image:       SelectionGradientHorizontalInverted;
