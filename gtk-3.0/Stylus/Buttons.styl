@@ -1,0 +1,150 @@
+
+ButtonGlossTop = gloss-color(lighter, faded);
+ButtonGlossBottom = gloss-color(darker, faded);
+
+
+/* BUTTON-TEXT-COLOR - Sets parameters controlling the color of text and colorized images that are children of buttons.
+ *
+ *  SYNTAX:
+ *      button-text-color:  c
+ *
+ *  INPUT:
+ *      c:      RGBA
+ *              The desired color of button text and colorized images.
+ */
+button-text-color(c)
+    color:      c;
+    GtkImage,
+    GtkLabel
+        color:  c;
+
+
+/* BUTTON - Controls all button widgets. */
+.button
+    @extends GtkWidget;
+
+    background-image:               vgradient(ButtonGlossTop, ButtonGlossBottom);
+    bevel:                          1px inset;
+    border-radius:                  0.5em;
+    box-shadow:                     inset 0px 0px 2px shadow-color(normal, semifaded);
+    padding:                        1em;
+
+    &:active,
+    &:checked
+        deep-inset();
+        background-image:           SelectionGradientVerticalInverted;
+        button-text-color:          TextColorSelected;
+        &:backdrop,
+        &:hover,
+        &:prelight
+            background-image:       HighlightGradientVerticalInverted;
+            button-text-color:      TextColorHighlighted;
+
+    &.flat,
+    .primary-toolbar &
+        @extends GtkWidget;
+        border-radius:              0.25em;
+
+        &:hover, &:prelight
+            background-color:       HighlightColor;
+            background-image:       none;
+
+    &:focus
+        button-text-color:          TextColorFocused;
+
+    &:hover,
+    &:prelight
+        background-image:           HighlightGradientVertical;
+        button-text-color:          TextColorHighlighted;
+        box-shadow:                 inset 0px 0px 2px shadow-color(darker, semiopaque);
+
+    &.spinbutton
+        flat();
+        border-width:               0px 0px 0px 0.25px;
+        box-shadow:                 none;
+
+        &:hover
+            color:                  SelectionColor;
+            &:backdrop              { color: HighlightColor; }
+        &:last-child
+            border-radius:          0em 2em 2em 0em;
+
+    .vertical.linked > &
+        background-image:           hgradient(ButtonGlossTop, ButtonGlossBottom);
+        border-radius:              0em;
+        border-width:               0.25px 1px;
+
+        &:hover
+            background-image:       HighlightGradientHorizontal;
+
+        &:first-child
+            border-radius:          0.5em 0.5em 0em 0em;
+            border-top-width:       1px;
+        &:last-child
+            border-radius:          0em 0em 0.5em 0.5em;
+            border-bottom-width:    1px;
+        &:only-child
+            border-radius           0.5em;
+            border-width:           1px;
+
+
+
+    .linked > &,
+    .horizontal.linked > &
+        border-radius:              0em;
+        border-width:               1px 0.25px;
+
+        &:first-child
+            border-radius:          0.5em 0em 0em 0.5em;
+            border-left-width:      1px;
+        &:last-child
+            border-radius:          0px 0.5em 0.5em 0px;
+            border-right-width:     1px;
+        &:only-child
+            border-radius:          0.5em;
+            border-width:           1px;
+
+
+
+column-header
+    .button
+        @extends .button.flat
+        background-color:   gloss-color(lighter, faded);
+        background-clip:    padding-box;
+        border-radius:      0px
+        border-top:         1px solid transparent;
+
+    &:first-child .button
+        border-radius:      2.5px 0px 0px 0px;
+        border-left:        1px solid transparent;
+    &:last-child .button
+        border-radius:      0px 2.5px 0px 0px;
+        border-right:       1px solid transparent;
+
+/* TITLEBUTTON - Governs the standard close, maximize, and minimize buttons for CSD windows. */
+.csd .titlebar.header-bar .button.titlebutton,
+.solid-csd .titlebar.header-bar .button.titlebutton
+    shallow-inset();
+
+    background-image:   none;
+    border-radius:      2em;
+    color:              transparent;
+    margin:             10em;
+    padding:            0.0625em;
+
+    &:backdrop
+        background-image: none;
+        background-color: WindowColorLight;
+
+    &.close
+        background-image:   rgradient(ButtonCloseColor, Gray);
+        &:hover             { background-image: rgradient(ButtonCloseColorHighlight, LightGray); }
+    &.maximize
+        background-image:   rgradient(ButtonMaximizeColor, Gray);
+        &:hover             { background-image: rgradient(ButtonMaximizeColorHighlight, LightGray); }
+    &.minimize
+        background-image:   rgradient(ButtonMinimizeColor, Gray);
+        &:hover             { background-image: rgradient(ButtonMinimizeColorHighlight, LightGray); }
+
+    GtkImage
+        color:          transparent;

@@ -1,0 +1,72 @@
+/* CONTAINERS - Styles for top-level container widgets used in applications. */
+
+
+
+.background,
+GtkApplicationWindow,
+GtkWindow
+    -GtkWindow-decoration-button-layout:    "close:";
+    -GtkWindow-resize-handle:               5;
+
+    background-color:       WindowColor;
+    background-clip:        border-box;
+    background-image:       none;
+
+    &:backdrop
+        background-color:   WindowColorDim;
+
+/* CSD - Controls windows that undergo decoration on the client side. */
+.csd,
+.solid-csd
+    @extends .background
+
+    /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side. */
+    &.window-frame,
+    &.window-frame:backdrop
+        bevel:              1px outset;
+        border-radius:      0.5em;
+        /*box-shadow:         0.5em 0.5em 1em shadow-color(normal, normal);*/
+        box-shadow:         none;
+        margin:             0em 0.25em 0.25em 0.25em;
+
+
+.dnd
+    border: 1px solid SelectionColor;
+
+
+.header-bar
+    padding: 0.25em;
+
+/* OVERSHOOT - Governs decorations drawn on the sides of GtkScrolledWindow controls when attempting to scroll too far. */
+.overshoot,
+.undershoot
+    flat();
+
+/* POPUP - Controls the base windows used for context, drop-down, and combo-box menus.
+ *
+ *      NOTES:
+ *          - 'margin' and 'padding' settings have no effect on this class.
+ */
+.popup,
+.popup.background
+    deep-outset();
+    background-color:       MenuColor;
+    border-radius:          0.5em;
+    color:                  MenuTextColor;
+
+/* POPOVER - Governs windows that behave similarly to 'popup' instances.
+ *
+ *      So far, I've only seen these used in CSD-type windows.
+ */
+.popover,
+.popover.background
+    bevel:                  1px outset shade(MenuColor, light) LightBlack;
+    background-clip:        border-box;
+    background-color:       MenuColor;
+    border-radius:          0.5em;
+    color:                  MenuTextColor;
+
+/* TOOLTIP - Controls the appearance of tooltip messages. */
+.tooltip,
+.tooltip.background
+    @extends .popup

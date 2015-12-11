@@ -1,0 +1,113 @@
+/* CELLS - Styles for the elements held within high-level container widgets. */
+
+
+
+/** INNER WINDOWS & CONTENTS **/
+
+/* VIEW - Controls individual elements of a list or table.
+ *
+ *  The ".view" selector generally belongs to lists or tables of data. It specifically controls the individual elements that
+ *  are present within those lists (e.g. a single cell within a table). Common examples associated with this selector
+ *  include:
+ *
+ *      - The file chooser side bar in GEdit
+ *      - The various lists found throughout Unity Tweak Tool
+ *      - Files within Nautilus (only when viewing items as a list)
+ */
+.view
+    @extends                            GtkWidget;
+    -GtkTreeView-expander-size:         10;
+    -GtkTreeView-indent-expanders:      true;
+    -GtkTreeView-vertical-separator:    0;
+    padding:                            0.25em 0.5em 0.25em 0.5em;
+
+    .cell,
+    row
+        &:selected
+            background-image:           SelectionGradientVertical;
+            color:                      TextColorSelected;
+            &:backdrop
+                background-color:       HighlightColor;
+                background-image:       none;
+                color:                  TextColorHighlighted;
+
+/* GTKPANED - Controls the widget used for separated, multipane UI views.
+ *
+ *  The GtkPaned widget is often behind multi-view UIs found in explorer-like applications. More specifically, it holds
+ *  multiple resizeable member panes that themselves can hold essentially any widget.
+ */
+GtkPaned
+    @extends                    GtkWidget;
+    -GtkPaned-handle-size:      5;
+    NautilusWindow &
+        -GtkPaned-handle-size:  1;
+
+
+/* SIDEBAR - Controls panels docked to the sides of a window.
+ *
+ *  The ".sidebar" selector is most typically found in file chooser windows and, by extension, Nautilus. As its name implies,
+ *  it controls a bar or panel that resides on one side (usually the left) of the window.
+ */
+.sidebar,
+GtkPlacesSidebar
+    @extends .view;
+    font:                           bold;
+    padding:                        0em;
+
+    // Governs the padding between list entries in the Nautilus sidebar
+    .view                           { padding: 0.5em; }
+
+    .list
+        .separator                  { color: transparent; }
+
+        .sidebar-item,
+        .sidebar-item.button
+            @extends GtkWidget;
+            button-text-color:      TextColor;
+            &:selected
+                background-image:   SelectionGradientVertical;
+                button-text-color:  TextColorSelected;
+
+                &:backdrop
+                    background-color:   HighlightColor;
+                    background-image:   none;
+                    button-text-color:  TextColorHighlighted;
+
+.list
+    .separator.horizontal,
+    .separator.vertical      { color: transparent; }
+
+    .list-row,
+    .list-row.button
+        @extends GtkWidget;
+        @extends .sidebar .list .sidebar-item;
+
+
+
+GtkScrolledWindow
+    -GtkScrolledWindow-scrollbar-spacing:           0;
+    -GtkScrolledWindow-scrollbars-within-bevel:     true;
+    deeper-inset();
+    border-radius:              0.25em;
+    padding:                    1px;
+
+    .sidebar &
+        @extends GtkWidget;
+
+
+.nautilus-canvas-item
+    border-radius:              0.5em;
+    &:active                    { background-color: Orchid; }
+    &:prelight, &:selected
+        background-color:       alpha(SelectionColor, 0.75);
+        color:                  TextColorSelected;
+
+    &.nautilus-desktop, &.nautilus-desktop:backdrop
+        color:                  White;
+
+
+/* RUBBERBAND - Controls the scalable rectangle drawn when selecting multiple icons using the mouse. */
+.rubberband
+    background-color:           alpha(HighlightColor, 0.5);
+    border:                     1px solid HighlightColor;
+    border-radius:              0.25em;

@@ -1,0 +1,46 @@
+@import 'Standards/Colors/ColorNames';
+@import 'Standards/Colors/UI';
+@import 'Standards/UI/Styles';
+
+@css { @import url("gtk-widgets-assets.css"); }
+
+
+
+/** DEFAULTS **/
+*,
+GtkWidget
+    -GtkWidget-background-color:    transparent;
+    -GtkWidget-focus-padding:       0;
+    -GtkWidget-focus-line-width:    0;
+    -GtkWidget-link-color:          LinkColor;
+    -GtkWidget-separator-height:    1;
+    -GtkWidget-separator-width:     1;
+    -GtkWidget-visited-link-color:  LinkColor;
+    -GtkWidget-wide-separators:     false;
+
+    background-color:               transparent;
+    background-clip:                padding-box;
+    background-image:               none;
+    border:                         none;
+    border-radius:                  0em;
+    box-shadow:                     none;
+    color:                          TextColor;
+    outline-color:                  transparent;
+    outline-offset:                 0px;
+
+    &:backdrop
+        color:                      TextColorDim;
+
+
+@import 'Containers';
+@import 'Cells';
+
+@import 'Buttons';
+@import 'Controls';
+@import 'TextEntry';
+@import 'Menus';
+@import 'Notebook';
+@import 'Bars';
+@import 'Unity';
+
+@import 'Minutiae';

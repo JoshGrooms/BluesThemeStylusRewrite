@@ -1,4 +1,4 @@
 #!/bin/bash
 
-stylus -o ./gtk-theme.css ./Main.styl
-ln -fs ../../BluesStylusRewrite/gtk-theme.css ./../Blues/gtk-3.0/gtk-theme.css
+stylus -o ./gtk-3.0/gtk.css ./gtk-3.0/Stylus/Main.styl
+# ln -fs ../../BluesStylusRewrite/gtk-theme.css ./../Blues/gtk-3.0/gtk-theme.css
