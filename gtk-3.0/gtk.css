@@ -664,13 +664,6 @@ GtkSwitch {
   border: 1px solid transparent;
   border-radius: 2em;
 }
-GtkSwitch.slider {
-  border-radius: 2em;
-  padding: 0em 1em 0em 0em;
-}
-GtkSwitch.slider:active {
-  padding: 0em 0em 0em 1em;
-}
 GtkSwitch.trough {
   background-clip: padding-box;
   border-color: rgba(36,36,36,0.125);
