@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Blues
+Comment=A customized dark Ubuntu 15.10 theme based on a vibrant blue color.
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=Blues
+IconTheme=Blues
+CursorTheme=DMZ-Black
+ButtonLayout=close,minimize,maximize:
