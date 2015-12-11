@@ -11,6 +11,8 @@ cohesiveness and to maintain a minimum level of compatibility, a simplistic GTK2
 undergoes periodic tweaking and improvements, a substantial effort would be required to style GTK2 widgets to look identical
 or even similar to their GTK3 counterparts. This isn't likely to happen in the near future.
 
+
+
 ## Installation
 ### Via Archive Decompression
 This theme can be manually installed by downloading this project as a .zip file and decompressing its contents into the
@@ -23,6 +25,8 @@ Open a terminal on an Ubuntu desktop session and enter the following command to 
 - git clone https://github.com/JoshGrooms/BluesThemeStylusRewrite.git ~/.themes/Blues
 
 Next, use the 'unity-tweak-tool' (or some equivalent) configuration program to switch the system theme.
+
+
 
 ## Compiling the Stylus Code
 The majority of the GTK3 theming code has been written in Stylus, which is an excellent preprocessor language that compiles
