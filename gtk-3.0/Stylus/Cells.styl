@@ -1,6 +1,19 @@
 /* CELLS - Styles for the elements held within high-level container widgets. */
 
-
+/* BUTTON-TEXT-COLOR - Sets parameters controlling the color of text and colorized images that are children of buttons.
+ *
+ *  SYNTAX:
+ *      button-text-color:  c
+ *
+ *  INPUT:
+ *      c:      RGBA
+ *              The desired color of button text and colorized images.
+ */
+button-text-color(c)
+    color:      c;
+    GtkImage,
+    GtkLabel
+        color:  c;
 
 /** INNER WINDOWS & CONTENTS **/
 
@@ -42,7 +55,6 @@ GtkPaned
     NautilusWindow &
         -GtkPaned-handle-size:  1;
 
-
 /* SIDEBAR - Controls panels docked to the sides of a window.
  *
  *  The ".sidebar" selector is most typically found in file chooser windows and, by extension, Nautilus. As its name implies,
@@ -51,27 +63,30 @@ GtkPaned
 .sidebar,
 GtkPlacesSidebar
     @extends .view;
-    font:                           bold;
-    padding:                        0em;
+    font:                               bold;
+    padding:                            0em;
 
     // Governs the padding between list entries in the Nautilus sidebar
-    .view                           { padding: 0.5em; }
+    .view                               { padding: 0.5em; }
 
     .list
-        .separator                  { color: transparent; }
-
+        .separator                      { color: transparent; }
         .sidebar-item,
         .sidebar-item.button
             @extends GtkWidget;
-            button-text-color:      TextColor;
+            button-text-color:          TextColor;
             &:selected
-                background-image:   SelectionGradientVertical;
-                button-text-color:  TextColorSelected;
+                background-image:       SelectionGradientVertical;
+                button-text-color:      TextColorSelected;
 
                 &:backdrop
                     background-color:   HighlightColor;
                     background-image:   none;
                     button-text-color:  TextColorHighlighted;
+
+    GtkScrolledWindow
+        @extends GtkWidget;
+
 
 .list
     .separator.horizontal,
@@ -82,29 +97,12 @@ GtkPlacesSidebar
         @extends GtkWidget;
         @extends .sidebar .list .sidebar-item;
 
-
-
 GtkScrolledWindow
     -GtkScrolledWindow-scrollbar-spacing:           0;
     -GtkScrolledWindow-scrollbars-within-bevel:     true;
     deeper-inset();
     border-radius:              0.25em;
     padding:                    1px;
-
-    .sidebar &
-        @extends GtkWidget;
-
-
-.nautilus-canvas-item
-    border-radius:              0.5em;
-    &:active                    { background-color: Orchid; }
-    &:prelight, &:selected
-        background-color:       alpha(SelectionColor, 0.75);
-        color:                  TextColorSelected;
-
-    &.nautilus-desktop, &.nautilus-desktop:backdrop
-        color:                  White;
-
 
 /* RUBBERBAND - Controls the scalable rectangle drawn when selecting multiple icons using the mouse. */
 .rubberband
