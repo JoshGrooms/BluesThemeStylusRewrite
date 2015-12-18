@@ -29,6 +29,10 @@ button-text-color(c)
     box-shadow:                     inset 0px 0px 2px shadow-color(normal, semifaded);
     padding:                        1em;
 
+    /* ACTIVE - Controls buttons currently undergoing a mouse click.
+     *
+     * CHECKED - Controls toggle-like buttons that have been pressed.
+     */
     &:active,
     &:checked
         deep-inset();
@@ -42,12 +46,16 @@ button-text-color(c)
 
     &.flat,
     .primary-toolbar &
-        @extends GtkWidget;
+        flat();
+        border:                     1px solid transparent;
         border-radius:              0.25em;
 
+        &:active, &:checked
+            @extends .button:active;
         &:hover, &:prelight
             background-color:       HighlightColor;
             background-image:       none;
+            box-shadow:             none;
 
     &:focus
         button-text-color:          TextColorFocused;
@@ -69,6 +77,7 @@ button-text-color(c)
         &:last-child
             border-radius:          0em 2em 2em 0em;
 
+    // Governs linked button groups that are vertically oriented
     .vertical.linked > &
         background-image:           hgradient(ButtonGlossTop, ButtonGlossBottom);
         border-radius:              0em;
@@ -87,8 +96,7 @@ button-text-color(c)
             border-radius           0.5em;
             border-width:           1px;
 
-
-
+    // Governs linked button groups that are horizontally oriented
     .linked > &,
     .horizontal.linked > &
         border-radius:              0em;
@@ -105,12 +113,13 @@ button-text-color(c)
             border-width:           1px;
 
 
-
+/* COLUMN-HEADER - Governs the title buttons at the top of sortable lists. */
 column-header
     .button
         @extends .button.flat
         background-color:   gloss-color(lighter, faded);
         background-clip:    padding-box;
+        border:             none;
         border-radius:      0px
         border-top:         1px solid transparent;
 
