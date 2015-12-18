@@ -15,8 +15,25 @@ GtkWindow
     &:backdrop
         background-color:   WindowColorDim;
 
+
+
 /* CSD - Controls windows that undergo decoration on the client side. */
-.csd,
+.csd
+    @extends .background
+
+    /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side. */
+    &.window-frame,
+    &.window-frame:backdrop
+        background-clip:    border-box;
+        bevel:              1px outset;
+        border-radius:      0.5em;
+        box-shadow:         0.25em 0.25em 1em shadow-color(normal, normal);
+
+    &.background
+        bevel:              1px outset;
+        border-radius:      0em 0em 0.5em 0.5em;
+        border-top:         none;
+
 .solid-csd
     @extends .background
 
@@ -25,14 +42,12 @@ GtkWindow
     &.window-frame:backdrop
         bevel:              1px outset;
         border-radius:      0.5em;
-        /*box-shadow:         0.5em 0.5em 1em shadow-color(normal, normal);*/
+        //box-shadow:         0.25em 0.25em 1em shadow-color(normal);
         box-shadow:         none;
         margin:             0em 0.25em 0.25em 0.25em;
 
-
 .dnd
     border: 1px solid SelectionColor;
-
 
 .header-bar
     padding: 0.25em;
@@ -53,6 +68,9 @@ GtkWindow
     background-color:       MenuColor;
     border-radius:          0.5em;
     color:                  MenuTextColor;
+
+
+
 
 /* POPOVER - Governs windows that behave similarly to 'popup' instances.
  *
