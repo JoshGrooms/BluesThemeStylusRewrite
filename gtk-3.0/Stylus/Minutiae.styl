@@ -31,10 +31,23 @@ ECalendar
             color: TextColor;
         &:hover GtkArrow
             color: TextColorHighlighted;
-            
+
 
 
 /** GNOME TERMINAL **/
 TerminalScreen
     background-color:   WindowColorDark;
     color:              VibrantBlue;
+
+
+
+/** NAUTILUS **/
+.nautilus-canvas-item
+    border-radius:              0.5em;
+    &:active                    { background-color: Orchid; }
+    &:prelight, &:selected
+        background-color:       alpha(SelectionColor, 0.75);
+        color:                  TextColorSelected;
+
+    &.nautilus-desktop, &.nautilus-desktop:backdrop
+        color:                  White;
