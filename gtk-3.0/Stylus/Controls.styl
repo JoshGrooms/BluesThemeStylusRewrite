@@ -65,10 +65,14 @@ GtkComboBox
             padding:            0.375em;
 
     .button
-        @extends .button.flat
+        flat();
         deep-inset();
         border-radius:          0.25em;
         padding:                0.5em;
+
+        &:hover, &:prelight
+            background-color:   HighlightColor;
+            background-image:   none;
 
     .horizontal.linked & .button,
     .vertical.linked & .button
