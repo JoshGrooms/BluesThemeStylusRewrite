@@ -6,11 +6,24 @@
 
 /** EVOLUTION TWEAKS **/
 // Governs the small box at the top of the Evolution sidebar (for all tabs)
-EShellWindow GtkEventBox
+EShellWindow
+    EShellSwitcher
+        GtkEventBox
+            background-image: vgradient(WindowColor, WindowColor);
+            &:backdrop
+                background-image: vgradient(WindowColorDim, WindowColorDim);
 
-    background-image: vgradient(WindowColor, WindowColor);
-    &:backdrop
-        background-image: vgradient(WindowColorDim, WindowColorDim);
+        GtkScrolledWindow
+            flat();
+            padding: 0px;
+
+    // MessageList ECanvas .cell
+    //     debug();
+    //     background-image: vgradient(Red, Red)
+    //     border-radius: 10px;
+
+EPreferencesWindow GtkNotebook > GtkAlignment > GtkScrolledWindow
+    flat();
 
 // Governs the buttons at the top of each list-view-like element (e.g. e-mail)
 ECanvas.button
