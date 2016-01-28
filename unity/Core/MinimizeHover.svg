@@ -35,15 +35,11 @@
        inkscape:collect="always"
        id="linearGradient4590">
       <stop
-         style="stop-color:#64afff;stop-opacity:1"
+         style="stop-color:#71b6ff;stop-opacity:1"
          offset="0"
          id="stop4592" />
       <stop
-         id="stop4614"
-         offset="0.5"
-         style="stop-color:#4b84c0;stop-opacity:1" />
-      <stop
-         style="stop-color:#325880;stop-opacity:1"
+         style="stop-color:#3196ff;stop-opacity:1"
          offset="1"
          id="stop4594" />
     </linearGradient>
@@ -51,13 +47,13 @@
        inkscape:collect="always"
        xlink:href="#linearGradient4590"
        id="radialGradient4596"
-       cx="-276.40717"
+       cx="-277.1113"
        cy="528.71222"
-       fx="-276.40717"
+       fx="-277.1113"
        fy="528.71222"
        r="8.5"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0,1.32958,-1.0298709,0,-27.699098,545.2074)" />
+       gradientTransform="matrix(0,1.2868043,-0.89022305,0,-102.23973,533.69024)" />
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient4626"
@@ -67,7 +63,7 @@
        y1="104.84277"
        x2="149.66196"
        y2="466.88141"
-       gradientTransform="matrix(0.03621149,0,0,0.03621149,-276.22164,521.5107)" />
+       gradientTransform="matrix(0.03239976,0,0,0.03239976,-276.84116,523.10034)" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -76,9 +72,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="31.842105"
-     inkscape:cx="9.4371901"
-     inkscape:cy="9.5"
+     inkscape:zoom="29.789474"
+     inkscape:cx="9.4999999"
+     inkscape:cy="9.4328621"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -93,7 +89,10 @@
      inkscape:window-maximized="1"
      inkscape:snap-center="true"
      inkscape:snap-object-midpoints="true"
-     inkscape:object-paths="true" />
+     inkscape:object-paths="true"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true" />
   <metadata
      id="metadata4775">
     <rdf:RDF>
@@ -111,29 +110,25 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(287.35714,-522.86219)">
-    <g
-       id="g4185"
-       transform="matrix(0.8947369,0,0,0.8947369,-29.695465,56.485469)">
-      <circle
-         transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
-         r="9.0411692"
-         cy="179.96225"
-         cx="-572.20441"
-         id="circle4499"
-         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:url(#radialGradient4596);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8;stroke-opacity:1;marker:none;enable-background:accumulate" />
-      <rect
-         y="540.6571"
-         x="-286.85715"
-         height="0.70507801"
-         width="0.70507801"
-         id="rect4507"
-         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:none;stroke:none;stroke-width:1;marker:none;enable-background:accumulate" />
-      <circle
-         style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient4638);stroke-width:0.45971614;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker:none;enable-background:accumulate"
-         id="circle4634"
-         cx="-277.35715"
-         cy="531.86218"
-         r="9.2701406" />
-    </g>
+    <circle
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:url(#radialGradient4596);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:8;stroke-opacity:1;marker:none;enable-background:accumulate"
+       id="circle4499"
+       cx="-572.9115"
+       cy="179.96227"
+       r="8.089468"
+       transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" />
+    <rect
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:none;stroke:none;stroke-width:1;marker:none;enable-background:accumulate"
+       id="rect4507"
+       width="0.63085932"
+       height="0.63085932"
+       x="-286.35715"
+       y="540.23132" />
+    <circle
+       r="8.2943373"
+       cy="532.36218"
+       cx="-277.85715"
+       id="circle4634"
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;fill:none;fill-opacity:1;fill-rule:nonzero;stroke:url(#linearGradient4638);stroke-width:0.41132501;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker:none;enable-background:accumulate" />
   </g>
 </svg>
