@@ -64,3 +64,19 @@ TerminalScreen
 
     &.nautilus-desktop, &.nautilus-desktop:backdrop
         color:                  White;
+
+
+/** UBUNTU SOFTWARE CENTER **/
+GtkWindow .section-sel-bg.button.flat
+
+    &:checked
+        background-image: gradient(WindowColor, WindowColor);
+
+        .symbolic-icon, GtkLabel
+            color:              SelectionColor;
+            font-weight:        bold;
+
+        &:backdrop
+            background-image: gradient(WindowColorDim, WindowColorDim);
+            .symbolic-icon, GtkLabel
+                color:          HighlightColor;
