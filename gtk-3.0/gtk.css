@@ -1,4 +1,3 @@
- @import url("gtk-widgets-assets.css");
 /** DEFAULTS **/
 *,
 GtkWidget,
@@ -78,7 +77,7 @@ GtkWindow:backdrop,
   border-style: solid;
   border-width: 1px;
   border-radius: 0.5em;
-  box-shadow: 0.25em 0.25em 1em rgba(0,0,0,0.5);
+  box-shadow: 0.25em 0.25em 0.5em rgba(0,0,0,0.375);
 }
 .csd.background {
   background-clip: border-box;
@@ -126,10 +125,12 @@ GtkWindow:backdrop,
   border-style: solid;
   border-width: 1px;
   background-color: rgba(162,162,162,0.5);
-  box-shadow: 0px 0px 0px 1px rgba(36,36,36,0.875), 3px 3px 5px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 0px 1px #292929, -1px -1px 0px rgba(36,36,36,0.875), 3px 3px 5px rgba(0,0,0,0.25);
   background-color: #252525;
   border-radius: 0.5em;
   color: #c8c8c8;
+  border-right: 1px solid #232323;
+  border-bottom: 1px solid #232323;
 }
 .popover,
 .popover.background {
@@ -273,7 +274,7 @@ GtkScrolledWindow {
   border-style: solid;
   border-width: 1px;
   background-color: rgba(24,24,24,0.375);
-  box-shadow: inset 10px 10px 10px -10px rgba(0,0,0,0.5);
+  box-shadow: inset 5px 5px 5px -5px rgba(0,0,0,0.5);
   border-radius: 0.25em;
   padding: 1px;
 }
@@ -301,15 +302,11 @@ GtkScrolledWindow {
 .button:active,
 .button:checked,
 .button.flat:active,
-.primary-toolbar .button:active,
 .button.flat:checked,
-.primary-toolbar .button:checked,
 column-header .button:active,
 column-header .button:checked,
 GtkCalendar.button:active,
-GtkCalendar.button:focus:active,
 GtkCalendar.button:checked,
-GtkCalendar.button:focus:checked,
 ECanvas.button:active,
 ECanvas.button:checked,
 ECalendar .button:active,
@@ -328,15 +325,11 @@ ECalendar .button:checked {
 .button:active GtkImage,
 .button:checked GtkImage,
 .button.flat:active GtkImage,
-.primary-toolbar .button:active GtkImage,
 .button.flat:checked GtkImage,
-.primary-toolbar .button:checked GtkImage,
 column-header .button:active GtkImage,
 column-header .button:checked GtkImage,
 GtkCalendar.button:active GtkImage,
-GtkCalendar.button:focus:active GtkImage,
 GtkCalendar.button:checked GtkImage,
-GtkCalendar.button:focus:checked GtkImage,
 ECanvas.button:active GtkImage,
 ECanvas.button:checked GtkImage,
 ECalendar .button:active GtkImage,
@@ -344,15 +337,11 @@ ECalendar .button:checked GtkImage,
 .button:active GtkLabel,
 .button:checked GtkLabel,
 .button.flat:active GtkLabel,
-.primary-toolbar .button:active GtkLabel,
 .button.flat:checked GtkLabel,
-.primary-toolbar .button:checked GtkLabel,
 column-header .button:active GtkLabel,
 column-header .button:checked GtkLabel,
 GtkCalendar.button:active GtkLabel,
-GtkCalendar.button:focus:active GtkLabel,
 GtkCalendar.button:checked GtkLabel,
-GtkCalendar.button:focus:checked GtkLabel,
 ECanvas.button:active GtkLabel,
 ECanvas.button:checked GtkLabel,
 ECalendar .button:active GtkLabel,
@@ -362,15 +351,11 @@ ECalendar .button:checked GtkLabel {
 .button:active:backdrop,
 .button:checked:backdrop,
 .button.flat:active:backdrop,
-.primary-toolbar .button:active:backdrop,
 .button.flat:checked:backdrop,
-.primary-toolbar .button:checked:backdrop,
 column-header .button:active:backdrop,
 column-header .button:checked:backdrop,
 GtkCalendar.button:active:backdrop,
-GtkCalendar.button:focus:active:backdrop,
 GtkCalendar.button:checked:backdrop,
-GtkCalendar.button:focus:checked:backdrop,
 ECanvas.button:active:backdrop,
 ECanvas.button:checked:backdrop,
 ECalendar .button:active:backdrop,
@@ -378,15 +363,11 @@ ECalendar .button:checked:backdrop,
 .button:active:hover,
 .button:checked:hover,
 .button.flat:active:hover,
-.primary-toolbar .button:active:hover,
 .button.flat:checked:hover,
-.primary-toolbar .button:checked:hover,
 column-header .button:active:hover,
 column-header .button:checked:hover,
 GtkCalendar.button:active:hover,
-GtkCalendar.button:focus:active:hover,
 GtkCalendar.button:checked:hover,
-GtkCalendar.button:focus:checked:hover,
 ECanvas.button:active:hover,
 ECanvas.button:checked:hover,
 ECalendar .button:active:hover,
@@ -394,15 +375,11 @@ ECalendar .button:checked:hover,
 .button:active:prelight,
 .button:checked:prelight,
 .button.flat:active:prelight,
-.primary-toolbar .button:active:prelight,
 .button.flat:checked:prelight,
-.primary-toolbar .button:checked:prelight,
 column-header .button:active:prelight,
 column-header .button:checked:prelight,
 GtkCalendar.button:active:prelight,
-GtkCalendar.button:focus:active:prelight,
 GtkCalendar.button:checked:prelight,
-GtkCalendar.button:focus:checked:prelight,
 ECanvas.button:active:prelight,
 ECanvas.button:checked:prelight,
 ECalendar .button:active:prelight,
@@ -413,15 +390,11 @@ ECalendar .button:checked:prelight {
 .button:active:backdrop GtkImage,
 .button:checked:backdrop GtkImage,
 .button.flat:active:backdrop GtkImage,
-.primary-toolbar .button:active:backdrop GtkImage,
 .button.flat:checked:backdrop GtkImage,
-.primary-toolbar .button:checked:backdrop GtkImage,
 column-header .button:active:backdrop GtkImage,
 column-header .button:checked:backdrop GtkImage,
 GtkCalendar.button:active:backdrop GtkImage,
-GtkCalendar.button:focus:active:backdrop GtkImage,
 GtkCalendar.button:checked:backdrop GtkImage,
-GtkCalendar.button:focus:checked:backdrop GtkImage,
 ECanvas.button:active:backdrop GtkImage,
 ECanvas.button:checked:backdrop GtkImage,
 ECalendar .button:active:backdrop GtkImage,
@@ -429,15 +402,11 @@ ECalendar .button:checked:backdrop GtkImage,
 .button:active:hover GtkImage,
 .button:checked:hover GtkImage,
 .button.flat:active:hover GtkImage,
-.primary-toolbar .button:active:hover GtkImage,
 .button.flat:checked:hover GtkImage,
-.primary-toolbar .button:checked:hover GtkImage,
 column-header .button:active:hover GtkImage,
 column-header .button:checked:hover GtkImage,
 GtkCalendar.button:active:hover GtkImage,
-GtkCalendar.button:focus:active:hover GtkImage,
 GtkCalendar.button:checked:hover GtkImage,
-GtkCalendar.button:focus:checked:hover GtkImage,
 ECanvas.button:active:hover GtkImage,
 ECanvas.button:checked:hover GtkImage,
 ECalendar .button:active:hover GtkImage,
@@ -445,15 +414,11 @@ ECalendar .button:checked:hover GtkImage,
 .button:active:prelight GtkImage,
 .button:checked:prelight GtkImage,
 .button.flat:active:prelight GtkImage,
-.primary-toolbar .button:active:prelight GtkImage,
 .button.flat:checked:prelight GtkImage,
-.primary-toolbar .button:checked:prelight GtkImage,
 column-header .button:active:prelight GtkImage,
 column-header .button:checked:prelight GtkImage,
 GtkCalendar.button:active:prelight GtkImage,
-GtkCalendar.button:focus:active:prelight GtkImage,
 GtkCalendar.button:checked:prelight GtkImage,
-GtkCalendar.button:focus:checked:prelight GtkImage,
 ECanvas.button:active:prelight GtkImage,
 ECanvas.button:checked:prelight GtkImage,
 ECalendar .button:active:prelight GtkImage,
@@ -461,15 +426,11 @@ ECalendar .button:checked:prelight GtkImage,
 .button:active:backdrop GtkLabel,
 .button:checked:backdrop GtkLabel,
 .button.flat:active:backdrop GtkLabel,
-.primary-toolbar .button:active:backdrop GtkLabel,
 .button.flat:checked:backdrop GtkLabel,
-.primary-toolbar .button:checked:backdrop GtkLabel,
 column-header .button:active:backdrop GtkLabel,
 column-header .button:checked:backdrop GtkLabel,
 GtkCalendar.button:active:backdrop GtkLabel,
-GtkCalendar.button:focus:active:backdrop GtkLabel,
 GtkCalendar.button:checked:backdrop GtkLabel,
-GtkCalendar.button:focus:checked:backdrop GtkLabel,
 ECanvas.button:active:backdrop GtkLabel,
 ECanvas.button:checked:backdrop GtkLabel,
 ECalendar .button:active:backdrop GtkLabel,
@@ -477,15 +438,11 @@ ECalendar .button:checked:backdrop GtkLabel,
 .button:active:hover GtkLabel,
 .button:checked:hover GtkLabel,
 .button.flat:active:hover GtkLabel,
-.primary-toolbar .button:active:hover GtkLabel,
 .button.flat:checked:hover GtkLabel,
-.primary-toolbar .button:checked:hover GtkLabel,
 column-header .button:active:hover GtkLabel,
 column-header .button:checked:hover GtkLabel,
 GtkCalendar.button:active:hover GtkLabel,
-GtkCalendar.button:focus:active:hover GtkLabel,
 GtkCalendar.button:checked:hover GtkLabel,
-GtkCalendar.button:focus:checked:hover GtkLabel,
 ECanvas.button:active:hover GtkLabel,
 ECanvas.button:checked:hover GtkLabel,
 ECalendar .button:active:hover GtkLabel,
@@ -493,15 +450,11 @@ ECalendar .button:checked:hover GtkLabel,
 .button:active:prelight GtkLabel,
 .button:checked:prelight GtkLabel,
 .button.flat:active:prelight GtkLabel,
-.primary-toolbar .button:active:prelight GtkLabel,
 .button.flat:checked:prelight GtkLabel,
-.primary-toolbar .button:checked:prelight GtkLabel,
 column-header .button:active:prelight GtkLabel,
 column-header .button:checked:prelight GtkLabel,
 GtkCalendar.button:active:prelight GtkLabel,
-GtkCalendar.button:focus:active:prelight GtkLabel,
 GtkCalendar.button:checked:prelight GtkLabel,
-GtkCalendar.button:focus:checked:prelight GtkLabel,
 ECanvas.button:active:prelight GtkLabel,
 ECanvas.button:checked:prelight GtkLabel,
 ECalendar .button:active:prelight GtkLabel,
@@ -509,10 +462,8 @@ ECalendar .button:checked:prelight GtkLabel {
   color: #323232;
 }
 .button.flat,
-.primary-toolbar .button,
 column-header .button,
 GtkCalendar.button,
-GtkCalendar.button:focus,
 ECanvas.button,
 ECalendar .button {
   background-color: transparent;
@@ -523,17 +474,13 @@ ECalendar .button {
   border-radius: 0.25em;
 }
 .button.flat:hover,
-.primary-toolbar .button:hover,
 column-header .button:hover,
 GtkCalendar.button:hover,
-GtkCalendar.button:focus:hover,
 ECanvas.button:hover,
 ECalendar .button:hover,
 .button.flat:prelight,
-.primary-toolbar .button:prelight,
 column-header .button:prelight,
 GtkCalendar.button:prelight,
-GtkCalendar.button:focus:prelight,
 ECanvas.button:prelight,
 ECalendar .button:prelight {
   background-color: #a2a2a2;
@@ -707,12 +654,10 @@ GtkCalendar:selected:backdrop {
   background-color: #a2a2a2;
   color: #323232;
 }
-GtkCalendar.button,
-GtkCalendar.button:focus {
+GtkCalendar.button {
   border-radius: 0.125em;
 }
-GtkCalendar.button:hover,
-GtkCalendar.button:focus:hover {
+GtkCalendar.button:hover {
   color: #323232;
 }
 GtkCalendar.header {
@@ -1545,11 +1490,24 @@ UnityDecoration.top .button {
 .unity-panel.panel-title {
   color: transparent;
 }
-EShellWindow GtkEventBox {
+EShellWindow EShellSwitcher GtkEventBox {
   background-image: -gtk-gradient(linear, left top, left bottom, from(#4b4b4b), to(#4b4b4b));
 }
-EShellWindow GtkEventBox:backdrop {
+EShellWindow EShellSwitcher GtkEventBox:backdrop {
   background-image: -gtk-gradient(linear, left top, left bottom, from(#3e3e3e), to(#3e3e3e));
+}
+EShellWindow EShellSwitcher GtkScrolledWindow {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  padding: 0px;
+}
+EPreferencesWindow GtkNotebook > GtkAlignment > GtkScrolledWindow {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
 }
 ECanvas.button {
   color: #323232;
@@ -1588,4 +1546,19 @@ TerminalScreen {
 .nautilus-canvas-item.nautilus-desktop,
 .nautilus-canvas-item.nautilus-desktop:backdrop {
   color: #fff;
+}
+GtkWindow .section-sel-bg.button.flat:checked {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#4b4b4b), to(#4b4b4b));
+}
+GtkWindow .section-sel-bg.button.flat:checked .symbolic-icon,
+GtkWindow .section-sel-bg.button.flat:checked GtkLabel {
+  color: #00c8ff;
+  font-weight: bold;
+}
+GtkWindow .section-sel-bg.button.flat:checked:backdrop {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#3e3e3e), to(#3e3e3e));
+}
+GtkWindow .section-sel-bg.button.flat:checked:backdrop .symbolic-icon,
+GtkWindow .section-sel-bg.button.flat:checked:backdrop GtkLabel {
+  color: #a2a2a2;
 }
