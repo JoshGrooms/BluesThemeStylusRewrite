@@ -27,7 +27,7 @@ GtkWindow
         background-clip:    border-box;
         bevel:              1px outset;
         border-radius:      0.5em;
-        box-shadow:         0.25em 0.25em 1em shadow-color(normal, normal);
+        box-shadow:         0.25em 0.25em 0.5em shadow-color(normal, semifaded);
 
     &.background
         bevel:              1px outset;
@@ -42,7 +42,6 @@ GtkWindow
     &.window-frame:backdrop
         bevel:              1px outset;
         border-radius:      0.5em;
-        //box-shadow:         0.25em 0.25em 1em shadow-color(normal);
         box-shadow:         none;
         margin:             0em 0.25em 0.25em 0.25em;
 
@@ -68,6 +67,9 @@ GtkWindow
     background-color:       MenuColor;
     border-radius:          0.5em;
     color:                  MenuTextColor;
+
+    border-right:           1px solid #232323;
+    border-bottom:          1px solid #232323;
 
 
 
