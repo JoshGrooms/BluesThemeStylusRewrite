@@ -347,6 +347,12 @@ style "toolbar"
     }
 }
 
+style "MenuBar"
+{
+    xthickness = 5
+    ythickness = 5
+}
+
 style "menu" = "Dark"
 {
     xthickness = 0
@@ -506,9 +512,9 @@ widget_class "*<GtkComboBoxEntry>*"                         style "ComboBoxEntry
 widget_class "*<GtkCombo>*"                                 style "ComboBoxEntry"
 widget_class "*<GtkComboBox>"                               style "ComboBoxEntry"
 
-# widget_class "*<GtkMenuBar>*"                               style "menubar"
 widget_class "*<GtkMenu>*"                                  style "menu"
-widget_class "*<GtkMenuItem>*"                              style "menu_item"
+widget_class "*<GtkMenuItem>"                               style "menu_item"
+widget_class "*<GtkMenuBar>*"                               style "MenuBar"
 widget_class "*<GtkSeparatorMenuItem>*"                     style "separator_menu_item"
 widget_class "*<GtkSeparatorToolItem>*"                     style "separator_tool_item"
 
