@@ -113,7 +113,19 @@ GtkComboBox
     //     &:selected
     //         debug();
 
+.check
+    icon: "Icons/Checkbox.svg";
 
+    &:checked
+        icon: "Icons/Checkbox-Checked.svg";
+        &:backdrop                  { icon: "Icons/Checkbox-Checked-Backdrop.svg"; }
+        &:inconsistent              { icon: "Icons/Checkbox-Checked-Partial.svg"; }
+        &:inconsistent:backdrop     { icon: "Icons/Checkbox-Checked-Partial-Backdrop.svg"; }
+
+    &:insensitive
+        icon: "Icons/Checkbox-Inactive.svg";
+        &:checked                   { icon: "Icons/Checkbox-Checked-Inactive.svg"; }
+        &:inconsistent              { icon: "Icons/Checkbox-Checked-Partial-Inactive.svg"; }
 
 /* GTKEXPANDER - Governs the small arrow icon found next to expandable controls.
  *
@@ -177,7 +189,18 @@ GtkSwitch
                 background-color:   HighlightColor;
                 color:              TextColorHighlighted;
 
+.radio
+    icon: "Icons/Radio.svg";
+    &:checked
+        icon: "Icons/Radio-Checked.svg";
+        &:backdrop                  { icon: "Icons/Radio-Checked-Backdrop.svg"; }
+        &:inconsistent              { icon: "Icons/Radio-Checked-Partial.svg"; }
+        &:inconsistent:backdrop     { icon: "Icons/Radio-Checked-Partial-Backdrop.svg"; }
 
+    &:insensitive
+        icon: "Icons/Radio-Inactive.svg";
+        &:checked                   { icon: "Icons/Radio-Checked-Inactive.svg"; }
+        &:inconsistent              { icon: "Icons/Radio-Checked-Partial-Inactive.svg"; }
 
 .separator
     color:      TextColor;

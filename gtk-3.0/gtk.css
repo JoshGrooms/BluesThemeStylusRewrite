@@ -747,6 +747,30 @@ GtkComboBox .cell:hover {
 GtkComboBox .menuitem:hover * {
   color: #323232;
 }
+.check {
+  -gtk-icon-source: url("Icons/Checkbox.svg");
+}
+.check:checked {
+  -gtk-icon-source: url("Icons/Checkbox-Checked.svg");
+}
+.check:checked:backdrop {
+  -gtk-icon-source: url("Icons/Checkbox-Checked-Backdrop.svg");
+}
+.check:checked:inconsistent {
+  -gtk-icon-source: url("Icons/Checkbox-Checked-Partial.svg");
+}
+.check:checked:inconsistent:backdrop {
+  -gtk-icon-source: url("Icons/Checkbox-Checked-Partial-Backdrop.svg");
+}
+.check:insensitive {
+  -gtk-icon-source: url("Icons/Checkbox-Inactive.svg");
+}
+.check:insensitive:checked {
+  -gtk-icon-source: url("Icons/Checkbox-Checked-Inactive.svg");
+}
+.check:insensitive:inconsistent {
+  -gtk-icon-source: url("Icons/Checkbox-Checked-Partial-Inactive.svg");
+}
 .expander,
 GtkExpander,
 GtkExpander.expander {
@@ -827,6 +851,30 @@ GtkSwitch.trough:active {
 GtkSwitch.trough:active:backdrop {
   background-color: #a2a2a2;
   color: #323232;
+}
+.radio {
+  -gtk-icon-source: url("Icons/Radio.svg");
+}
+.radio:checked {
+  -gtk-icon-source: url("Icons/Radio-Checked.svg");
+}
+.radio:checked:backdrop {
+  -gtk-icon-source: url("Icons/Radio-Checked-Backdrop.svg");
+}
+.radio:checked:inconsistent {
+  -gtk-icon-source: url("Icons/Radio-Checked-Partial.svg");
+}
+.radio:checked:inconsistent:backdrop {
+  -gtk-icon-source: url("Icons/Radio-Checked-Partial-Backdrop.svg");
+}
+.radio:insensitive {
+  -gtk-icon-source: url("Icons/Radio-Inactive.svg");
+}
+.radio:insensitive:checked {
+  -gtk-icon-source: url("Icons/Radio-Checked-Inactive.svg");
+}
+.radio:insensitive:inconsistent {
+  -gtk-icon-source: url("Icons/Radio-Checked-Partial-Inactive.svg");
 }
 .separator {
   color: #a2a2a2;

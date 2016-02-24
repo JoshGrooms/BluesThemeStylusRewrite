@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="16" viewBox="0 0 16 16" width="16" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs>
+  <linearGradient id="linearGradient5005" y2="516.36" gradientUnits="userSpaceOnUse" x2="-306.51" gradientTransform="matrix(.89471 0 0 1.096 -13.123 -40.071)" y1="530.95" x1="-288.62">
+   <stop style="stop-color:#afafaf;stop-opacity:.50196" offset="0"/>
+   <stop style="stop-opacity:.50196" offset="1"/>
+  </linearGradient>
+  <radialGradient id="radialGradient5029" xlink:href="#radialGradient4596" gradientUnits="userSpaceOnUse" cy="532.06" cx="-281.16" gradientTransform="matrix(1.2085 1.209 -.78035 .78004 505.42 455.24)" r="7.2129"/>
+  <radialGradient id="radialGradient4596" gradientUnits="userSpaceOnUse" cy="528.71" cx="-277.11" gradientTransform="matrix(-.00032519 1.1943 -.82535 -.00022473 -138.76 508.39)" r="8.5">
+   <stop style="stop-color:#00c8ff" offset="0"/>
+   <stop style="stop-color:#0096c8" offset="1"/>
+  </radialGradient>
+  <radialGradient id="radialGradient5121" xlink:href="#radialGradient4596" gradientUnits="userSpaceOnUse" cy="531.99" cx="-281.23" gradientTransform="matrix(1.0646 1.065 -.73885 .73856 411.23 438.61)" r="7.5039"/>
+ </defs>
+ <g transform="translate(287.36 -525.86)">
+  <rect style="color:#000000;fill:none" height=".59330" width=".59330" y="541.27" x="-287.36"/>
+  <circle style="opacity:0;stroke-width:8;color:#000000" transform="rotate(-45)" cy="179.96" cx="-575.04" r="7.6079"/>
+  <rect style="stroke:url(#linearGradient5005);stroke-linecap:round;stroke-width:.5;fill:none" rx="5" ry="5" height="15.5" width="15.5" y="526.11" x="-287.11"/>
+  <path style="fill:url(#radialGradient5029);fill-rule:evenodd" d="m-252.93 524.73c-1.2508 0-2.25 0.99917-2.25 2.25v10.5c0 1.2508 0.99917 2.25 2.25 2.25h10.5c1.2508 0 2.25-0.99918 2.25-2.25v-10.5c0-1.2508-0.99918-2.25-2.25-2.25h-10.5z"/>
+  <path style="fill:url(#radialGradient5121);fill-rule:evenodd" d="m-282.11 526.36c-2.6374 0-4.7539 2.1165-4.7539 4.7539v5.5c0 2.6374 2.1165 4.7539 4.7539 4.7539h5.5c2.6374 0 4.7539-2.1164 4.7539-4.7539v-5.5c0-2.6374-2.1164-4.7539-4.7539-4.7539h-5.5z" transform="translate(2.85e-4,8.65e-4)"/>
+ </g>
+</svg>
