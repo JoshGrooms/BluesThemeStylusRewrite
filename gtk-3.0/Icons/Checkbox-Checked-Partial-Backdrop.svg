@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="16" width="16" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 16 16">
  <defs>
-  <radialGradient id="radialGradient4596" gradientUnits="userSpaceOnUse" cy="528.71" cx="-277.11" gradientTransform="matrix(-.00032519 1.1943 -.82535 -.00022473 -138.76 508.39)" r="8.5">
+  <radialGradient id="radialGradient4596" gradientUnits="userSpaceOnUse" cy="528.71" cx="-277.11" gradientTransform="matrix(-.00032519 1.1943 -.82535 -.00022473 436.27 339.75)" r="8.5">
    <stop style="stop-color:#969696" offset="0"/>
    <stop style="stop-color:#646464" offset="1"/>
   </radialGradient>
-  <linearGradient id="linearGradient4638" y2="21.603" gradientUnits="userSpaceOnUse" x2="-295.62" gradientTransform="matrix(.030273 0 0 .030273 -278.41 525.21)" y1="550.12" x1="232.9">
+  <linearGradient id="linearGradient4638" x1="232.9" gradientUnits="userSpaceOnUse" y1="550.12" gradientTransform="matrix(.030273 0 0 .030273 8.95 -.65)" x2="-295.62" y2="21.603">
    <stop style="stop-color:#afafaf;stop-opacity:.50196" offset="0"/>
    <stop style="stop-opacity:.50196" offset="1"/>
   </linearGradient>
  </defs>
- <g transform="translate(287.36 -525.86)">
-  <circle style="color:#000000;fill:url(#radialGradient4596)" cx="-575.04" transform="rotate(-45)" cy="179.96" r="7.5"/>
-  <rect style="color:#000000;fill:none" height=".5933" width=".5933" y="541.27" x="-287.36"/>
-  <circle cy="533.87" cx="-279.36" r="7.75" style="color:#000000;stroke:url(#linearGradient4638);stroke-width:.5;fill:none"/>
-  <circle style="opacity:0;color:#000000;stroke-width:8" cx="-575.04" transform="rotate(-45)" cy="179.96" r="7.6079"/>
- </g>
+ <circle style="color:#000000;fill:url(#radialGradient4596)" transform="rotate(-45)" cy="11.315" cx="-.0066005" r="7.5"/>
+ <circle cx="8" style="color:#000000;stroke:url(#linearGradient4638);stroke-width:.5;fill:none" r="7.75" cy="8.01"/>
 </svg>
