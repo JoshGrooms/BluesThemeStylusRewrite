@@ -151,7 +151,7 @@ GtkPlacesSidebar {
   -GtkTreeView-expander-size: 10;
   -GtkTreeView-indent-expanders: true;
   -GtkTreeView-vertical-separator: 0;
-  padding: 0.25em 0.5em 0.25em 0.5em;
+  padding: 0.25em;
 }
 .view .cell:selected,
 .sidebar .cell:selected,
@@ -770,6 +770,30 @@ GtkComboBox .menuitem:hover * {
 }
 .check:insensitive:inconsistent {
   -gtk-icon-source: url("Icons/Checkbox-Checked-Partial-Inactive.svg");
+}
+.check .cell {
+  -gtk-icon-source: url("Icons/Checkbox-Small.svg");
+}
+.check .cell:checked {
+  -gtk-icon-source: url("Icons/Checkbox-Small-Checked.svg");
+}
+.check .cell:checked:backdrop {
+  -gtk-icon-source: url("Icons/Checkbox-Small-Checked-Backdrop.svg");
+}
+.check .cell:checked:inconsistent {
+  -gtk-icon-source: url("Icons/Checkbox-Small-Checked-Partial.svg");
+}
+.check .cell:checked:inconsistent:backdrop {
+  -gtk-icon-source: url("Icons/Checkbox-Small-Checked-Partial-Backdrop.svg");
+}
+.check .cell:insensitive {
+  -gtk-icon-source: url("Icons/Checkbox-Small-Inactive.svg");
+}
+.check .cell:insensitive:checked {
+  -gtk-icon-source: url("Icons/Checkbox-Small-Checked-Inactive.svg");
+}
+.check .cell:insensitive:inconsistent {
+  -gtk-icon-source: url("Icons/Checkbox-Small-Checked-Partial-Inactive.svg");
 }
 .expander,
 GtkExpander,
