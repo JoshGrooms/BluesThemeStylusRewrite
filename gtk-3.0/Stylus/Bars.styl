@@ -112,9 +112,10 @@ GtkScale.scale
 
     &.slider.horizontal,
     &.slider.vertical
-        border-radius:              2em;
-        background-image:           rgradient(White, VeryDarkSilver);
-        margin:                     0.125em;
+        margin:                     0px;
+        background-clip:            border-box;
+        image:                      "Icons/Slider.svg";
+        &:backdrop                  { image: "Icons/Slider-Backdrop.svg"; }
 
     &.trough
         @extends .trough;
@@ -123,9 +124,16 @@ GtkScale.scale
             background-image:       none;
 
     &.vertical
-        margin: 0em 0.25em 0em 0.25em;
+        margin:                     0em 0.25em 0em 0.25em;
         &.trough.highlight
             background-image:       SelectionGradientHorizontalInverted;
             &:backdrop
                 background-color:   HighlightColor;
                 background-image:   none;
+
+
+.separator
+    &.horizontal, &.menuitem
+        border-image:   -gtk-scaled(url("Icons/Separator-Horizontal.svg")) 1 0 1 0 / 1px 0px 1px 0px stretch;
+    &.vertical
+        border-image:   -gtk-scaled(url("Icons/Separator-Vertical.svg")) 0 1 0 1 / 0px 1px 0px 1px stretch;
