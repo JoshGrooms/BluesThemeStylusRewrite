@@ -5,11 +5,11 @@
    <stop style="stop-color:#00c8ff" offset="0"/>
    <stop style="stop-color:#0096c8" offset="1"/>
   </radialGradient>
-  <linearGradient id="linearGradient4638" x1="232.9" gradientUnits="userSpaceOnUse" y1="550.12" gradientTransform="matrix(.030273 0 0 .030273 8.95 -.65)" x2="-295.62" y2="21.603">
+  <linearGradient id="linearGradient4638" y2="21.603" gradientUnits="userSpaceOnUse" x2="-295.62" gradientTransform="matrix(.030273 0 0 .030273 8.95 -.65)" y1="550.12" x1="232.9">
    <stop style="stop-color:#afafaf;stop-opacity:.50196" offset="0"/>
    <stop style="stop-opacity:.50196" offset="1"/>
   </linearGradient>
  </defs>
- <circle style="color:#000000;fill:url(#radialGradient4596)" transform="rotate(-45)" cy="11.315" cx="-.0066005" r="7.5"/>
- <circle cx="8" style="color:#000000;stroke:url(#linearGradient4638);stroke-width:.5;fill:none" r="7.75" cy="8.01"/>
+ <circle style="color:#000000;fill:url(#radialGradient4596)" cx="-.0066005" transform="rotate(-45)" cy="11.315" r="7.5"/>
+ <circle style="color:#000000;stroke:url(#linearGradient4638);stroke-width:.5;fill:none" cx="8" r="7.75" cy="8.01"/>
 </svg>
