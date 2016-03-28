@@ -18,14 +18,15 @@ GtkPlacesSidebar GtkScrolledWindow,
   -GtkWidget-focus-padding: 0;
   -GtkWidget-focus-line-width: 0;
   -GtkWidget-link-color: #00c864;
-  -GtkWidget-separator-height: 1;
-  -GtkWidget-separator-width: 1;
+  -GtkWidget-separator-height: 2;
+  -GtkWidget-separator-width: 2;
   -GtkWidget-visited-link-color: #00c864;
-  -GtkWidget-wide-separators: false;
+  -GtkWidget-wide-separators: true;
   background-color: transparent;
   background-clip: padding-box;
   background-image: none;
   border: none;
+  border-image: none;
   border-radius: 0em;
   box-shadow: none;
   color: #a2a2a2;
@@ -89,6 +90,9 @@ GtkWindow:backdrop,
   border-radius: 0em 0em 0.5em 0.5em;
   border-top: none;
 }
+.csd .titlebar.header-bar {
+  padding: 0.75em 0.75em 0px 0.75em;
+}
 .solid-csd.window-frame,
 .solid-csd.window-frame:backdrop {
   background-clip: border-box;
@@ -104,14 +108,12 @@ GtkWindow:backdrop,
 .dnd {
   border: 1px solid #00c8ff;
 }
-.header-bar {
-  padding: 0.25em;
-}
 .overshoot,
 .undershoot {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
 }
 .popup,
@@ -189,6 +191,13 @@ GtkPlacesSidebar .view {
 }
 .sidebar .list .separator,
 GtkPlacesSidebar .list .separator {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-image: none;
+  box-shadow: none;
+  background-position: center center;
+  background-repeat: no-repeat;
   color: transparent;
 }
 .sidebar .list .sidebar-item,
@@ -282,6 +291,251 @@ GtkScrolledWindow {
   background-color: rgba(162,162,162,0.5);
   border: 1px solid #a2a2a2;
   border-radius: 0.25em;
+}
+.trough,
+.progressbar.horizontal.trough,
+GtkProgressBar.horizontal.trough,
+GtkProgressBar.progressbar.horizontal.trough,
+.progressbar.horizontal.trough:backdrop,
+GtkProgressBar.horizontal.trough:backdrop,
+GtkProgressBar.progressbar.horizontal.trough:backdrop,
+.progressbar.vertical.trough,
+GtkProgressBar.vertical.trough,
+GtkProgressBar.progressbar.vertical.trough,
+.progressbar.vertical.trough:backdrop,
+GtkProgressBar.vertical.trough:backdrop,
+GtkProgressBar.progressbar.vertical.trough:backdrop,
+.level-bar.indicator-discrete.fill-block,
+GtkLevelBar.indicator-discrete.fill-block,
+GtkLevelBar.level-bar.indicator-discrete.fill-block,
+.scale.trough,
+GtkScale.trough,
+GtkScale.scale.trough {
+  background-clip: padding-box;
+  border-color: rgba(36,36,36,0.125);
+  border-bottom-color: rgba(198,198,198,0.125);
+  border-right-color: rgba(198,198,198,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(36,36,36,0.25);
+  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.375);
+  background-image: none;
+  border-radius: 2em;
+  padding: 0.125em;
+}
+.trough row:selected:focused,
+.progressbar.horizontal.trough row:selected:focused,
+GtkProgressBar.horizontal.trough row:selected:focused,
+GtkProgressBar.progressbar.horizontal.trough row:selected:focused,
+.progressbar.horizontal.trough:backdrop row:selected:focused,
+GtkProgressBar.horizontal.trough:backdrop row:selected:focused,
+GtkProgressBar.progressbar.horizontal.trough:backdrop row:selected:focused,
+.progressbar.vertical.trough row:selected:focused,
+GtkProgressBar.vertical.trough row:selected:focused,
+GtkProgressBar.progressbar.vertical.trough row:selected:focused,
+.progressbar.vertical.trough:backdrop row:selected:focused,
+GtkProgressBar.vertical.trough:backdrop row:selected:focused,
+GtkProgressBar.progressbar.vertical.trough:backdrop row:selected:focused,
+.level-bar.indicator-discrete.fill-block row:selected:focused,
+GtkLevelBar.indicator-discrete.fill-block row:selected:focused,
+GtkLevelBar.level-bar.indicator-discrete.fill-block row:selected:focused,
+.scale.trough row:selected:focused,
+GtkScale.trough row:selected:focused,
+GtkScale.scale.trough row:selected:focused {
+  background-color: #323232;
+  background-image: none;
+  color: #a2a2a2;
+}
+.progressbar,
+GtkProgressBar,
+GtkProgressBar.progressbar {
+  -GtkProgressBar-min-horizontal-bar-height: 15;
+  -GtkProgressBar-min-vertical-bar-width: 15;
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
+  border: 1px solid transparent;
+  border-radius: 2em;
+}
+.progressbar:backdrop,
+GtkProgressBar:backdrop,
+GtkProgressBar.progressbar:backdrop {
+  background-color: #a2a2a2;
+  background-image: none;
+  color: #323232;
+}
+.progressbar.horizontal,
+GtkProgressBar.horizontal,
+GtkProgressBar.progressbar.horizontal {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
+}
+.progressbar.horizontal:backdrop,
+GtkProgressBar.horizontal:backdrop,
+GtkProgressBar.progressbar.horizontal:backdrop {
+  background-color: #a2a2a2;
+  background-image: none;
+}
+.progressbar.vertical,
+GtkProgressBar.vertical,
+GtkProgressBar.progressbar.vertical {
+  background-image: -gtk-gradient(linear, left top, right top, from(#49d8ff), to(#008fb6));
+}
+.progressbar.vertical:backdrop,
+GtkProgressBar.vertical:backdrop,
+GtkProgressBar.progressbar.vertical:backdrop {
+  background-color: #a2a2a2;
+  background-image: none;
+}
+.level-bar.horizontal,
+GtkLevelBar.horizontal,
+GtkLevelBar.level-bar.horizontal {
+  -GtkLevelBar-min-block-height: 15;
+  -GtkLevelBar-min-block-width: 3;
+}
+.level-bar.vertical,
+GtkLevelBar.vertical,
+GtkLevelBar.level-bar.vertical {
+  -GtkLevelBar-min-block-height: 3;
+  -GtkLevelBar-min-block-width: 15;
+}
+.level-bar.indicator-continuous.fill-block,
+GtkLevelBar.indicator-continuous.fill-block,
+GtkLevelBar.level-bar.indicator-continuous.fill-block {
+  border-radius: 2em;
+}
+.level-bar.indicator-continuous.fill-block.horizontal,
+GtkLevelBar.indicator-continuous.fill-block.horizontal,
+GtkLevelBar.level-bar.indicator-continuous.fill-block.horizontal {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
+}
+.level-bar.indicator-continuous.fill-block.horizontal:backdrop,
+GtkLevelBar.indicator-continuous.fill-block.horizontal:backdrop,
+GtkLevelBar.level-bar.indicator-continuous.fill-block.horizontal:backdrop {
+  background-color: #a2a2a2;
+  background-image: none;
+}
+.level-bar.indicator-continuous.fill-block.horizontal.empty-fill-block,
+GtkLevelBar.indicator-continuous.fill-block.horizontal.empty-fill-block,
+GtkLevelBar.level-bar.indicator-continuous.fill-block.horizontal.empty-fill-block {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-image: none;
+  box-shadow: none;
+}
+.level-bar.indicator-discrete.fill-block.horizontal.level-high,
+GtkLevelBar.indicator-discrete.fill-block.horizontal.level-high,
+GtkLevelBar.level-bar.indicator-discrete.fill-block.horizontal.level-high {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#12ff88), to(#007f40));
+}
+.level-bar.indicator-discrete.fill-block.horizontal.level-low,
+GtkLevelBar.indicator-discrete.fill-block.horizontal.level-low,
+GtkLevelBar.level-bar.indicator-discrete.fill-block.horizontal.level-low {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#ff4949), to(#b60000));
+}
+.level-bar.indicator-discrete.fill-block.horizontal.empty-fill-block,
+GtkLevelBar.indicator-discrete.fill-block.horizontal.empty-fill-block,
+GtkLevelBar.level-bar.indicator-discrete.fill-block.horizontal.empty-fill-block,
+.level-bar.indicator-discrete.fill-block.horizontal.empty-fill-block:backdrop,
+GtkLevelBar.indicator-discrete.fill-block.horizontal.empty-fill-block:backdrop,
+GtkLevelBar.level-bar.indicator-discrete.fill-block.horizontal.empty-fill-block:backdrop {
+  background-image: none;
+}
+.level-bar.indicator-discrete.fill-block.vertical.level-high,
+GtkLevelBar.indicator-discrete.fill-block.vertical.level-high,
+GtkLevelBar.level-bar.indicator-discrete.fill-block.vertical.level-high {
+  background-image: -gtk-gradient(linear, left top, right top, from(#12ff88), to(#007f40));
+}
+.level-bar.indicator-discrete.fill-block.vertical.level-low,
+GtkLevelBar.indicator-discrete.fill-block.vertical.level-low,
+GtkLevelBar.level-bar.indicator-discrete.fill-block.vertical.level-low {
+  background-image: -gtk-gradient(linear, left top, right top, from(#ff4949), to(#b60000));
+}
+.level-bar.indicator-discrete.fill-block.vertical.empty-fill-block,
+GtkLevelBar.indicator-discrete.fill-block.vertical.empty-fill-block,
+GtkLevelBar.level-bar.indicator-discrete.fill-block.vertical.empty-fill-block,
+.level-bar.indicator-discrete.fill-block.vertical.empty-fill-block:backdrop,
+GtkLevelBar.indicator-discrete.fill-block.vertical.empty-fill-block:backdrop,
+GtkLevelBar.level-bar.indicator-discrete.fill-block.vertical.empty-fill-block:backdrop {
+  background-image: none;
+}
+.level-bar.indicator-discrete.trough,
+GtkLevelBar.indicator-discrete.trough,
+GtkLevelBar.level-bar.indicator-discrete.trough {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-image: none;
+  box-shadow: none;
+  padding: 0px;
+}
+.scale,
+GtkScale,
+GtkScale.scale {
+  -GtkRange-slider-width: 20;
+  -GtkRange-trough-border: 0;
+  -GtkScale-slider-length: 20;
+  -GtkWidget-focus-line-width: 0;
+}
+.scale.horizontal,
+GtkScale.horizontal,
+GtkScale.scale.horizontal {
+  margin: 0.25em 0em 0.25em 0em;
+}
+.scale.horizontal.trough.highlight,
+GtkScale.horizontal.trough.highlight,
+GtkScale.scale.horizontal.trough.highlight {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#008fb6), to(#49d8ff));
+}
+.scale.mark,
+GtkScale.mark,
+GtkScale.scale.mark {
+  color: #898989;
+}
+.scale.slider.horizontal,
+GtkScale.slider.horizontal,
+GtkScale.scale.slider.horizontal,
+.scale.slider.vertical,
+GtkScale.slider.vertical,
+GtkScale.scale.slider.vertical {
+  margin: 0px;
+  background-clip: border-box;
+  background-image: -gtk-scaled(url("Icons/Slider.svg"));
+}
+.scale.slider.horizontal:backdrop,
+GtkScale.slider.horizontal:backdrop,
+GtkScale.scale.slider.horizontal:backdrop,
+.scale.slider.vertical:backdrop,
+GtkScale.slider.vertical:backdrop,
+GtkScale.scale.slider.vertical:backdrop {
+  background-image: -gtk-scaled(url("Icons/Slider-Backdrop.svg"));
+}
+.scale.trough.highlight:backdrop,
+GtkScale.trough.highlight:backdrop,
+GtkScale.scale.trough.highlight:backdrop {
+  background-color: #a2a2a2;
+  background-image: none;
+}
+.scale.vertical,
+GtkScale.vertical,
+GtkScale.scale.vertical {
+  margin: 0em 0.25em 0em 0.25em;
+}
+.scale.vertical.trough.highlight,
+GtkScale.vertical.trough.highlight,
+GtkScale.scale.vertical.trough.highlight {
+  background-image: -gtk-gradient(linear, left top, right top, from(#008fb6), to(#49d8ff));
+}
+.scale.vertical.trough.highlight:backdrop,
+GtkScale.vertical.trough.highlight:backdrop,
+GtkScale.scale.vertical.trough.highlight:backdrop {
+  background-color: #a2a2a2;
+  background-image: none;
+}
+.separator.horizontal,
+.separator.menuitem {
+  border-image: -gtk-scaled(url("Icons/Separator-Horizontal.svg")) 1 0 1 0/1px 0px 1px 0px stretch;
+}
+.separator.vertical {
+  border-image: -gtk-scaled(url("Icons/Separator-Vertical.svg")) 0 1 0 1/0px 1px 0px 1px stretch;
 }
 .button {
   background-image: -gtk-gradient(linear, left top, left bottom, from(rgba(198,198,198,0.25)), to(rgba(126,126,126,0.25)));
@@ -469,6 +723,7 @@ ECalendar .button {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
   border: 1px solid transparent;
   border-radius: 0.25em;
@@ -510,6 +765,7 @@ ECalendar .button:prelight {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
   border-width: 0px 0px 0px 0.25px;
   box-shadow: none;
@@ -578,50 +834,53 @@ column-header:last-child .button {
   border-radius: 0px 2.5px 0px 0px;
   border-right: 1px solid transparent;
 }
+.csd .titlebar.header-bar .stack-switcher,
+.solid-csd .titlebar.header-bar .stack-switcher {
+  margin-top: 0.5em;
+}
 .csd .titlebar.header-bar .button.titlebutton,
 .solid-csd .titlebar.header-bar .button.titlebutton {
-  background-clip: padding-box;
-  border-color: rgba(36,36,36,0.125);
-  border-bottom-color: rgba(198,198,198,0.125);
-  border-right-color: rgba(198,198,198,0.125);
-  border-style: solid;
-  border-width: 1px;
-  background-color: rgba(36,36,36,0.25);
-  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.375);
+  background-color: transparent;
   background-image: none;
-  border-radius: 2em;
+  border: none;
+  border-image: none;
+  box-shadow: none;
+  background-position: center center;
+  background-repeat: no-repeat;
   color: transparent;
-  margin: 10em;
-  padding: 0.0625em;
+  padding: 0px;
 }
-.csd .titlebar.header-bar .button.titlebutton:backdrop,
-.solid-csd .titlebar.header-bar .button.titlebutton:backdrop {
-  background-image: none;
-  background-color: #646464;
+.csd .titlebar.header-bar .button.titlebutton.close:backdrop,
+.solid-csd .titlebar.header-bar .button.titlebutton.close:backdrop,
+.csd .titlebar.header-bar .button.titlebutton.maximize:backdrop,
+.solid-csd .titlebar.header-bar .button.titlebutton.maximize:backdrop,
+.csd .titlebar.header-bar .button.titlebutton.minimize:backdrop,
+.solid-csd .titlebar.header-bar .button.titlebutton.minimize:backdrop {
+  background-image: -gtk-scaled(url("../unity/Core/Button.svg"));
 }
 .csd .titlebar.header-bar .button.titlebutton.close,
 .solid-csd .titlebar.header-bar .button.titlebutton.close {
-  background-image: -gtk-gradient(radial, 0.375 0.375, 0, 0.5 0.5, 1, from(#00c8ff), to(#4b4b4b));
+  background-image: -gtk-scaled(url("../unity/Core/Close.svg"));
 }
 .csd .titlebar.header-bar .button.titlebutton.close:hover,
 .solid-csd .titlebar.header-bar .button.titlebutton.close:hover {
-  background-image: -gtk-gradient(radial, 0.375 0.375, 0, 0.5 0.5, 1, from(#80e3ff), to(#646464));
+  background-image: -gtk-scaled(url("../unity/Core/CloseHover.svg"));
 }
 .csd .titlebar.header-bar .button.titlebutton.maximize,
 .solid-csd .titlebar.header-bar .button.titlebutton.maximize {
-  background-image: -gtk-gradient(radial, 0.375 0.375, 0, 0.5 0.5, 1, from(#00c864), to(#4b4b4b));
+  background-image: -gtk-scaled(url("../unity/Core/Maximize.svg"));
 }
 .csd .titlebar.header-bar .button.titlebutton.maximize:hover,
 .solid-csd .titlebar.header-bar .button.titlebutton.maximize:hover {
-  background-image: -gtk-gradient(radial, 0.375 0.375, 0, 0.5 0.5, 1, from(#64ffb2), to(#646464));
+  background-image: -gtk-scaled(url("../unity/Core/MaximizeHover.svg"));
 }
 .csd .titlebar.header-bar .button.titlebutton.minimize,
 .solid-csd .titlebar.header-bar .button.titlebutton.minimize {
-  background-image: -gtk-gradient(radial, 0.375 0.375, 0, 0.5 0.5, 1, from(#00c8c8), to(#4b4b4b));
+  background-image: -gtk-scaled(url("../unity/Core/Minimize.svg"));
 }
 .csd .titlebar.header-bar .button.titlebutton.minimize:hover,
 .solid-csd .titlebar.header-bar .button.titlebutton.minimize:hover {
-  background-image: -gtk-gradient(radial, 0.375 0.375, 0, 0.5 0.5, 1, from(#64ffff), to(#646464));
+  background-image: -gtk-scaled(url("../unity/Core/MinimizeHover.svg"));
 }
 .csd .titlebar.header-bar .button.titlebutton GtkImage,
 .solid-csd .titlebar.header-bar .button.titlebutton GtkImage {
@@ -708,6 +967,7 @@ GtkComboBox .button,
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
   background-clip: padding-box;
   border-color: rgba(0,0,0,0.125);
@@ -850,31 +1110,40 @@ GtkExpander.expander:backdrop {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
 }
 GtkSwitch {
-  background-image: -gtk-gradient(radial, 0.375 0.375, 0, 0.5 0.5, 1, from(#fff), to(#7d7d7d));
-  border: 1px solid transparent;
-  border-radius: 2em;
+  -GtkSwitch-slider-width: 48;
+}
+GtkSwitch.trough,
+GtkSwitch.slider {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  border-image: none;
+  box-shadow: none;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: transparent;
+}
+GtkSwitch.slider {
+  background-image: -gtk-scaled(url("Icons/Switch-Slider.svg"));
+}
+GtkSwitch.slider:active {
+  background-image: -gtk-scaled(url("Icons/Switch-Slider-On.svg"));
+}
+GtkSwitch.slider:active:backdrop {
+  background-image: -gtk-scaled(url("Icons/Switch-Slider.svg"));
 }
 GtkSwitch.trough {
-  background-clip: padding-box;
-  border-color: rgba(36,36,36,0.125);
-  border-bottom-color: rgba(198,198,198,0.125);
-  border-right-color: rgba(198,198,198,0.125);
-  border-style: solid;
-  border-width: 1px;
-  background-color: rgba(36,36,36,0.25);
-  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.375);
-  color: #a2a2a2;
+  background-image: -gtk-scaled(url("Icons/Switch-Trough.svg"));
 }
 GtkSwitch.trough:active {
-  background-color: #00c8ff;
-  color: #323232;
+  background-image: -gtk-scaled(url("Icons/Switch-Trough-On.svg"));
 }
 GtkSwitch.trough:active:backdrop {
-  background-color: #a2a2a2;
-  color: #323232;
+  background-image: -gtk-scaled(url("Icons/Switch-Trough-On-Backdrop.svg"));
 }
 .radio {
   -gtk-icon-source: url("Icons/Radio.svg");
@@ -899,12 +1168,6 @@ GtkSwitch.trough:active:backdrop {
 }
 .radio:insensitive:inconsistent {
   -gtk-icon-source: url("Icons/Radio-Checked-Partial-Inactive.svg");
-}
-.separator {
-  color: #a2a2a2;
-}
-.separator:backdrop {
-  color: #898989;
 }
 .entry,
 GtkEntry,
@@ -992,6 +1255,7 @@ GtkMenu.menu {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
   color: #c8c8c8;
   padding: 0.125em;
@@ -1041,6 +1305,7 @@ GtkImageMenuItem.button {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
   color: #a2a2a2;
 }
@@ -1148,6 +1413,7 @@ GtkNotebook.notebook tab {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
   border: 2px solid transparent;
   padding: 0.75em;
@@ -1195,6 +1461,7 @@ GtkNotebook.notebook tab .active-page .button.flat {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
 }
 .notebook tab .active-page .button > GtkImage,
@@ -1249,6 +1516,7 @@ GtkNotebook.notebook tab .button.flat {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
   padding: 1px;
 }
@@ -1275,234 +1543,6 @@ GtkNotebook.notebook tab .button:hover > GtkImage,
 GtkNotebook tab .button.flat:hover > GtkImage,
 GtkNotebook.notebook tab .button.flat:hover > GtkImage {
   color: #f00;
-}
-.trough,
-.progressbar.horizontal.trough,
-GtkProgressBar.horizontal.trough,
-GtkProgressBar.progressbar.horizontal.trough,
-.progressbar.horizontal.trough:backdrop,
-GtkProgressBar.horizontal.trough:backdrop,
-GtkProgressBar.progressbar.horizontal.trough:backdrop,
-.progressbar.vertical.trough,
-GtkProgressBar.vertical.trough,
-GtkProgressBar.progressbar.vertical.trough,
-.progressbar.vertical.trough:backdrop,
-GtkProgressBar.vertical.trough:backdrop,
-GtkProgressBar.progressbar.vertical.trough:backdrop,
-.level-bar.indicator-discrete.fill-block,
-GtkLevelBar.indicator-discrete.fill-block,
-GtkLevelBar.level-bar.indicator-discrete.fill-block,
-.scale.trough,
-GtkScale.trough,
-GtkScale.scale.trough {
-  background-clip: padding-box;
-  border-color: rgba(36,36,36,0.125);
-  border-bottom-color: rgba(198,198,198,0.125);
-  border-right-color: rgba(198,198,198,0.125);
-  border-style: solid;
-  border-width: 1px;
-  background-color: rgba(36,36,36,0.25);
-  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.375);
-  background-image: none;
-  border-radius: 2em;
-  padding: 0.125em;
-}
-.trough row:selected:focused,
-.progressbar.horizontal.trough row:selected:focused,
-GtkProgressBar.horizontal.trough row:selected:focused,
-GtkProgressBar.progressbar.horizontal.trough row:selected:focused,
-.progressbar.horizontal.trough:backdrop row:selected:focused,
-GtkProgressBar.horizontal.trough:backdrop row:selected:focused,
-GtkProgressBar.progressbar.horizontal.trough:backdrop row:selected:focused,
-.progressbar.vertical.trough row:selected:focused,
-GtkProgressBar.vertical.trough row:selected:focused,
-GtkProgressBar.progressbar.vertical.trough row:selected:focused,
-.progressbar.vertical.trough:backdrop row:selected:focused,
-GtkProgressBar.vertical.trough:backdrop row:selected:focused,
-GtkProgressBar.progressbar.vertical.trough:backdrop row:selected:focused,
-.level-bar.indicator-discrete.fill-block row:selected:focused,
-GtkLevelBar.indicator-discrete.fill-block row:selected:focused,
-GtkLevelBar.level-bar.indicator-discrete.fill-block row:selected:focused,
-.scale.trough row:selected:focused,
-GtkScale.trough row:selected:focused,
-GtkScale.scale.trough row:selected:focused {
-  background-color: #323232;
-  background-image: none;
-  color: #a2a2a2;
-}
-.progressbar,
-GtkProgressBar,
-GtkProgressBar.progressbar {
-  -GtkProgressBar-min-horizontal-bar-height: 15;
-  -GtkProgressBar-min-vertical-bar-width: 15;
-  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
-  border: 1px solid transparent;
-  border-radius: 2em;
-}
-.progressbar:backdrop,
-GtkProgressBar:backdrop,
-GtkProgressBar.progressbar:backdrop {
-  background-color: #a2a2a2;
-  background-image: none;
-  color: #323232;
-}
-.progressbar.horizontal,
-GtkProgressBar.horizontal,
-GtkProgressBar.progressbar.horizontal {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
-}
-.progressbar.horizontal:backdrop,
-GtkProgressBar.horizontal:backdrop,
-GtkProgressBar.progressbar.horizontal:backdrop {
-  background-color: #a2a2a2;
-  background-image: none;
-}
-.progressbar.vertical,
-GtkProgressBar.vertical,
-GtkProgressBar.progressbar.vertical {
-  background-image: -gtk-gradient(linear, left top, right top, from(#49d8ff), to(#008fb6));
-}
-.progressbar.vertical:backdrop,
-GtkProgressBar.vertical:backdrop,
-GtkProgressBar.progressbar.vertical:backdrop {
-  background-color: #a2a2a2;
-  background-image: none;
-}
-.level-bar.horizontal,
-GtkLevelBar.horizontal,
-GtkLevelBar.level-bar.horizontal {
-  -GtkLevelBar-min-block-height: 15;
-  -GtkLevelBar-min-block-width: 3;
-}
-.level-bar.vertical,
-GtkLevelBar.vertical,
-GtkLevelBar.level-bar.vertical {
-  -GtkLevelBar-min-block-height: 3;
-  -GtkLevelBar-min-block-width: 15;
-}
-.level-bar.indicator-continuous.fill-block,
-GtkLevelBar.indicator-continuous.fill-block,
-GtkLevelBar.level-bar.indicator-continuous.fill-block {
-  border-radius: 2em;
-}
-.level-bar.indicator-continuous.fill-block.horizontal,
-GtkLevelBar.indicator-continuous.fill-block.horizontal,
-GtkLevelBar.level-bar.indicator-continuous.fill-block.horizontal {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
-}
-.level-bar.indicator-continuous.fill-block.horizontal:backdrop,
-GtkLevelBar.indicator-continuous.fill-block.horizontal:backdrop,
-GtkLevelBar.level-bar.indicator-continuous.fill-block.horizontal:backdrop {
-  background-color: #a2a2a2;
-  background-image: none;
-}
-.level-bar.indicator-continuous.fill-block.horizontal.empty-fill-block,
-GtkLevelBar.indicator-continuous.fill-block.horizontal.empty-fill-block,
-GtkLevelBar.level-bar.indicator-continuous.fill-block.horizontal.empty-fill-block {
-  background-color: transparent;
-  background-image: none;
-  border: none;
-  box-shadow: none;
-}
-.level-bar.indicator-discrete.fill-block.horizontal.level-high,
-GtkLevelBar.indicator-discrete.fill-block.horizontal.level-high,
-GtkLevelBar.level-bar.indicator-discrete.fill-block.horizontal.level-high {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(#12ff88), to(#007f40));
-}
-.level-bar.indicator-discrete.fill-block.horizontal.level-low,
-GtkLevelBar.indicator-discrete.fill-block.horizontal.level-low,
-GtkLevelBar.level-bar.indicator-discrete.fill-block.horizontal.level-low {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(#ff4949), to(#b60000));
-}
-.level-bar.indicator-discrete.fill-block.horizontal.empty-fill-block,
-GtkLevelBar.indicator-discrete.fill-block.horizontal.empty-fill-block,
-GtkLevelBar.level-bar.indicator-discrete.fill-block.horizontal.empty-fill-block,
-.level-bar.indicator-discrete.fill-block.horizontal.empty-fill-block:backdrop,
-GtkLevelBar.indicator-discrete.fill-block.horizontal.empty-fill-block:backdrop,
-GtkLevelBar.level-bar.indicator-discrete.fill-block.horizontal.empty-fill-block:backdrop {
-  background-image: none;
-}
-.level-bar.indicator-discrete.fill-block.vertical.level-high,
-GtkLevelBar.indicator-discrete.fill-block.vertical.level-high,
-GtkLevelBar.level-bar.indicator-discrete.fill-block.vertical.level-high {
-  background-image: -gtk-gradient(linear, left top, right top, from(#12ff88), to(#007f40));
-}
-.level-bar.indicator-discrete.fill-block.vertical.level-low,
-GtkLevelBar.indicator-discrete.fill-block.vertical.level-low,
-GtkLevelBar.level-bar.indicator-discrete.fill-block.vertical.level-low {
-  background-image: -gtk-gradient(linear, left top, right top, from(#ff4949), to(#b60000));
-}
-.level-bar.indicator-discrete.fill-block.vertical.empty-fill-block,
-GtkLevelBar.indicator-discrete.fill-block.vertical.empty-fill-block,
-GtkLevelBar.level-bar.indicator-discrete.fill-block.vertical.empty-fill-block,
-.level-bar.indicator-discrete.fill-block.vertical.empty-fill-block:backdrop,
-GtkLevelBar.indicator-discrete.fill-block.vertical.empty-fill-block:backdrop,
-GtkLevelBar.level-bar.indicator-discrete.fill-block.vertical.empty-fill-block:backdrop {
-  background-image: none;
-}
-.level-bar.indicator-discrete.trough,
-GtkLevelBar.indicator-discrete.trough,
-GtkLevelBar.level-bar.indicator-discrete.trough {
-  background-color: transparent;
-  background-image: none;
-  border: none;
-  box-shadow: none;
-  padding: 0px;
-}
-.scale,
-GtkScale,
-GtkScale.scale {
-  -GtkRange-slider-width: 20;
-  -GtkRange-trough-border: 0;
-  -GtkScale-slider-length: 20;
-  -GtkWidget-focus-line-width: 0;
-}
-.scale.horizontal,
-GtkScale.horizontal,
-GtkScale.scale.horizontal {
-  margin: 0.25em 0em 0.25em 0em;
-}
-.scale.horizontal.trough.highlight,
-GtkScale.horizontal.trough.highlight,
-GtkScale.scale.horizontal.trough.highlight {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(#008fb6), to(#49d8ff));
-}
-.scale.mark,
-GtkScale.mark,
-GtkScale.scale.mark {
-  color: #898989;
-}
-.scale.slider.horizontal,
-GtkScale.slider.horizontal,
-GtkScale.scale.slider.horizontal,
-.scale.slider.vertical,
-GtkScale.slider.vertical,
-GtkScale.scale.slider.vertical {
-  border-radius: 2em;
-  background-image: -gtk-gradient(radial, 0.375 0.375, 0, 0.5 0.5, 1, from(#fff), to(#7d7d7d));
-  margin: 0.125em;
-}
-.scale.trough.highlight:backdrop,
-GtkScale.trough.highlight:backdrop,
-GtkScale.scale.trough.highlight:backdrop {
-  background-color: #a2a2a2;
-  background-image: none;
-}
-.scale.vertical,
-GtkScale.vertical,
-GtkScale.scale.vertical {
-  margin: 0em 0.25em 0em 0.25em;
-}
-.scale.vertical.trough.highlight,
-GtkScale.vertical.trough.highlight,
-GtkScale.scale.vertical.trough.highlight {
-  background-image: -gtk-gradient(linear, left top, right top, from(#008fb6), to(#49d8ff));
-}
-.scale.vertical.trough.highlight:backdrop,
-GtkScale.vertical.trough.highlight:backdrop,
-GtkScale.scale.vertical.trough.highlight:backdrop {
-  background-color: #a2a2a2;
-  background-image: none;
 }
 UnityDecoration {
   -UnityDecoration-extents: 30px 5px 5px 5px;
@@ -1572,6 +1612,7 @@ EShellWindow EShellSwitcher GtkScrolledWindow {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
   padding: 0px;
 }
@@ -1579,6 +1620,7 @@ EPreferencesWindow GtkNotebook > GtkAlignment > GtkScrolledWindow {
   background-color: transparent;
   background-image: none;
   border: none;
+  border-image: none;
   box-shadow: none;
 }
 ECanvas.button {
