@@ -2,8 +2,6 @@
 @import 'Standards/Colors/UI';
 @import 'Standards/UI/Styles';
 
-// @css { @import url("Stylus/gtk-widgets-assets.css"); }
-
 
 
 /** DEFAULTS **/
@@ -13,15 +11,16 @@ GtkWidget
     -GtkWidget-focus-padding:       0;
     -GtkWidget-focus-line-width:    0;
     -GtkWidget-link-color:          LinkColor;
-    -GtkWidget-separator-height:    1;
-    -GtkWidget-separator-width:     1;
+    -GtkWidget-separator-height:    2;
+    -GtkWidget-separator-width:     2;
     -GtkWidget-visited-link-color:  LinkColor;
-    -GtkWidget-wide-separators:     false;
+    -GtkWidget-wide-separators:     true;
 
     background-color:               transparent;
     background-clip:                padding-box;
     background-image:               none;
     border:                         none;
+    border-image:                   none;
     border-radius:                  0em;
     box-shadow:                     none;
     color:                          TextColor;
@@ -35,12 +34,12 @@ GtkWidget
 @import 'Containers';
 @import 'Cells';
 
+@import 'Bars';
 @import 'Buttons';
 @import 'Controls';
 @import 'TextEntry';
 @import 'Menus';
 @import 'Notebook';
-@import 'Bars';
 @import 'Unity';
 
 @import 'Minutiae';
