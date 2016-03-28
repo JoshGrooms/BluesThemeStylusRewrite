@@ -70,11 +70,14 @@ GtkPlacesSidebar
     .view                               { padding: 0.5em; }
 
     .list
-        .separator                      { color: transparent; }
+        .separator
+            blank();
+                    
         .sidebar-item,
         .sidebar-item.button
             @extends GtkWidget;
             button-text-color:          TextColor;
+
             &:selected
                 background-image:       SelectionGradientVertical;
                 button-text-color:      TextColorSelected;
