@@ -187,20 +187,24 @@ GtkExpander.expander
     flat();
 
 GtkSwitch
-    background-image:   rgradient(White, VeryDarkSilver);
-    border:             1px solid transparent;
-    border-radius:      2em;
+    -GtkSwitch-slider-width:    48;
+
+    &.trough,
+    &.slider
+        blank();
+
+    &.slider
+        image:          "Icons/Switch-Slider.svg";
+        &:active
+            image:      "Icons/Switch-Slider-On.svg";
+            &:backdrop  { image: "Icons/Switch-Slider.svg"; }
 
     &.trough
-        shallow-inset();
-        color:              TextColor;
-
+        image:          "Icons/Switch-Trough.svg";
         &:active
-            background-color:   SelectionColor;
-            color:              TextColorSelected;
-            &:backdrop
-                background-color:   HighlightColor;
-                color:              TextColorHighlighted;
+            image:      "Icons/Switch-Trough-On.svg";
+            &:backdrop  { image: "Icons/Switch-Trough-On-Backdrop.svg"; }
+
 
 .radio
     icon: "Icons/Radio.svg";
@@ -214,7 +218,3 @@ GtkSwitch
         icon: "Icons/Radio-Inactive.svg";
         &:checked                   { icon: "Icons/Radio-Checked-Inactive.svg"; }
         &:inconsistent              { icon: "Icons/Radio-Checked-Partial-Inactive.svg"; }
-
-.separator
-    color:      TextColor;
-    &:backdrop  { color: TextColorDim; }
