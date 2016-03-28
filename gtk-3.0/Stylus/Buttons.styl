@@ -131,29 +131,30 @@ column-header
         border-right:       1px solid transparent;
 
 /* TITLEBUTTON - Governs the standard close, maximize, and minimize buttons for CSD windows. */
-.csd .titlebar.header-bar .button.titlebutton,
-.solid-csd .titlebar.header-bar .button.titlebutton
-    shallow-inset();
+.csd, .solid-csd
+    .titlebar.header-bar
 
-    background-image:   none;
-    border-radius:      2em;
-    color:              transparent;
-    margin:             10em;
-    padding:            0.0625em;
+        .stack-switcher
+            margin-top:         0.5em;
 
-    &:backdrop
-        background-image: none;
-        background-color: WindowColorLight;
+        .button.titlebutton
+            blank();
+            padding:        0px;
 
-    &.close
-        background-image:   rgradient(ButtonCloseColor, Gray);
-        &:hover             { background-image: rgradient(ButtonCloseColorHighlight, LightGray); }
-    &.maximize
-        background-image:   rgradient(ButtonMaximizeColor, Gray);
-        &:hover             { background-image: rgradient(ButtonMaximizeColorHighlight, LightGray); }
-    &.minimize
-        background-image:   rgradient(ButtonMinimizeColor, Gray);
-        &:hover             { background-image: rgradient(ButtonMinimizeColorHighlight, LightGray); }
+            &.close, &.maximize, &.minimize
+                &:backdrop
+                    image:  "../unity/Core/Button.svg";
 
-    GtkImage
-        color:          transparent;
+            &.close
+                image:      "../unity/Core/Close.svg";
+                &:hover     { image: "../unity/Core/CloseHover.svg"; }
+
+            &.maximize
+                image:      "../unity/Core/Maximize.svg";
+                &:hover     { image: "../unity/Core/MaximizeHover.svg"; }
+            &.minimize
+                image:      "../unity/Core/Minimize.svg";
+                &:hover     { image: "../unity/Core/MinimizeHover.svg"; }
+
+            GtkImage
+                color:          transparent;
