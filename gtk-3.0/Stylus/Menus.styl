@@ -5,56 +5,45 @@
 .menu,
 GtkMenu,
 GtkMenu.menu
-    -GtkMenu-horizontal-offset: -1;
     flat();
+    -GtkMenu-horizontal-offset: -1;
     color:      MenuTextColor;
     padding:    0.125em;
 
-
 .menuitem,
 GtkImageMenuItem
-    -GtkMenuItem-arrow-scaling:     0.6;
+    flat();
 
+    -GtkMenuItem-arrow-scaling:     0.6;
     border-radius:                  0.25em;
-    color:                          TextColor;
     padding:                        1em;
 
-    &:hover
-        background-image:           SelectionGradientVertical;
-        color:                      TextColorSelected;
+    &, .label
+        color:                      MenuTextColor;
 
-        > GtkLabel,
-        > GtkImage,
-        > * > GtkLabel,
-        > * > GtkImage,
-        > * > * > GtkLabel
-        > * > * > GtkImage
-            color: TextColorSelected;
+    /* ACCELERATOR - Governs the shortcut text found adjacent to certain individual menu items. */
+    .accelerator
+        color:                      MenuAcceleratorColor;
+
+    &:hover, &:prelight
+        background-image:           SelectionGradientVertical;
+        &, .accelerator, .label
+            color:                  TextColorSelected;
 
     // Governs inactive menu items that cannot be selected.
-    &:insensitive,
-    &:insensitive .accelerator,
-    &:insensitive GtkLabel
-        color:                      TextColorDisabled;
+    &:insensitive
+        &, .accelerator, .label
+            color:                  TextColorDisabled;
 
-    &.button
-        flat();
+    &.separator
+        @extends .separator.horizontal;
 
-        button-text-color:      TextColor;
-        &:backdrop              { button-text-color: TextColorDim; }
+// Governs the very first menu items, which is what is displayed on menu bars.
+.menubar, .unity-panel
+    > .menuitem
 
-        &:hover
-            background-image:   SelectionGradientVertical;
-            button-text-color:  TextColorSelected;
-
-
-    // Governs the very first menu items, which is what is displayed on menu bars.
-    .menubar > &,
-    GtkMenuBar > &,
-    GtkMenuBar.menubar > &,
-    .unity-panel > &
         border-radius:              0.125em;
-        color:                      TextColor;
+        color:                      MenuTextColor;
         padding:                    0.25em 0.5em;
         text-shadow:                none;
 
@@ -64,11 +53,9 @@ GtkImageMenuItem
             background-image:       HighlightGradientVertical;
             color:                  TextColorHighlighted;
 
-    /* GTKACCELLABEL - Governs the text description of each individual menu item.
-     *
-     *      Although its name would suggest differently, this class does NOT control the accelerators found adjacent to some
-     *      menu items.
-     */
-    // GtkAccelLabel   { color: MenuTextColor; }
-    /* ACCELERATOR - Governs the shortcut text found adjacent to certain individual menu items. */
-    .accelerator    { color: MenuAcceleratorColor; }
+
+.button:checked .menuitem,
+.menuitem:hover .menuitem,
+.menuitem.button.flat
+    &, &:active, &:checked, &:active:checked
+        @extends .menuitem;
