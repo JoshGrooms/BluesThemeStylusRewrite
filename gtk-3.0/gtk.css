@@ -113,8 +113,8 @@ GtkWindow:backdrop,
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
 }
 .popup,
 .popup.background,
@@ -130,7 +130,7 @@ GtkWindow:backdrop,
   box-shadow: 0px 0px 0px 1px #292929, -1px -1px 0px rgba(36,36,36,0.875), 3px 3px 5px rgba(0,0,0,0.25);
   background-color: #252525;
   border-radius: 0.5em;
-  color: #c8c8c8;
+  color: #bbb;
   border-right: 1px solid #232323;
   border-bottom: 1px solid #232323;
 }
@@ -145,7 +145,7 @@ GtkWindow:backdrop,
   background-clip: border-box;
   background-color: #252525;
   border-radius: 0.5em;
-  color: #c8c8c8;
+  color: #bbb;
 }
 .view,
 .sidebar,
@@ -194,8 +194,8 @@ GtkPlacesSidebar .list .separator {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   background-position: center center;
   background-repeat: no-repeat;
   color: transparent;
@@ -418,8 +418,8 @@ GtkLevelBar.level-bar.indicator-continuous.fill-block.horizontal.empty-fill-bloc
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
 }
 .level-bar.indicator-discrete.fill-block.horizontal.level-high,
 GtkLevelBar.indicator-discrete.fill-block.horizontal.level-high,
@@ -463,8 +463,8 @@ GtkLevelBar.level-bar.indicator-discrete.trough {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   padding: 0px;
 }
 .scale,
@@ -531,7 +531,20 @@ GtkScale.scale.vertical.trough.highlight:backdrop {
   background-image: none;
 }
 .separator.horizontal,
-.separator.menuitem {
+.menuitem.separator,
+GtkImageMenuItem.separator,
+.button:checked .menuitem.separator,
+.menuitem:hover .menuitem.separator,
+.menuitem.button.flat.separator,
+.button:checked .menuitem:active.separator,
+.menuitem:hover .menuitem:active.separator,
+.menuitem.button.flat:active.separator,
+.button:checked .menuitem:checked.separator,
+.menuitem:hover .menuitem:checked.separator,
+.menuitem.button.flat:checked.separator,
+.button:checked .menuitem:active:checked.separator,
+.menuitem:hover .menuitem:active:checked.separator,
+.menuitem.button.flat:active:checked.separator {
   border-image: -gtk-scaled(url("Icons/Separator-Horizontal.svg")) 1 0 1 0/1px 0px 1px 0px stretch;
 }
 .separator.vertical {
@@ -723,8 +736,8 @@ ECalendar .button {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   border: 1px solid transparent;
   border-radius: 0.25em;
 }
@@ -765,8 +778,8 @@ ECalendar .button:prelight {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   border-width: 0px 0px 0px 0.25px;
   box-shadow: none;
 }
@@ -843,8 +856,8 @@ column-header:last-child .button {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   background-position: center center;
   background-repeat: no-repeat;
   color: transparent;
@@ -967,8 +980,8 @@ GtkComboBox .button,
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   background-clip: padding-box;
   border-color: rgba(0,0,0,0.125);
   border-bottom-color: rgba(162,162,162,0.125);
@@ -1110,8 +1123,8 @@ GtkExpander.expander:backdrop {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
 }
 GtkSwitch {
   -GtkSwitch-slider-width: 48;
@@ -1121,8 +1134,8 @@ GtkSwitch.slider {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   background-position: center center;
   background-repeat: no-repeat;
   color: transparent;
@@ -1251,128 +1264,260 @@ EelEditableLabel.entry {
 .menu,
 GtkMenu,
 GtkMenu.menu {
-  -GtkMenu-horizontal-offset: -1;
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
-  color: #c8c8c8;
+  text-shadow: none;
+  -GtkMenu-horizontal-offset: -1;
+  color: #bbb;
   padding: 0.125em;
 }
 .menuitem,
-GtkImageMenuItem {
+GtkImageMenuItem,
+.button:checked .menuitem,
+.menuitem:hover .menuitem,
+.menuitem.button.flat,
+.button:checked .menuitem:active,
+.menuitem:hover .menuitem:active,
+.menuitem.button.flat:active,
+.button:checked .menuitem:checked,
+.menuitem:hover .menuitem:checked,
+.menuitem.button.flat:checked,
+.button:checked .menuitem:active:checked,
+.menuitem:hover .menuitem:active:checked,
+.menuitem.button.flat:active:checked {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
   -GtkMenuItem-arrow-scaling: 0.6;
   border-radius: 0.25em;
-  color: #a2a2a2;
   padding: 1em;
-/* GTKACCELLABEL - Governs the text description of each individual menu item.
-     *
-     *      Although its name would suggest differently, this class does NOT control the accelerators found adjacent to some
-     *      menu items.
-     */
 /* ACCELERATOR - Governs the shortcut text found adjacent to certain individual menu items. */
 }
-.menuitem:hover,
-GtkImageMenuItem:hover {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
-  color: #323232;
+.menuitem,
+GtkImageMenuItem,
+.button:checked .menuitem,
+.menuitem:hover .menuitem,
+.menuitem.button.flat,
+.button:checked .menuitem:active,
+.menuitem:hover .menuitem:active,
+.menuitem.button.flat:active,
+.button:checked .menuitem:checked,
+.menuitem:hover .menuitem:checked,
+.menuitem.button.flat:checked,
+.button:checked .menuitem:active:checked,
+.menuitem:hover .menuitem:active:checked,
+.menuitem.button.flat:active:checked,
+.menuitem .label,
+GtkImageMenuItem .label,
+.button:checked .menuitem .label,
+.menuitem:hover .menuitem .label,
+.menuitem.button.flat .label,
+.button:checked .menuitem:active .label,
+.menuitem:hover .menuitem:active .label,
+.menuitem.button.flat:active .label,
+.button:checked .menuitem:checked .label,
+.menuitem:hover .menuitem:checked .label,
+.menuitem.button.flat:checked .label,
+.button:checked .menuitem:active:checked .label,
+.menuitem:hover .menuitem:active:checked .label,
+.menuitem.button.flat:active:checked .label {
+  color: #bbb;
 }
-.menuitem:hover > GtkLabel,
-GtkImageMenuItem:hover > GtkLabel,
-.menuitem:hover > GtkImage,
-GtkImageMenuItem:hover > GtkImage,
-.menuitem:hover > * > GtkLabel,
-GtkImageMenuItem:hover > * > GtkLabel,
-.menuitem:hover > * > GtkImage,
-GtkImageMenuItem:hover > * > GtkImage,
-.menuitem:hover > * > * > GtkLabel,
-GtkImageMenuItem:hover > * > * > GtkLabel,
-.menuitem:hover > * > * > GtkImage,
-GtkImageMenuItem:hover > * > * > GtkImage {
+.menuitem .accelerator,
+GtkImageMenuItem .accelerator,
+.button:checked .menuitem .accelerator,
+.menuitem:hover .menuitem .accelerator,
+.menuitem.button.flat .accelerator,
+.button:checked .menuitem:active .accelerator,
+.menuitem:hover .menuitem:active .accelerator,
+.menuitem.button.flat:active .accelerator,
+.button:checked .menuitem:checked .accelerator,
+.menuitem:hover .menuitem:checked .accelerator,
+.menuitem.button.flat:checked .accelerator,
+.button:checked .menuitem:active:checked .accelerator,
+.menuitem:hover .menuitem:active:checked .accelerator,
+.menuitem.button.flat:active:checked .accelerator {
+  color: #898989;
+}
+.menuitem:hover,
+GtkImageMenuItem:hover,
+.button:checked .menuitem:hover,
+.menuitem:hover .menuitem:hover,
+.menuitem.button.flat:hover,
+.button:checked .menuitem:active:hover,
+.menuitem:hover .menuitem:active:hover,
+.menuitem.button.flat:active:hover,
+.button:checked .menuitem:checked:hover,
+.menuitem:hover .menuitem:checked:hover,
+.menuitem.button.flat:checked:hover,
+.button:checked .menuitem:active:checked:hover,
+.menuitem:hover .menuitem:active:checked:hover,
+.menuitem.button.flat:active:checked:hover,
+.menuitem:prelight,
+GtkImageMenuItem:prelight,
+.button:checked .menuitem:prelight,
+.menuitem:hover .menuitem:prelight,
+.menuitem.button.flat:prelight,
+.button:checked .menuitem:active:prelight,
+.menuitem:hover .menuitem:active:prelight,
+.menuitem.button.flat:active:prelight,
+.button:checked .menuitem:checked:prelight,
+.menuitem:hover .menuitem:checked:prelight,
+.menuitem.button.flat:checked:prelight,
+.button:checked .menuitem:active:checked:prelight,
+.menuitem:hover .menuitem:active:checked:prelight,
+.menuitem.button.flat:active:checked:prelight {
+  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
+}
+.menuitem:hover,
+GtkImageMenuItem:hover,
+.button:checked .menuitem:hover,
+.menuitem:hover .menuitem:hover,
+.menuitem.button.flat:hover,
+.button:checked .menuitem:active:hover,
+.menuitem:hover .menuitem:active:hover,
+.menuitem.button.flat:active:hover,
+.button:checked .menuitem:checked:hover,
+.menuitem:hover .menuitem:checked:hover,
+.menuitem.button.flat:checked:hover,
+.button:checked .menuitem:active:checked:hover,
+.menuitem:hover .menuitem:active:checked:hover,
+.menuitem.button.flat:active:checked:hover,
+.menuitem:prelight,
+GtkImageMenuItem:prelight,
+.button:checked .menuitem:prelight,
+.menuitem:hover .menuitem:prelight,
+.menuitem.button.flat:prelight,
+.button:checked .menuitem:active:prelight,
+.menuitem:hover .menuitem:active:prelight,
+.menuitem.button.flat:active:prelight,
+.button:checked .menuitem:checked:prelight,
+.menuitem:hover .menuitem:checked:prelight,
+.menuitem.button.flat:checked:prelight,
+.button:checked .menuitem:active:checked:prelight,
+.menuitem:hover .menuitem:active:checked:prelight,
+.menuitem.button.flat:active:checked:prelight,
+.menuitem:hover .accelerator,
+GtkImageMenuItem:hover .accelerator,
+.button:checked .menuitem:hover .accelerator,
+.menuitem:hover .menuitem:hover .accelerator,
+.menuitem.button.flat:hover .accelerator,
+.button:checked .menuitem:active:hover .accelerator,
+.menuitem:hover .menuitem:active:hover .accelerator,
+.menuitem.button.flat:active:hover .accelerator,
+.button:checked .menuitem:checked:hover .accelerator,
+.menuitem:hover .menuitem:checked:hover .accelerator,
+.menuitem.button.flat:checked:hover .accelerator,
+.button:checked .menuitem:active:checked:hover .accelerator,
+.menuitem:hover .menuitem:active:checked:hover .accelerator,
+.menuitem.button.flat:active:checked:hover .accelerator,
+.menuitem:prelight .accelerator,
+GtkImageMenuItem:prelight .accelerator,
+.button:checked .menuitem:prelight .accelerator,
+.menuitem:hover .menuitem:prelight .accelerator,
+.menuitem.button.flat:prelight .accelerator,
+.button:checked .menuitem:active:prelight .accelerator,
+.menuitem:hover .menuitem:active:prelight .accelerator,
+.menuitem.button.flat:active:prelight .accelerator,
+.button:checked .menuitem:checked:prelight .accelerator,
+.menuitem:hover .menuitem:checked:prelight .accelerator,
+.menuitem.button.flat:checked:prelight .accelerator,
+.button:checked .menuitem:active:checked:prelight .accelerator,
+.menuitem:hover .menuitem:active:checked:prelight .accelerator,
+.menuitem.button.flat:active:checked:prelight .accelerator,
+.menuitem:hover .label,
+GtkImageMenuItem:hover .label,
+.button:checked .menuitem:hover .label,
+.menuitem:hover .menuitem:hover .label,
+.menuitem.button.flat:hover .label,
+.button:checked .menuitem:active:hover .label,
+.menuitem:hover .menuitem:active:hover .label,
+.menuitem.button.flat:active:hover .label,
+.button:checked .menuitem:checked:hover .label,
+.menuitem:hover .menuitem:checked:hover .label,
+.menuitem.button.flat:checked:hover .label,
+.button:checked .menuitem:active:checked:hover .label,
+.menuitem:hover .menuitem:active:checked:hover .label,
+.menuitem.button.flat:active:checked:hover .label,
+.menuitem:prelight .label,
+GtkImageMenuItem:prelight .label,
+.button:checked .menuitem:prelight .label,
+.menuitem:hover .menuitem:prelight .label,
+.menuitem.button.flat:prelight .label,
+.button:checked .menuitem:active:prelight .label,
+.menuitem:hover .menuitem:active:prelight .label,
+.menuitem.button.flat:active:prelight .label,
+.button:checked .menuitem:checked:prelight .label,
+.menuitem:hover .menuitem:checked:prelight .label,
+.menuitem.button.flat:checked:prelight .label,
+.button:checked .menuitem:active:checked:prelight .label,
+.menuitem:hover .menuitem:active:checked:prelight .label,
+.menuitem.button.flat:active:checked:prelight .label {
   color: #323232;
 }
 .menuitem:insensitive,
 GtkImageMenuItem:insensitive,
+.button:checked .menuitem:insensitive,
+.menuitem:hover .menuitem:insensitive,
+.menuitem.button.flat:insensitive,
+.button:checked .menuitem:active:insensitive,
+.menuitem:hover .menuitem:active:insensitive,
+.menuitem.button.flat:active:insensitive,
+.button:checked .menuitem:checked:insensitive,
+.menuitem:hover .menuitem:checked:insensitive,
+.menuitem.button.flat:checked:insensitive,
+.button:checked .menuitem:active:checked:insensitive,
+.menuitem:hover .menuitem:active:checked:insensitive,
+.menuitem.button.flat:active:checked:insensitive,
 .menuitem:insensitive .accelerator,
 GtkImageMenuItem:insensitive .accelerator,
-.menuitem:insensitive GtkLabel,
-GtkImageMenuItem:insensitive GtkLabel {
+.button:checked .menuitem:insensitive .accelerator,
+.menuitem:hover .menuitem:insensitive .accelerator,
+.menuitem.button.flat:insensitive .accelerator,
+.button:checked .menuitem:active:insensitive .accelerator,
+.menuitem:hover .menuitem:active:insensitive .accelerator,
+.menuitem.button.flat:active:insensitive .accelerator,
+.button:checked .menuitem:checked:insensitive .accelerator,
+.menuitem:hover .menuitem:checked:insensitive .accelerator,
+.menuitem.button.flat:checked:insensitive .accelerator,
+.button:checked .menuitem:active:checked:insensitive .accelerator,
+.menuitem:hover .menuitem:active:checked:insensitive .accelerator,
+.menuitem.button.flat:active:checked:insensitive .accelerator,
+.menuitem:insensitive .label,
+GtkImageMenuItem:insensitive .label,
+.button:checked .menuitem:insensitive .label,
+.menuitem:hover .menuitem:insensitive .label,
+.menuitem.button.flat:insensitive .label,
+.button:checked .menuitem:active:insensitive .label,
+.menuitem:hover .menuitem:active:insensitive .label,
+.menuitem.button.flat:active:insensitive .label,
+.button:checked .menuitem:checked:insensitive .label,
+.menuitem:hover .menuitem:checked:insensitive .label,
+.menuitem.button.flat:checked:insensitive .label,
+.button:checked .menuitem:active:checked:insensitive .label,
+.menuitem:hover .menuitem:active:checked:insensitive .label,
+.menuitem.button.flat:active:checked:insensitive .label {
   color: #646464;
 }
-.menuitem.button,
-GtkImageMenuItem.button {
-  background-color: transparent;
-  background-image: none;
-  border: none;
-  border-image: none;
-  box-shadow: none;
-  color: #a2a2a2;
-}
-.menuitem.button GtkImage,
-GtkImageMenuItem.button GtkImage,
-.menuitem.button GtkLabel,
-GtkImageMenuItem.button GtkLabel {
-  color: #a2a2a2;
-}
-.menuitem.button:backdrop,
-GtkImageMenuItem.button:backdrop {
-  color: #898989;
-}
-.menuitem.button:backdrop GtkImage,
-GtkImageMenuItem.button:backdrop GtkImage,
-.menuitem.button:backdrop GtkLabel,
-GtkImageMenuItem.button:backdrop GtkLabel {
-  color: #898989;
-}
-.menuitem.button:hover,
-GtkImageMenuItem.button:hover {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
-  color: #323232;
-}
-.menuitem.button:hover GtkImage,
-GtkImageMenuItem.button:hover GtkImage,
-.menuitem.button:hover GtkLabel,
-GtkImageMenuItem.button:hover GtkLabel {
-  color: #323232;
-}
 .menubar > .menuitem,
-.menubar > GtkImageMenuItem,
-GtkMenuBar > .menuitem,
-GtkMenuBar > GtkImageMenuItem,
-GtkMenuBar.menubar > .menuitem,
-GtkMenuBar.menubar > GtkImageMenuItem,
-.unity-panel > .menuitem,
-.unity-panel > GtkImageMenuItem {
+.unity-panel > .menuitem {
   border-radius: 0.125em;
-  color: #a2a2a2;
+  color: #bbb;
   padding: 0.25em 0.5em;
   text-shadow: none;
 }
 .menubar > .menuitem:backdrop,
-.menubar > GtkImageMenuItem:backdrop,
-GtkMenuBar > .menuitem:backdrop,
-GtkMenuBar > GtkImageMenuItem:backdrop,
-GtkMenuBar.menubar > .menuitem:backdrop,
-GtkMenuBar.menubar > GtkImageMenuItem:backdrop,
-.unity-panel > .menuitem:backdrop,
-.unity-panel > GtkImageMenuItem:backdrop {
+.unity-panel > .menuitem:backdrop {
   color: #898989;
 }
 .menubar > .menuitem:hover,
-.menubar > GtkImageMenuItem:hover,
-GtkMenuBar > .menuitem:hover,
-GtkMenuBar > GtkImageMenuItem:hover,
-GtkMenuBar.menubar > .menuitem:hover,
-GtkMenuBar.menubar > GtkImageMenuItem:hover,
-.unity-panel > .menuitem:hover,
-.unity-panel > GtkImageMenuItem:hover {
+.unity-panel > .menuitem:hover {
   background-image: -gtk-gradient(linear, left top, left bottom, from(#c6c6c6), to(#7e7e7e));
   color: #323232;
-}
-.menuitem .accelerator,
-GtkImageMenuItem .accelerator {
-  color: #898989;
 }
 .notebook,
 GtkNotebook,
@@ -1413,8 +1558,8 @@ GtkNotebook.notebook tab {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   border: 2px solid transparent;
   padding: 0.75em;
 /* ACTIVE - Governs the active tab page for the notebook. */
@@ -1461,8 +1606,8 @@ GtkNotebook.notebook tab .active-page .button.flat {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
 }
 .notebook tab .active-page .button > GtkImage,
 GtkNotebook tab .active-page .button > GtkImage,
@@ -1516,8 +1661,8 @@ GtkNotebook.notebook tab .button.flat {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   padding: 1px;
 }
 .notebook tab .button > GtkImage,
@@ -1612,16 +1757,16 @@ EShellWindow EShellSwitcher GtkScrolledWindow {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
   padding: 0px;
 }
 EPreferencesWindow GtkNotebook > GtkAlignment > GtkScrolledWindow {
   background-color: transparent;
   background-image: none;
   border: none;
-  border-image: none;
   box-shadow: none;
+  text-shadow: none;
 }
 ECanvas.button {
   color: #323232;
