@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="28" width="1" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 1 28">
+ <defs>
+  <filter id="filter4226" style="color-interpolation-filters:sRGB" height="1.192" width="1.192" y="-0.096" x="-0.096">
+   <feGaussianBlur stdDeviation="1.22"/>
+  </filter>
+  <clipPath id="clipPath4232" clipPathUnits="userSpaceOnUse">
+   <circle r="14.5" cy="16" cx="16" style="fill-opacity:.18824;fill-rule:evenodd"/>
+  </clipPath>
+ </defs>
+ <g transform="translate(-15.5 2.0277)">
+  <path d="m15.5-2v28h1v-28h-1z" style="fill-opacity:.18824;fill-rule:evenodd"/>
+  <path style="color-rendering:auto;text-decoration-color:#000000;color:#000000;shape-rendering:auto;solid-color:#000000;text-decoration-line:none;mix-blend-mode:normal;fill-opacity:.62745;block-progression:tb;text-indent:0;image-rendering:auto;white-space:normal;text-decoration-style:solid;isolation:auto;filter:url(#filter4226);text-transform:none" d="m15.5 2v0.57617c0.32869-0.03367 0.66513-0.039375 1-0.050781v-0.5254h-1z" clip-path="url(#clipPath4232)" transform="translate(0,-4)"/>
+ </g>
+</svg>
