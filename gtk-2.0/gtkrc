@@ -99,19 +99,20 @@ style "Default" = "Dark"
     GtkButton::child-displacement-x                 = 1
     GtkButton::child-displacement-y                 = 1
     GtkButton::default-border                       = { 0, 0, 0, 0 }
+    GtkButton::default-outside_border               = { 0, 0, 0, 0 }
 
     GtkCheckButton::indicator-size                  = 16
 
     GtkPaned::handle-size                           = 6
 
     GtkRange::trough-border                         = 0
-    GtkRange::slider-width                          = 14
-    GtkRange::stepper-size                          = 13
+    GtkRange::slider-width                          = 15
+    GtkRange::stepper-size                          = 0
     GtkRange::trough-under-steppers                 = 1
 
     GtkScale::trough-border                         = 0
-    GtkScale::slider-width                          = 23
-    GtkScale::slider-length                         = 14
+    GtkScale::slider-width                          = 19
+    GtkScale::slider-length                         = 19
     GtkScale::trough-side-details                   = 1
 
     GtkScrollbar::activate-slider                   = 1
@@ -143,7 +144,7 @@ style "Default" = "Dark"
     # The following line hints to gecko (and possibly other appliations)
     # that the entry should be drawn transparently on the canvas.
     # Without this, gecko will fill in the background of the entry.
-    # GtkEntry::honors-transparent-bg-hint = 1
+    GtkEntry::honors-transparent-bg-hint            = 1
     GtkEntry::state-hint                            = 0
     GtkEntry::progress-border                       = { 0, 0, 0, 0 }
 
@@ -182,6 +183,7 @@ style "Default" = "Dark"
         scrollbarstyle          = 0
         sliderstyle             = 3
         stepperstyle            = 3
+        textstyle               = 0
         text_shade              = 1.0
         trough_border_shades    = { 0.125, 2.25 }
     }
@@ -218,8 +220,8 @@ style "Button" = "Dark"
 
 style "ButtonFlat" = "Button"
 {
-    xthickness = 7
-    ythickness = 7
+    xthickness = 5
+    ythickness = 5
 
     bg[ACTIVE] = @WindowColorDimmer
     fg[ACTIVE] = @TextColor
@@ -231,10 +233,92 @@ style "ButtonFlat" = "Button"
     }
 }
 
+style "ComboBox" = "Dark"
+{
+    xthickness = 4
+    ythickness = 4
+
+    engine "pixmap"
+    {
+        image
+        {
+            function        = BOX
+            state           = NORMAL
+            file            = "img/Trough-Square.svg"
+            border          = { 15, 15, 15, 15 }
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            state           = INSENSITIVE
+            file            = "img/Trough-Square.svg"
+            border          = { 15, 15, 15, 15 }
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = BOX
+            state           = PRELIGHT
+            file            = "img/Trough-Square-Highlighted.svg"
+            border          = { 15, 15, 15, 15 }
+            stretch         = TRUE
+        }
+    }
+}
+
+style "ComboBoxButton" = "Dark"
+{
+    xthickness = 8
+    ythickness = 2
+
+    engine "pixmap"
+    {
+        image
+        {
+            function    = BOX
+            state       = NORMAL
+            file        = "img/Trough-Half-Right.svg"
+            border      = { 1, 15, 15, 15 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = BOX
+            state       = PRELIGHT
+            file        = "img/Trough-Half-Right-Highlighted.svg"
+            border      = { 1, 15, 15, 15 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = BOX
+            state       = ACTIVE
+            file        = "img/Trough-Half-Right-Highlighted.svg"
+            border      = { 1, 15, 15, 15 }
+            stretch     = TRUE
+        }
+        image
+        {
+            function    = BOX
+            state       = INSENSITIVE
+            file        = "img/Trough-Half-Right.svg"
+            border      = { 1, 15, 15, 15 }
+            stretch     = TRUE
+        }
+    }
+}
+
+style "NotebookButton" = "Button"
+{
+    xthickness = 5
+    ythickness = 5
+}
+
 style "SpinButton" = "Dark"
 {
-    xthickness = 3
-    ythickness = 3
+    xthickness = 5
+    ythickness = 5
 
     engine "murrine"
     {
@@ -247,8 +331,7 @@ style "SpinButton" = "Dark"
 
 
 
-
-## SCROLLBARS ##
+## BARS ##
 style "scrollbar" = "Dark"
 {
     xthickness = 2
@@ -269,20 +352,61 @@ style "hscrollbar" = "scrollbar"
     # the inset appearance that the vertical scrollbars possess.
 }
 
-
-style "scale" = "Dark"
+style "Scale" = "Dark"
 {
-    xthickness = 10
-    ythickness = 10
+    xthickness = 2
+    ythickness = 2
 
-    bg[ACTIVE] = @WindowColorDimmer
-    bg[NORMAL] = @HighlightColor
+    # bg[ACTIVE] = @WindowColor
+    # bg[NORMAL] = @HighlightColor
 
-    engine "murrine"
+    GtkRange::trough-border                         = 0
+    GtkRange::slider-width                          = 19
+    GtkRange::stepper-size                          = 0
+    GtkRange::trough-under-steppers                 = 1
+
+    GtkScale::trough-border                         = 0
+    GtkScale::slider-width                          = 19
+    GtkScale::slider-length                         = 19
+    GtkScale::trough-side-details                   = 0
+
+    engine "pixmap"
     {
-        roundness = 20
-        gradient_shades = {1.25, 1.0, 1.0, 0.75}
-        handlestyle = 2
+
+        image
+        {
+            function        = BOX
+            detail          = "trough"
+            file            = "img/Trough-Horizontal.svg"
+            border          = { 4, 4, 0, 0 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+        }
+        image
+        {
+            function        = BOX
+            detail          = "trough"
+            file            = "img/Trough-Vertical.svg"
+            border          = { 0, 0, 4, 4 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+        }
+
+        image
+        {
+            function        = SLIDER
+            file            = "img/Slider.svg"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+        }
+        image
+        {
+            function        = SLIDER
+            state           = INSENSITIVE
+            file            = "img/Slider-Inactive.svg"
+            border          = { 0, 0, 0, 0 }
+            stretch         = TRUE
+        }
     }
 }
 
@@ -307,12 +431,15 @@ style "notebook" = "Dark"
     }
 }
 
+
+
+## TEXT ENTRY ##
 style "Entry" = "Dark"
 {
-    xthickness = 16
+    xthickness = 10
     ythickness = 4
 
-    GtkEntry::inner-border                          = { 0, 0, 2, 2 }
+    GtkEntry::inner-border = { 0, 0, 2, 2 }
 
     base[NORMAL] = @WindowColor
     base[ACTIVE] = @WindowColor
@@ -321,38 +448,67 @@ style "Entry" = "Dark"
     {
         image
         {
-            function = SHADOW
-            detail = "entry"
-            state = NORMAL
-            shadow = IN
-            file = "img/Trough.svg"
-            border = { 16, 16, 4, 4 }
-            stretch = TRUE
+            function        = SHADOW
+            detail          = "entry"
+            state           = NORMAL
+            shadow          = IN
+            file            = "img/Trough.svg"
+            border          = { 15, 15, 15, 15 }
+            stretch         = TRUE
         }
         image
         {
-            function = FLAT_BOX
-            detail = "entry_bg"
-            state = NORMAL
-            overlay_file = "img/Trough-Fill.svg"
-            overlay_border = { 0, 0, 0, 0 }
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = NORMAL
+            overlay_file    = "img/Trough-Fill.svg"
+            overlay_stretch = TRUE
+        }
+        image
+        {
+            function        = FLAT_BOX
+            detail          = "entry_bg"
+            state           = INSENSITIVE
+            overlay_file    = "img/Trough-Fill.svg"
             overlay_stretch = TRUE
         }
     }
 }
 
+style "NestedEntry" = "Entry"
+{
+    base[NORMAL] = @WindowColorDim
+    base[ACTIVE] = @WindowColorDim
+}
+
 style "ComboBoxEntry" = "Dark"
 {
-    xthickness = 3
-    ythickness = 3
+    xthickness = 10
+    ythickness = 4
 
-    engine "murrine"
+    base[NORMAL] = @WindowColor
+
+    engine "pixmap"
     {
-        roundness = 3
+        image
+        {
+            function        = SHADOW
+            detail          = "entry"
+            state           = NORMAL
+            file            = "img/Trough-Half-Left.svg"
+            border          = { 15, 1, 15, 15 }
+            stretch         = TRUE
+        }
     }
 }
 
+style "InsetLabel" = "Default"
+{
+    bg[NORMAL] = @WindowColorDimmer
+    base[NORMAL] = @WindowColorDimmer
 
+    engine "murrine" { }
+}
 
 
 
@@ -379,13 +535,28 @@ style "menu" = "Dark"
     ythickness = 0
 
     bg[NORMAL]          = @MenuColor
+    bg[INSENSITIVE]     = @MenuColor
+
+    fg[INSENSITIVE]     = @TextColorDisabled
 
     # This is for the benefit of Chrome-based application (e.g. Atom & Chromium). Their menus use the insensitive text color
     # as separators and borders (a feature that I otherwise can't find a way around).
     text[INSENSITIVE]   = @WindowColorDimmer
+
+    # This is for when horizontal lines are used as menu separators (instead of the actual separator widget).
+    engine "pixmap"
+    {
+        image
+        {
+            function    = HLINE
+            file        = "img/Separator-Horizontal.svg"
+            border      = { 0, 0, 0, 0 }
+            stretch     = TRUE
+        }
+    }
 }
 
-style "menu_item" = "menu"
+style "MenuItem" = "menu"
 {
     xthickness = 10
     ythickness = 10
@@ -398,52 +569,54 @@ style "menu_item" = "menu"
     }
 }
 
-# This style is there to modify the separator menu items. The goals are:
-# 1. Get a specific height.
-# 2. The line should go to the edges (ie. no border at the left/right)
-style "separator_menu_item" = "menu"
+style "SeparatorHorizontal" = "Dark"
 {
-    xthickness = 1
-    ythickness = 0
+    xthickness = 10
+    ythickness = 2
 
-    GtkSeparatorMenuItem::horizontal-padding = 0
-    GtkWidget::wide-separators = 0
-    GtkWidget::separator-width = 0
-    GtkWidget::separator-height = 7
-
-    bg[NORMAL] = @TextColor
-
-    engine "murrine"
-    {
-        contrast = 0.6
-        separatorstyle = 0
-        rgba = TRUE
-    }
-}
-
-style "separator_tool_item"
-{
-    xthickness = 0
-    ythickness = 1
-
-    GtkVSeparator::vertical-padding = 0
+    GtkWidget::separator-height = 2
+    GtkWidget::separator-width = 1
     GtkWidget::wide-separators = 1
-    GtkWidget::separator-width = 7
-    GtkWidget::separator-height = 1
 
-    engine "murrine"
+    engine "pixmap"
     {
-        contrast = 0.6
-        separatorstyle = 0
+        image
+        {
+            function    = BOX
+            file        = "img/Separator-Horizontal.svg"
+            border      = { 0, 0, 0, 0 }
+            stretch     = TRUE
+        }
     }
 }
 
+style "SeparatorVertical" = "Dark"
+{
+    xthickness = 2
+    ythickness = 2
+
+    engine "pixmap"
+    {
+        image
+        {
+            function    = BOX
+            file        = "img/Separator-Vertical.svg"
+            border      = { 0, 0, 0, 0 }
+            stretch     = TRUE
+        }
+    }
+}
+
+style "ComboBoxSeparator" = "SeparatorVertical"
+{
+    xthickness = 2
+    ythickness = 0
+}
 
 
 ## MISCELLANEOUS ##
 style "treeview" = "Dark"
 {
-
     base[NORMAL] = @WindowColorDimmer
     base[ACTIVE] = @SelectionColor
     text[ACTIVE] = @TextColorSelected
@@ -501,23 +674,16 @@ style "tooltips" = "Dark"
 ###############################################################################
 
 # The default style is applied to every widget
-class "GtkWidget"       style "Default"
+class "GtkWidget"                                           style "Default"
 
-class "GtkSeparator"    style "wide"
-class "GtkEntry"        style "Entry"
+class "GtkSeparator"                                        style "SeparatorVertical"
+class "GtkEntry"                                            style "Entry"
 
-class "GtkSpinButton"   style "SpinButton"
-class "GtkScale"        style "scale"
-class "GtkScrollbar"    style "scrollbar"
-class "GtkHScrollbar"   style "hscrollbar"
+class "GtkSpinButton"                                       style "SpinButton"
+class "GtkRange"                                            style "Scale"
+class "GtkScrollbar"                                        style "scrollbar"
+class "GtkHScrollbar"                                       style "hscrollbar"
 
-
-
-widget_class "*<GtkNotebook>"                               style "notebook"
-widget_class "*<GtkLayout>"                                 style "notebook"
-
-widget_class "*<GtkNotebook>*<GtkEventBox>"                 style "notebook"
-widget_class "*<GtkNotebook>.<GtkLabel>"                    style "notebook"
 
 widget_class "*<GtkToolbar>*"                               style "toolbar"
 
@@ -528,15 +694,27 @@ widget_class "*<GtkSpinButton>*"                            style "SpinButton"
 widget_class "*<GtkRadioButton>*"                           style "radiocheck"
 widget_class "*<GtkCheckButton>*"                           style "radiocheck"
 
-widget_class "*<GtkComboBoxEntry>*"                         style "ComboBoxEntry"
-widget_class "*<GtkCombo>*"                                 style "ComboBoxEntry"
-widget_class "*<GtkComboBox>"                               style "ComboBoxEntry"
+widget_class "*<GtkNotebook>"                               style "notebook"
+widget_class "*<GtkLayout>"                                 style "notebook"
+widget_class "*<GtkNotebook>*<GtkEventBox>"                 style "notebook"
+widget_class "*<GtkNotebook>.<GtkLabel>"                    style "notebook"
+widget_class "*<GtkNotebook>.*.<GtkButton>"                 style "NotebookButton"
+widget_class "*<GtkNotebook>*<GtkEntry>"                    style "NestedEntry"
+
+widget_class "*<GtkComboBox>*<GtkButton>"                   style "ComboBox"
+widget_class "*<GtkComboBoxEntry>*<GtkEntry>"               style "ComboBoxEntry"
+widget_class "*<GtkComboBoxEntry>*<GtkButton>"              style "ComboBoxButton"
+
+widget_class "*<GtkCombo>*<GtkEntry>"                       style "ComboBoxEntry"
+widget_class "*<GtkCombo>*<GtkSeparator>"                   style "ComboBoxSeparator"
+widget_class "*<GtkCombo>"                                  style "ComboBoxEntry"
+widget_class "*<GtkCombo>*<GtkButton>"                      style "ComboBoxButton"
 
 widget_class "*<GtkMenu>*"                                  style "menu"
-widget_class "*<GtkMenuItem>"                               style "menu_item"
+widget_class "*<GtkMenuItem>*"                              style "MenuItem"
 widget_class "*<GtkMenuBar>*"                               style "MenuBar"
-widget_class "*<GtkSeparatorMenuItem>*"                     style "separator_menu_item"
-widget_class "*<GtkSeparatorToolItem>*"                     style "separator_tool_item"
+widget_class "*<GtkSeparatorMenuItem>*"                     style "SeparatorHorizontal"
+widget_class "*<GtkSeparatorToolItem>*"                     style "SeparatorVertical"
 
 widget_class "*.<GtkTreeView>"                              style "treeview"
 

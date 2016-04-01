@@ -6,14 +6,14 @@
    <stop style="stop-color:#323232;stop-opacity:.25098" offset=".48688"/>
    <stop style="stop-opacity:.25098" offset="1"/>
   </linearGradient>
-  <filter id="filter4226" style="color-interpolation-filters:sRGB" height="1.192" width="1.192" y="-.096" x="-.096">
-   <feGaussianBlur stdDeviation="1.22"/>
+  <filter id="filter4160" style="color-interpolation-filters:sRGB" height="1.06" width="1.06" y="-.03" x="-.03">
+   <feGaussianBlur stdDeviation="0.3875"/>
   </filter>
-  <clipPath id="clipPath4232" clipPathUnits="userSpaceOnUse">
-   <circle r="14.5" cy="16" cx="16" style="fill-opacity:.18824;fill-rule:evenodd"/>
+  <clipPath id="clipPath4164" clipPathUnits="userSpaceOnUse">
+   <circle r="15" cy="16" cx="16" style="fill-opacity:.18824;fill-rule:evenodd"/>
   </clipPath>
  </defs>
- <circle cx="16" style="fill-opacity:.18824;fill-rule:evenodd" r="14.5" cy="16"/>
- <circle style="stroke-linejoin:round;stroke-opacity:.62745;filter:url(#filter4226);stroke:#000;stroke-width:1.5;fill:none" clip-path="url(#clipPath4232)" cy="17" cx="17" r="15.25"/>
- <circle cy="16" cx="16" r="15.25" style="stroke-linejoin:round;stroke:url(#linearGradient4208);stroke-width:1.5;fill:none"/>
+ <circle style="fill-opacity:.18824;fill-rule:evenodd" cx="16" r="15" cy="16"/>
+ <ellipse style="stroke-linejoin:round;filter:url(#filter4160);stroke:#000;stroke-opacity:.68627;fill:none" clip-path="url(#clipPath4164)" rx="15.5" ry="15.5" cy="16.5" cx="16.5"/>
+ <circle cy="16" cx="16" r="15.5" style="stroke-linejoin:round;stroke:url(#linearGradient4208);fill:none"/>
 </svg>
