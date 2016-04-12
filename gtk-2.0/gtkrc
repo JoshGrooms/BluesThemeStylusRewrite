@@ -320,6 +320,8 @@ style "SpinButton" = "Dark"
     xthickness = 5
     ythickness = 5
 
+    base[NORMAL] = @WindowColorDim
+
     engine "murrine"
     {
         # glow_shade = 1.0
@@ -327,6 +329,12 @@ style "SpinButton" = "Dark"
         spinbuttonstyle = 0
         # glowstyle = 3
     }
+}
+
+style "NestedSpinButton" = "SpinButton"
+{
+    base[ACTIVE] = @WindowColorDimmer
+    base[NORMAL] = @WindowColorDimmer
 }
 
 
@@ -477,8 +485,8 @@ style "Entry" = "Dark"
 
 style "NestedEntry" = "Entry"
 {
-    base[NORMAL] = @WindowColorDim
     base[ACTIVE] = @WindowColorDim
+    base[NORMAL] = @WindowColorDim
 }
 
 style "ComboBoxEntry" = "Dark"
@@ -690,7 +698,7 @@ widget_class "*<GtkToolbar>*"                               style "toolbar"
 widget_class "*<GtkButton>"                                 style "Button"
 widget_class "*<GtkButton>*<GtkLabel>"                      style "Button"
 widget_class "*<GtkToolbar>.*.<GtkButton>*"                 style "ButtonFlat"
-widget_class "*<GtkSpinButton>*"                            style "SpinButton"
+widget_class "*<GtkNotebook>*<GtkSpinButton>*"              style "NestedSpinButton"
 widget_class "*<GtkRadioButton>*"                           style "radiocheck"
 widget_class "*<GtkCheckButton>*"                           style "radiocheck"
 
