@@ -1,0 +1,141 @@
+/* CHANGELOG
+ * Written by Josh Grooms on 20151205
+ */
+
+@import "./ColorNames";
+@import "./Text";
+
+
+
+/** UI COLOR DEFINITIONS **/
+ButtonCloseColor                    = VibrantBlue;
+ButtonCloseColorHighlight           = lighten(ButtonCloseColor, 50%);
+ButtonMinimizeColor                 = Aqua;
+ButtonMinimizeColorHighlight        = lighten(ButtonMinimizeColor, 50%);
+ButtonMaximizeColor                 = SpringGreen;
+ButtonMaximizeColorHighlight        = lighten(ButtonMaximizeColor, 50%);
+ButtonSearchColor                   = LightOrchid;
+ButtonSearchColorHighlight          = lighten(ButtonSearchColor, 25%);
+
+CalendarAccentColor                 = LightBlue;
+
+ButtonColor                         = transparent;
+ButtonColorDim                      = transparent;
+ButtonCheckedColor                  = VibrantBlueGradientInverse;
+ButtonCheckedColorDim               = SilverGradientInverse;
+
+ErrorColor                          = Red;
+
+GlossColorDarker                    = alpha(Black, 0.25);
+GlossColorDark                      = alpha(Black, 0.125);
+GlossColorSemiDark                  = alpha(LightBlack, 0.125);
+GlossColorLight                     = alpha(Silver, 0.125);
+GlossColorLighter                   = alpha(White, 0.125);
+
+HighlightColor                      = Silver;
+HighlightTextColor                  = DarkGray;
+
+IconColor                           = Orchid;
+
+InsetColor                          = alpha(Black, 0.25);
+InsetColorDark                      = alpha(Black, 0.375);
+InsetBackgroundColor                = alpha(Black, 0.125);
+
+LinkColor                           = SpringGreen;
+
+MenuColor                           = VeryDarkGray;
+MenuBorderColor                     = DarkWhite;
+MenuTextColor                       = LightSilver;
+MenuAcceleratorColor                = TextColorDim;
+MenuTextColorDisabled               = LightGray;
+
+NominalColor                        = SpringGreen;
+
+OutsetColor                         = VeryDarkGray;
+
+ProgressBarColor                    = VibrantBlue;
+ProgressBarColorDim                 = Silver;
+
+ScrollbarColor                      = VibrantBlue;
+ScrollbarColorDim                   = WindowColorLight;
+
+SelectionColor                      = VibrantBlue;
+SelectionTextColor                  = TextColorSelected;
+
+ShadowColorDarker                   = alpha(Black, 0.75);
+ShadowColorDark                     = alpha(Black, 0.5);
+ShadowColorSemiDark                 = alpha(Black, 0.25);
+ShadowColor                         = ShadowColorSemiDark;
+
+TroughColor                         = InsetColor;
+
+TooltipColor                        = MenuColor;
+TooltipTextColor                    = MenuTextColor;
+
+UnityDecoratorColor                 = WindowColor;
+UnityDecoratorColorDim              = WindowColorDim;
+UnityDecoratorTextColor             = TextColorLight;
+UnityDecoratorTextColorDim          = TextColorDim;
+UnityLauncherColor                  = VeryDarkGray;
+UnityPanelColor                     = VeryDarkGray;
+UnityPanelTextColor                 = TextColorDim;
+
+WarningColor                        = Orange;
+
+WindowColor                         = Gray;
+WindowColorDim                      = SemiDarkGray;
+WindowColorDimmer                   = DarkGray;
+WindowColorDark                     = VeryDarkGray;
+WindowColorLight                    = LightGray;
+
+
+
+/** GRADIENT DEFINITIONS **/
+HighlightGradientHorizontal         = hgradient(shade(HighlightColor, lighter), shade(HighlightColor, darker));
+HighlightGradientHorizontalInverted = hgradient(shade(HighlightColor, darker), shade(HighlightColor, lighter));
+HighlightGradientVertical           = vgradient(shade(HighlightColor, lighter), shade(HighlightColor, darker));
+HighlightGradientVerticalInverted   = vgradient(shade(HighlightColor, darker), shade(HighlightColor, lighter));
+
+ProgressBarGradientHorizontal       = hgradient(ProgressBarColor);
+ProgressBarGradientHorizontalDim    = hgradient(ProgressBarColorDim);
+ProgressBarGradientVertical         = vgradient(ProgressBarColor);
+ProgressBarGradientVerticalDim      = vgradient(ProgressBarColorDim);
+
+SelectionGradientHorizontal         = hgradient(shade(SelectionColor, lighter), shade(SelectionColor, darker));
+SelectionGradientHorizontalInverted = hgradient(shade(SelectionColor, darker), shade(SelectionColor, lighter));
+SelectionGradientVertical           = vgradient(shade(SelectionColor, lighter), shade(SelectionColor, darker));
+SelectionGradientVerticalInverted   = vgradient(shade(SelectionColor, darker), shade(SelectionColor, lighter));
+
+
+
+/** COLOR RETRIEVAL FUNCTIONS **/
+
+/* SHADOW-COLOR - Gets standardized variations of the theme's shadow color.
+ *
+ *      SYNTAX:
+ *          c = shadow-color()
+ *          c = shadow-color(strength)
+ *          c = shadow-color(strength, opacity)
+ *
+ *      OUTPUT:
+ *          c:              RGBA
+ *                          The requested shadow color variation.
+ *
+ *      OPTIONAL INPUT:
+ *          strength:       OPTION
+ *                          The shade, or in this case lightness, of the shadow color to be returned.
+ *                          DEFAULT: normal
+ *                          OPTIONS:
+ *                              normal      - The standard, default shadow color shade.
+ *                              semilight   -
+ *                              light       - A more transparent, and thus lighter, shadow color.
+ *                              lighter     -
+ *
+ *          opacity:        OPTION
+ */
+shadow-color(strength = normal, opacity = normal)
+    opacify(shade(Black, strength), opacity);
+
+/* GLOSS-COLOR - Gets standardized variations of the theme's gloss color. */
+gloss-color(strength = normal, opacity = normal)
+    opacify(shade(Silver, strength), opacity);

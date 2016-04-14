@@ -1,0 +1,85 @@
+/* FUNCTIONS - A libary of Stylus color functions.
+ *
+ */
+
+/* CHANGELOG
+ * Written by Josh Grooms on 20151012
+ */
+
+
+/* GRADIENT - Creates a linear, vertical, two-toned color gradient.
+ *
+ */
+gradient(topColor, bottomColor)
+    vgradient(topColor, bottomColor);
+
+hgradient(leftColor, rightColor = none)
+    if (rightColor == none)
+        -gtk-gradient(linear, left top, right top, from(shade(leftColor, lighter)), to(shade(leftColor, darker)));
+    else
+        -gtk-gradient(linear, left top, right top, from(leftColor), to(rightColor));
+
+rgradient(innerColor, outerColor = none)
+    if (outerColor == none)
+        innerColor = shade(innerColor, lighter);
+        outerColor = shade(innerColor, darker);
+
+    -gtk-gradient(
+        radial,
+        0.375 0.375, 0,
+        0.5 0.5, 1,
+        from(innerColor),
+        to(outerColor));
+        
+vgradient(topColor, bottomColor = none)
+    if (bottomColor == none)
+        -gtk-gradient(linear, left top, left bottom, from(shade(topColor, lighter)), to(shade(topColor, darker)));
+    else
+        -gtk-gradient(linear, left top, left bottom, from(topColor), to(bottomColor));
+
+
+
+istransparent(color)
+    alpha(color) == 0;
+
+iscolor(x)
+    x is a 'rgba';
+
+
+
+opacify(color, opacity = normal)
+    if (opacity == semiopaque)
+        alpha(color, 0.875);
+    else if (opacity == translucent)
+        alpha(color, 0.75);
+    else if (opacity == semitranslucent)
+        alpha(color, 0.625);
+    else if (opacity == normal)
+        alpha(color, 0.5);
+    else if (opacity == semifaded)
+        alpha(color, 0.375);
+    else if (opacity == faded)
+        alpha(color, 0.25);
+    else if (opacity == semitransparent)
+        alpha(color, 0.125);
+
+
+/* SHADE -
+ *
+ *      WARNING: This function overloads the built-in Stylus function "shade" and does not behave in the same way.
+ */
+shade(color, strength = normal)
+    if (strength == darker)
+        darken(color, 14.29);
+    else if (strength == dark)
+        darken(color, 9.52);
+    else if (strength == semidark)
+        darken(color, 4.76);
+    else if (strength == normal)
+        color;
+    else if (strength == semilight)
+        lighten(color, 4.76);
+    else if (strength == light)
+        lighten(color, 9.52);
+    else if (strength == lighter)
+        lighten(color, 14.29);
