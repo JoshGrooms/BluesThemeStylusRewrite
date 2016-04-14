@@ -42,3 +42,10 @@ Once completed, the Stylus language compiler can then be installed:
 
 The Stylus theme files can then be fed directly to the compiler in order to generate the CSS file that GTK needs to style its
 UI elements. A simple 'build' Bash script is provided within the top-level directory to facilitate this last step.
+
+
+
+## Screenshots
+![Screenshot1](https://raw.githubusercontent.com/JoshGrooms/BluesThemeStylusRewrite/master/screenshots/Screenshot-1.png)
+![Screenshot2](https://raw.githubusercontent.com/JoshGrooms/BluesThemeStylusRewrite/master/screenshots/Screenshot-2.png)
+![Screenshot3](https://raw.githubusercontent.com/JoshGrooms/BluesThemeStylusRewrite/master/screenshots/Screenshot-3.png)
