@@ -118,6 +118,12 @@ GtkScrolledWindow
     border-radius:              0.25em;
     padding:                    1px;
 
+FooScrollArea,
+GtkDrawingArea
+    background-color:           WindowColorDim;
+    &:backdrop
+        background-color:       WindowColorDimmer;
+
 /* RUBBERBAND - Controls the scalable rectangle drawn when selecting multiple icons using the mouse. */
 .rubberband
     background-color:           alpha(HighlightColor, 0.5);
