@@ -450,6 +450,14 @@ GtkScrolledWindow {
   border-radius: 0.25em;
   padding: 1px;
 }
+FooScrollArea,
+GtkDrawingArea {
+  background-color: #3e3e3e;
+}
+FooScrollArea:backdrop,
+GtkDrawingArea:backdrop {
+  background-color: #323232;
+}
 .rubberband {
   background-color: rgba(162,162,162,0.5);
   border: 1px solid #a2a2a2;
@@ -999,6 +1007,9 @@ ECalendar .button:prelight {
   border-radius: 0.5em;
   border-width: 1px;
 }
+.notebook .button {
+  padding: 0.75em;
+}
 column-header .button {
   background-color: rgba(198,198,198,0.25);
   background-clip: padding-box;
@@ -1159,6 +1170,17 @@ GtkComboBox .button,
   box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
   border-radius: 0.25em;
   padding: 0.5em;
+}
+.notebook GtkComboBox .button,
+.notebook .horizontal.linked GtkComboBox .button,
+.notebook .vertical.linked GtkComboBox .button,
+.notebook .horizontal.linked GtkComboBox .button:first-child,
+.notebook .vertical.linked GtkComboBox .button:first-child,
+.notebook .horizontal.linked GtkComboBox .button:last-child,
+.notebook .vertical.linked GtkComboBox .button:last-child,
+.notebook .horizontal.linked GtkComboBox .button:only-child,
+.notebook .vertical.linked GtkComboBox .button:only-child {
+  padding: 0.25em;
 }
 GtkComboBox .button:hover,
 .horizontal.linked GtkComboBox .button:hover,
@@ -1807,7 +1829,6 @@ GtkNotebook.notebook tab .active-page GtkLabel,
 GtkNotebook tab GtkLabel.active-page,
 GtkNotebook.notebook tab GtkLabel.active-page {
   color: #00c8ff;
-  font-weight: bold;
   border-color: #00c8ff;
 }
 .notebook tab .active-page GtkLabel:backdrop,
