@@ -12,14 +12,13 @@ GtkNotebook.notebook
     -GtkNotebook-tab-overlap:   -5;
     -GtkNotebook-tab-fill:      true;
 
-    padding-bottom: 0.125em;
-    padding-top:    0.25em;
+    padding-bottom:             0.125em;
+    padding-top:                0.25em;
 
     /* HEADER - Governs the area where tabs are located for the notebook. */
     &.header
-        // shallow-inset();
         deep-inset();
-        border-radius:  0.25em;
+        border-radius:          0.25em;
 
     /* TAB - Governs the individual tabs for a notebook control.
      *
@@ -60,7 +59,6 @@ GtkNotebook.notebook
 
             GtkLabel
                 color:                      SelectionColor;
-                font-weight:                bold;
                 border-color:               SelectionColor;
                 &:backdrop
                     color:                  HighlightColor;
