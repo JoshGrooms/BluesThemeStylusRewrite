@@ -7,14 +7,13 @@ GtkArrow
         color: TextColorHighlighted;
 
 GtkCalendar
-
-    border-radius:      2em;
-    color:              TextColor;
-    padding:            0.125em;
+    border-radius:              2em;
+    color:                      TextColor;
+    padding:                    0.125em;
 
     /* INCONSISTENT - Governs any days present on the calendar that do not belong to the currently selected month. */
     &:inconsistent
-        color: TextColorDimmer;
+        color:                  TextColorDimmer;
 
     &:selected
         background-color:       SelectionColor;
@@ -26,34 +25,34 @@ GtkCalendar
 
     &.button
         @extends .button.flat
-        border-radius:  0.125em;
+        border-radius:          0.125em;
         &:hover
-            color:      TextColorHighlighted;
+            color:              TextColorHighlighted;
 
     /* HEADER - Governs the calendar bar containing the month and year selection controls. */
     &.header
         shallow-outset();
-        border-radius: 0.375em;
+        border-radius:          0.375em;
 
     /* HIGHLIGHT - Governs the list of weekdays at the top of the calendar. */
     &.highlight
-        background-color: transparent;
-        background-image: -gtk-gradient(
+        background-color:       transparent;
+        background-image:       -gtk-gradient(
             linear, left top, left bottom,
             color-stop(0, transparent),
             color-stop(0.875, transparent),
             color-stop(1.0, SelectionColor));
-        border-radius: 0em;
-        color: TextColorLight;
+        border-radius:          0em;
+        color:                  TextColorLight;
 
         &:backdrop
-            background-color: transparent;
-            background-image: -gtk-gradient(
+            background-color:   transparent;
+            background-image:   -gtk-gradient(
                 linear, left top, left bottom,
                 color-stop(0, transparent),
                 color-stop(0.875, transparent),
                 color-stop(1.0, HighlightColor));
-            color: TextColorDim;
+            color:              TextColorDim;
 
 GtkComboBox
     &.combobox-entry
@@ -95,51 +94,30 @@ GtkComboBox
     .menuitem:hover *
         color:                  TextColorSelected;
 
-
-
-    // .cell,
-    // column,
-    // column-header,
-    // row,
-    // tab
-    //     // &.view
-    //     // &.frame
-    //     // .view
-    //     //
-    //     // &:active
-    //     // &:checked
-    //     // &:focused
-    //     &:hover
-    //     // &:inconsistent
-    //     // &:insensitive
-    //     // &:prelight
-    //     &:selected
-    //         debug();
-
 .check
-    icon: "Icons/Checkbox.svg";
+    icon:                               "Icons/Checkbox.svg";
 
     &:checked
-        icon: "Icons/Checkbox-Checked.svg";
+        icon:                           "Icons/Checkbox-Checked.svg";
         &:backdrop                      { icon: "Icons/Checkbox-Checked-Backdrop.svg"; }
         &:inconsistent                  { icon: "Icons/Checkbox-Checked-Partial.svg"; }
         &:inconsistent:backdrop         { icon: "Icons/Checkbox-Checked-Partial-Backdrop.svg"; }
 
     &:insensitive
-        icon: "Icons/Checkbox-Inactive.svg";
+        icon:                           "Icons/Checkbox-Inactive.svg";
         &:checked                       { icon: "Icons/Checkbox-Checked-Inactive.svg"; }
         &:inconsistent                  { icon: "Icons/Checkbox-Checked-Partial-Inactive.svg"; }
 
     .cell
-        icon: "Icons/Checkbox-Small.svg";
+        icon:                           "Icons/Checkbox-Small.svg";
         &:checked
-            icon: "Icons/Checkbox-Small-Checked.svg";
+            icon:                       "Icons/Checkbox-Small-Checked.svg";
             &:backdrop                  { icon: "Icons/Checkbox-Small-Checked-Backdrop.svg"; }
             &:inconsistent              { icon: "Icons/Checkbox-Small-Checked-Partial.svg"; }
             &:inconsistent:backdrop     { icon: "Icons/Checkbox-Small-Checked-Partial-Backdrop.svg"; }
 
         &:insensitive
-            icon: "Icons/Checkbox-Small-Inactive.svg";
+            icon:                       "Icons/Checkbox-Small-Inactive.svg";
             &:checked                   { icon: "Icons/Checkbox-Small-Checked-Inactive.svg"; }
             &:inconsistent              { icon: "Icons/Checkbox-Small-Checked-Partial-Inactive.svg"; }
 
