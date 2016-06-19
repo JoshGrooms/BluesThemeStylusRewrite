@@ -16,7 +16,6 @@ button-text-color(c)
         color:  c;
 
 /** INNER WINDOWS & CONTENTS **/
-
 /* VIEW - Controls individual elements of a list or table.
  *
  *  The ".view" selector generally belongs to lists or tables of data. It specifically controls the individual elements that
@@ -52,8 +51,6 @@ button-text-color(c)
 GtkPaned
     @extends                    GtkWidget;
     -GtkPaned-handle-size:      5;
-    NautilusWindow &
-        -GtkPaned-handle-size:  1;
 
 /* SIDEBAR - Controls panels docked to the sides of a window.
  *
@@ -65,21 +62,13 @@ GtkPlacesSidebar,
 GtkStackSidebar
     @extends .view;
     font:                               bold;
-    //padding:                            0em;
-
-    // Governs the padding between list entries in the Nautilus sidebar
-    .view                               { padding: 0.5em; }
 
     &.list,
     .list
-        .separator
-            blank();
-
         .sidebar-item,
         .sidebar-row
             @extends GtkWidget;
             button-text-color:          TextColor;
-            //padding:                    0.5em;
             &:selected
                 background-image:       SelectionGradientVertical;
                 button-text-color:      TextColorSelected;
@@ -90,7 +79,7 @@ GtkStackSidebar
                     button-text-color:  TextColorHighlighted;
 
             .label
-                padding:                1em 0em 1em 1em;
+                padding:                1em;
 
             .sidebar-button
                 @extends GtkWidget;
@@ -108,8 +97,7 @@ GtkStackSidebar
 
     .list-row,
     .list-row.button
-        @extends GtkWidget;
-        @extends .sidebar .list .sidebar-item;
+        @extends .sidebar .list .sidebar-item .sidebar-button;
 
 GtkScrolledWindow
     -GtkScrolledWindow-scrollbar-spacing:           0;

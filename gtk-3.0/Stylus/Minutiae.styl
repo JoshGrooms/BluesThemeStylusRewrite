@@ -55,15 +55,23 @@ TerminalScreen
 
 
 /** NAUTILUS **/
-.nautilus-canvas-item
-    border-radius:              0.5em;
-    &:active                    { background-color: Orchid; }
-    &:prelight, &:selected
-        background-color:       alpha(SelectionColor, 0.75);
-        color:                  TextColorSelected;
+NautilusWindow
+    GtkPaned
+        -GtkPaned-handle-size:      2;
 
-    &.nautilus-desktop, &.nautilus-desktop:backdrop
-        color:                  White;
+    .nautilus-canvas-item
+        border-radius:              0.5em;
+        &:active                    { background-color: Orchid; }
+        &:prelight, &:selected
+            background-color:       alpha(SelectionColor, 0.75);
+            color:                  TextColorSelected;
+
+            &:backdrop
+                background-color:   alpha(SelectionColorBackground, 0.75);
+
+        &.nautilus-desktop, &.nautilus-desktop:backdrop
+            color:                  White;
+
 
 
 /** UBUNTU SOFTWARE CENTER **/
