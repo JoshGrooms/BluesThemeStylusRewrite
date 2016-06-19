@@ -35,8 +35,6 @@ GtkPlacesSidebar GtkScrolledWindow,
 GtkStackSidebar GtkScrolledWindow,
 .list .list-row,
 .list .list-row.button,
-.list .list-row .sidebar-button,
-.list .list-row.button .sidebar-button,
 .button {
   -GtkWidget-background-color: transparent;
   -GtkWidget-focus-padding: 0;
@@ -93,8 +91,6 @@ GtkPlacesSidebar GtkScrolledWindow:backdrop,
 GtkStackSidebar GtkScrolledWindow:backdrop,
 .list .list-row:backdrop,
 .list .list-row.button:backdrop,
-.list .list-row .sidebar-button:backdrop,
-.list .list-row.button .sidebar-button:backdrop,
 .button:backdrop {
   color: #898989;
 }
@@ -231,33 +227,10 @@ GtkStackSidebar row:selected:backdrop {
 GtkPaned {
   -GtkPaned-handle-size: 5;
 }
-NautilusWindow GtkPaned {
-  -GtkPaned-handle-size: 1;
-}
 .sidebar,
 GtkPlacesSidebar,
 GtkStackSidebar {
   font: bold;
-}
-.sidebar .view,
-GtkPlacesSidebar .view,
-GtkStackSidebar .view {
-  padding: 0.5em;
-}
-.sidebar.list .separator,
-GtkPlacesSidebar.list .separator,
-GtkStackSidebar.list .separator,
-.sidebar .list .separator,
-GtkPlacesSidebar .list .separator,
-GtkStackSidebar .list .separator {
-  background-color: transparent;
-  background-image: none;
-  border: none;
-  box-shadow: none;
-  text-shadow: none;
-  background-position: center center;
-  background-repeat: no-repeat;
-  color: transparent;
 }
 .sidebar.list .sidebar-item,
 GtkPlacesSidebar.list .sidebar-item,
@@ -270,9 +243,7 @@ GtkPlacesSidebar.list .sidebar-row,
 GtkStackSidebar.list .sidebar-row,
 .sidebar .list .sidebar-row,
 GtkPlacesSidebar .list .sidebar-row,
-GtkStackSidebar .list .sidebar-row,
-.list .list-row,
-.list .list-row.button {
+GtkStackSidebar .list .sidebar-row {
   color: #a2a2a2;
 }
 .sidebar.list .sidebar-item GtkImage,
@@ -287,8 +258,6 @@ GtkStackSidebar.list .sidebar-row GtkImage,
 .sidebar .list .sidebar-row GtkImage,
 GtkPlacesSidebar .list .sidebar-row GtkImage,
 GtkStackSidebar .list .sidebar-row GtkImage,
-.list .list-row GtkImage,
-.list .list-row.button GtkImage,
 .sidebar.list .sidebar-item GtkLabel,
 GtkPlacesSidebar.list .sidebar-item GtkLabel,
 GtkStackSidebar.list .sidebar-item GtkLabel,
@@ -300,9 +269,7 @@ GtkPlacesSidebar.list .sidebar-row GtkLabel,
 GtkStackSidebar.list .sidebar-row GtkLabel,
 .sidebar .list .sidebar-row GtkLabel,
 GtkPlacesSidebar .list .sidebar-row GtkLabel,
-GtkStackSidebar .list .sidebar-row GtkLabel,
-.list .list-row GtkLabel,
-.list .list-row.button GtkLabel {
+GtkStackSidebar .list .sidebar-row GtkLabel {
   color: #a2a2a2;
 }
 .sidebar.list .sidebar-item:selected,
@@ -316,9 +283,7 @@ GtkPlacesSidebar.list .sidebar-row:selected,
 GtkStackSidebar.list .sidebar-row:selected,
 .sidebar .list .sidebar-row:selected,
 GtkPlacesSidebar .list .sidebar-row:selected,
-GtkStackSidebar .list .sidebar-row:selected,
-.list .list-row:selected,
-.list .list-row.button:selected {
+GtkStackSidebar .list .sidebar-row:selected {
   background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
   color: #323232;
 }
@@ -334,8 +299,6 @@ GtkStackSidebar.list .sidebar-row:selected GtkImage,
 .sidebar .list .sidebar-row:selected GtkImage,
 GtkPlacesSidebar .list .sidebar-row:selected GtkImage,
 GtkStackSidebar .list .sidebar-row:selected GtkImage,
-.list .list-row:selected GtkImage,
-.list .list-row.button:selected GtkImage,
 .sidebar.list .sidebar-item:selected GtkLabel,
 GtkPlacesSidebar.list .sidebar-item:selected GtkLabel,
 GtkStackSidebar.list .sidebar-item:selected GtkLabel,
@@ -347,9 +310,7 @@ GtkPlacesSidebar.list .sidebar-row:selected GtkLabel,
 GtkStackSidebar.list .sidebar-row:selected GtkLabel,
 .sidebar .list .sidebar-row:selected GtkLabel,
 GtkPlacesSidebar .list .sidebar-row:selected GtkLabel,
-GtkStackSidebar .list .sidebar-row:selected GtkLabel,
-.list .list-row:selected GtkLabel,
-.list .list-row.button:selected GtkLabel {
+GtkStackSidebar .list .sidebar-row:selected GtkLabel {
   color: #323232;
 }
 .sidebar.list .sidebar-item:selected:backdrop,
@@ -363,9 +324,7 @@ GtkPlacesSidebar.list .sidebar-row:selected:backdrop,
 GtkStackSidebar.list .sidebar-row:selected:backdrop,
 .sidebar .list .sidebar-row:selected:backdrop,
 GtkPlacesSidebar .list .sidebar-row:selected:backdrop,
-GtkStackSidebar .list .sidebar-row:selected:backdrop,
-.list .list-row:selected:backdrop,
-.list .list-row.button:selected:backdrop {
+GtkStackSidebar .list .sidebar-row:selected:backdrop {
   background-color: #a2a2a2;
   background-image: none;
   color: #323232;
@@ -382,8 +341,6 @@ GtkStackSidebar.list .sidebar-row:selected:backdrop GtkImage,
 .sidebar .list .sidebar-row:selected:backdrop GtkImage,
 GtkPlacesSidebar .list .sidebar-row:selected:backdrop GtkImage,
 GtkStackSidebar .list .sidebar-row:selected:backdrop GtkImage,
-.list .list-row:selected:backdrop GtkImage,
-.list .list-row.button:selected:backdrop GtkImage,
 .sidebar.list .sidebar-item:selected:backdrop GtkLabel,
 GtkPlacesSidebar.list .sidebar-item:selected:backdrop GtkLabel,
 GtkStackSidebar.list .sidebar-item:selected:backdrop GtkLabel,
@@ -395,9 +352,7 @@ GtkPlacesSidebar.list .sidebar-row:selected:backdrop GtkLabel,
 GtkStackSidebar.list .sidebar-row:selected:backdrop GtkLabel,
 .sidebar .list .sidebar-row:selected:backdrop GtkLabel,
 GtkPlacesSidebar .list .sidebar-row:selected:backdrop GtkLabel,
-GtkStackSidebar .list .sidebar-row:selected:backdrop GtkLabel,
-.list .list-row:selected:backdrop GtkLabel,
-.list .list-row.button:selected:backdrop GtkLabel {
+GtkStackSidebar .list .sidebar-row:selected:backdrop GtkLabel {
   color: #323232;
 }
 .sidebar.list .sidebar-item .label,
@@ -411,10 +366,8 @@ GtkPlacesSidebar.list .sidebar-row .label,
 GtkStackSidebar.list .sidebar-row .label,
 .sidebar .list .sidebar-row .label,
 GtkPlacesSidebar .list .sidebar-row .label,
-GtkStackSidebar .list .sidebar-row .label,
-.list .list-row .label,
-.list .list-row.button .label {
-  padding: 1em 0em 1em 1em;
+GtkStackSidebar .list .sidebar-row .label {
+  padding: 1em;
 }
 .sidebar.list .sidebar-item .sidebar-icon,
 GtkPlacesSidebar.list .sidebar-item .sidebar-icon,
@@ -427,9 +380,7 @@ GtkPlacesSidebar.list .sidebar-row .sidebar-icon,
 GtkStackSidebar.list .sidebar-row .sidebar-icon,
 .sidebar .list .sidebar-row .sidebar-icon,
 GtkPlacesSidebar .list .sidebar-row .sidebar-icon,
-GtkStackSidebar .list .sidebar-row .sidebar-icon,
-.list .list-row .sidebar-icon,
-.list .list-row.button .sidebar-icon {
+GtkStackSidebar .list .sidebar-row .sidebar-icon {
   padding-left: 0.5em;
 }
 .list .separator.horizontal,
@@ -1979,19 +1930,26 @@ TerminalScreen {
   background-color: #252525;
   color: #00c8ff;
 }
-.nautilus-canvas-item {
+NautilusWindow GtkPaned {
+  -GtkPaned-handle-size: 2;
+}
+NautilusWindow .nautilus-canvas-item {
   border-radius: 0.5em;
 }
-.nautilus-canvas-item:active {
+NautilusWindow .nautilus-canvas-item:active {
   background-color: #9632ff;
 }
-.nautilus-canvas-item:prelight,
-.nautilus-canvas-item:selected {
+NautilusWindow .nautilus-canvas-item:prelight,
+NautilusWindow .nautilus-canvas-item:selected {
   background-color: rgba(0,200,255,0.75);
   color: #323232;
 }
-.nautilus-canvas-item.nautilus-desktop,
-.nautilus-canvas-item.nautilus-desktop:backdrop {
+NautilusWindow .nautilus-canvas-item:prelight:backdrop,
+NautilusWindow .nautilus-canvas-item:selected:backdrop {
+  background-color: rgba(162,162,162,0.75);
+}
+NautilusWindow .nautilus-canvas-item.nautilus-desktop,
+NautilusWindow .nautilus-canvas-item.nautilus-desktop:backdrop {
   color: #fff;
 }
 GtkWindow .section-sel-bg.button.flat:checked {
