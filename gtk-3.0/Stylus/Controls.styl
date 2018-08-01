@@ -1,12 +1,13 @@
 
 
-GtkArrow
+arrow
     -GtkArrow-arrow-scaling: 0.6;
     color: TextColor;
     &:hover
         color: TextColorHighlighted;
 
-GtkCalendar
+// GtkCalendar
+calendar
     border-radius:              2em;
     color:                      TextColor;
     padding:                    0.125em;
@@ -24,7 +25,7 @@ GtkCalendar
             color:              TextColorHighlighted;
 
     &.button
-        @extends .button.flat
+        @extends button.flat
         border-radius:          0.125em;
         &:hover
             color:              TextColorHighlighted;
@@ -54,47 +55,108 @@ GtkCalendar
                 color-stop(1.0, HighlightColor));
             color:              TextColorDim;
 
-GtkComboBox
-    &.combobox-entry
-        .entry
-            border-radius:      2em 0em 0em 2em;
-        .button
-            deep-inset();
-            border-radius:      0em 2em 2em 0em;
-            padding:            0.375em;
+// GtkComboBox
+combobox
+    // &.combobox-entry
+    //     .entry
+    //         border-radius:      2em 0em 0em 2em;
+    //     .button
+    //         deep-inset();
+    //         border-radius:      0em 2em 2em 0em;
+    //         padding:            0.375em;
 
-    .button
-        flat();
-        deep-inset();
-        border-radius:          0.25em;
-        padding:                0.5em;
+    box.linked > button.combo:only-child
+        // flat();
+        shallow-inset();
+        background-image:           none;
+        border-radius:              0.125em;
+        padding:                    0.375em;
 
-        .notebook &
-            padding:            0.25em;
+        &:hover
+            background-color:       HighlightColor;
+            background-image:       none;
 
-        &:hover, &:prelight
-            background-color:   HighlightColor;
-            background-image:   none;
+            cellview
+                color:              TextColorHighlighted;
 
-    .horizontal.linked & .button,
-    .vertical.linked & .button
-        @extends GtkComboBox .button;
+    menuitem:hover cellview
+        color:                      TextColorSelected;
 
-        &:first-child,
-        &:last-child,
-        &:only-child
-            @extends GtkComboBox .button;
-
-    // Governs the selected entry in the combobox (i.e. while it is still collapsed)
-    .cell:hover
-        color:                  TextColorHighlighted;
-    // Governs the available combobox options (i.e. while it is expanded)
+    // menuitem
+    //     cellview
+    //         color:                  TextColorSelected;
+    //     &:hover label
+    //         color:                  TextColorSelected;
+    //     // background-color:       Red;
     //
-    //      Unfortunately, for the time being, this appears to be the only way to manipulate text within the combobox menu.
-    .menuitem:hover *
-        color:                  TextColorSelected;
+    //     &:hover
+    //         color:                  TextColorSelected;
+        // cellview label
+        //     color:                  Red;
 
-.check
+        // menuitem:hover cellview
+        //     color:                  Red;
+
+
+
+
+        // menuitem:hover label
+        //     color:                  TextColorHighlighted;
+
+
+            // box cellview
+            //     color:              TextColorHighlighted;
+
+        // > box cellview
+        //     border-radius:          0em;
+        //     color:                  TextColor;
+
+        // cellview
+        //     deep-inset();
+        //     border-radius:          0em;
+        //     padding:                0.25em;
+        //
+        // &:hover
+        //     flat();
+        //     cellview
+        //         background-color:   HighlightColor;
+        //         color:              TextHighlightColor;
+
+
+    // entry
+    //     deep-inset();
+    //     border-radius:          0em;
+    //     padding:                0.25em;
+        // cellview
+        //     flat();
+        //     border-radius:      0em;
+    //
+    // notebook &
+    //     padding:            0.25em;
+
+    // &:hover, &:prelight
+    //     background-color:   HighlightColor;
+    //     background-image:   none;
+
+    // .horizontal.linked button,
+    // .vertical.linked button
+    //     @extends combobox;
+    //
+    //     &:first-child,
+    //     &:last-child,
+    //     &:only-child
+    //         @extends combobox;
+    //
+    // // Governs the selected entry in the combobox (i.e. while it is still collapsed)
+    // .cell:hover
+    //     color:                  TextColorHighlighted;
+    // // Governs the available combobox options (i.e. while it is expanded)
+    // //
+    // //      Unfortunately, for the time being, this appears to be the only way to manipulate text within the combobox menu.
+    // .menuitem:hover *
+    //     color:                  TextColorSelected;
+
+check
     icon:                               "Icons/Checkbox.svg";
 
     &:checked
@@ -127,75 +189,100 @@ GtkComboBox
  *      hidden while the expander is collapsed. Perhaps the most common example can be observed in hierarchical tree
  *      controls, where any given entry within the tree can contain a list of sub-entries.
  */
-.expander,
-GtkExpander,
-GtkExpander.expander
+expander
     -GtkExpander-expander-size:     10;
     -GtkExpander-expander-spacing:  2;
 
-    color:      TextColorLight;
+    color:                                  TextColorLight;
     &:backdrop
-        color:  TextColor;
+        color:                              TextColor;
 
 /* SCROLLBAR - Controls the appearance of scrollbars in container widgets. */
-.scrollbar
+scrollbar
     -GtkScrollbar-has-backward-stepper:     false;
     -GtkScrollbar-has-forward-stepper:      false;
     -GtkScrollbar-min-slider-length:        30;
 
     border:                                 1px solid transparent;
-    border-radius:                          2em;
 
-    &.slider
+    slider
+        min-height:                         0.5em;
+        min-width:                          0.5em;
         border:                             2px solid transparent;
+        border-radius:                      2em;
 
-        &.horizontal, &.horizontal:hover
+    &.horizontal, &.horizontal:hover
+        .slider, slider
             background-image:               vgradient(ScrollbarColor);
             &:backdrop
                 background-color:           ScrollbarColorDim;
                 background-image:           none;
-        &.vertical, &.vertical:hover
+
+    &.vertical, &.vertical:hover
+        .slider, slider
             background-image:               hgradient(ScrollbarColor);
             &:backdrop
                 background-color:           ScrollbarColorDim;
                 background-image:           none;
 
-    &.trough
+    trough
         shallow-inset();
+        border-radius:                      2em;
+
+
 
 .scrollbars-junction,
 .scrollbars-junction:backdrop
     flat();
 
-GtkSwitch
+
+/* SWITCH */
+switch
     -GtkSwitch-slider-width:    48;
 
-    &.trough,
-    &.slider
-        blank();
+    // background-size:                        100%;
+    background-repeat:                      no-repeat;
+    background-size:                        contain;
+    image:                                  "Icons/Switch-Trough.svg";
+    padding:                                0em;
 
-    &.slider
-        image:          "Icons/Switch-Slider.svg";
-        &:active
-            image:      "Icons/Switch-Slider-On.svg";
-            &:backdrop  { image: "Icons/Switch-Slider.svg"; }
+    slider
+        background-repeat:                  no-repeat;
+        background-size:                    contain;
+        image:                              "Icons/Switch-Slider.svg";
 
-    &.trough
-        image:          "Icons/Switch-Trough.svg";
-        &:active
-            image:      "Icons/Switch-Trough-On.svg";
-            &:backdrop  { image: "Icons/Switch-Trough-On-Backdrop.svg"; }
+    &:backdrop, &:backdrop:checked
+    &:disabled, &:disabled:checked
+        image:                              "Icons/Switch-Trough.svg";
+        slider
+            image:                          "Icons/Switch-Slider.svg";
 
-
-.radio
-    icon: "Icons/Radio.svg";
     &:checked
-        icon: "Icons/Radio-Checked.svg";
+        image:                              "Icons/Switch-Trough-On.svg";
+        slider
+            image:                          "Icons/Switch-Slider-On.svg";
+            padding:                        0em;
+
+        // &:checked
+        //     image:      "Icons/Switch-Slider-On.svg";
+        //     &:backdrop  { image: "Icons/Switch-Slider.svg"; }
+
+    // &.trough
+    //     image:          "Icons/Switch-Trough.svg";
+    //     &:checked
+    //         image:      "Icons/Switch-Trough-On.svg";
+    //         &:backdrop  { image: "Icons/Switch-Trough-On-Backdrop.svg"; }
+
+
+radio
+    icon:                           "Icons/Radio.svg";
+    &:checked
+        icon:                       "Icons/Radio-Checked.svg";
         &:backdrop                  { icon: "Icons/Radio-Checked-Backdrop.svg"; }
         &:inconsistent              { icon: "Icons/Radio-Checked-Partial.svg"; }
         &:inconsistent:backdrop     { icon: "Icons/Radio-Checked-Partial-Backdrop.svg"; }
 
     &:insensitive
-        icon: "Icons/Radio-Inactive.svg";
+        icon:                       "Icons/Radio-Inactive.svg";
         &:checked                   { icon: "Icons/Radio-Checked-Inactive.svg"; }
         &:inconsistent              { icon: "Icons/Radio-Checked-Partial-Inactive.svg"; }

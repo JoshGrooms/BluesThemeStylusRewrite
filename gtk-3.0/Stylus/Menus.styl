@@ -2,60 +2,73 @@
  * Written by Josh Grooms on 20151205
  */
 
-.menu,
-GtkMenu,
-GtkMenu.menu
+.context-menu,
+menu
     flat();
     -GtkMenu-horizontal-offset: -1;
+
     color:      MenuTextColor;
     padding:    0.125em;
 
-.menuitem,
-GtkImageMenuItem
+menuitem
     flat();
 
     -GtkMenuItem-arrow-scaling:     0.6;
     border-radius:                  0.25em;
-    padding:                        1em;
+    background-clip:                border-box;
+    padding:                        0.75em;
 
-    &, .label
+    label
         color:                      MenuTextColor;
 
     /* ACCELERATOR - Governs the shortcut text found adjacent to certain individual menu items. */
-    .accelerator
+    accelerator
         color:                      MenuAcceleratorColor;
 
-    &:hover, &:prelight
+    &:hover
         background-image:           SelectionGradientVertical;
-        &, .accelerator, .label
+        accelerator, label
             color:                  TextColorSelected;
 
     // Governs inactive menu items that cannot be selected.
-    &:insensitive
-        &, .accelerator, .label
+    &:disabled
+        accelerator, label
             color:                  TextColorDisabled;
 
-    &.separator
-        @extends .separator.horizontal;
+    separator
+        @extends separator;
 
 // Governs the very first menu items, which is what is displayed on menu bars.
-.menubar, .unity-panel
-    > .menuitem
+menubar
 
-        border-radius:              0.125em;
-        color:                      MenuTextColor;
+        // border-radius:              0.125em;
+        // color:                      MenuTextColor;
         padding:                    0.25em 0.5em;
-        text-shadow:                none;
+        // text-shadow:                none;
 
-        &:backdrop
-            color:                  TextColorDim;
-        &:hover
-            background-image:       HighlightGradientVertical;
-            color:                  TextColorHighlighted;
+        // background-color:           Red;
+
+        // &:backdrop
+        //     color:                  TextColorDim;
+
+        > menuitem
+            @extends menuitem;
+
+            border-radius:          0.125em;
+            padding:                0.25em 0.5em;
+
+            &:hover
+                background-color:   Red;
+                menuitem
+                    @extends menuitem;
+
+            // &:hover
+            //     background-image:       HighlightGradientVertical;
+                // color:                  TextColorHighlighted;
 
 
-.button:checked .menuitem,
-.menuitem:hover .menuitem,
-.menuitem.button.flat
+button:checked menuitem,
+menuitem:hover menuitem,
+menuitem button.flat
     &, &:active, &:checked, &:active:checked
-        @extends .menuitem;
+        @extends menuitem;

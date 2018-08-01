@@ -14,20 +14,21 @@ ButtonGlossBottom = gloss-color(darker, faded);
  */
 button-text-color(c)
     color:      c;
-    GtkImage,
-    GtkLabel
+    image, label
         color:  c;
 
 
 /* BUTTON - Controls all button widgets. */
-.button
+button,
+button.popup
     @extends GtkWidget;
 
+    background-color:               transparent;
     background-image:               vgradient(ButtonGlossTop, ButtonGlossBottom);
     bevel:                          1px inset;
     border-radius:                  0.5em;
     box-shadow:                     inset 0px 0px 2px shadow-color(normal, semifaded);
-    padding:                        1em;
+    padding:                        0.5em;
 
     /* ACTIVE - Controls buttons currently undergoing a mouse click.
      *
@@ -38,9 +39,7 @@ button-text-color(c)
         deep-inset();
         background-image:           SelectionGradientVerticalInverted;
         button-text-color:          TextColorSelected;
-        &:backdrop,
-        &:hover,
-        &:prelight
+        &:backdrop, &:hover
             background-image:       HighlightGradientVerticalInverted;
             button-text-color:      TextColorHighlighted;
 
@@ -50,8 +49,8 @@ button-text-color(c)
         border-radius:              0.25em;
 
         &:active, &:checked
-            @extends .button:active;
-        &:hover, &:prelight
+            @extends button:active;
+        &:hover
             background-color:       HighlightColor;
             background-image:       none;
             box-shadow:             none;
@@ -59,22 +58,14 @@ button-text-color(c)
     &:focus
         button-text-color:          TextColorFocused;
 
-    &:hover,
-    &:prelight
+    &:hover
         background-image:           HighlightGradientVertical;
         button-text-color:          TextColorHighlighted;
         box-shadow:                 inset 0px 0px 2px shadow-color(darker, semiopaque);
 
-    &.spinbutton
-        flat();
-        border-width:               0px 0px 0px 0.25px;
-        box-shadow:                 none;
-
-        &:hover
-            color:                  SelectionColor;
-            &:backdrop              { color: HighlightColor; }
-        &:last-child
-            border-radius:          0em 2em 2em 0em;
+    // &.popup
+    //     flat();
+        // background-color:           Red;
 
     // Governs linked button groups that are vertically oriented
     .vertical.linked > &
@@ -111,36 +102,69 @@ button-text-color(c)
             border-radius:          0.5em;
             border-width:           1px;
 
-    .notebook &
+    notebook &
         padding:                    0.75em;
 
 
+spinbutton
+    flat();
+    border-width:                   0px 0px 0px 0.25px;
+    box-shadow:                     none;
+    padding:                        0em;
+
+    &:hover
+        color:                      SelectionColor;
+        &:backdrop                  { color: HighlightColor; }
+    &:last-child
+        border-radius:              0em 2em 2em 0em;
+
+    &.horizontal
+        & > entry
+            border-radius:          2em 0em 0em 2em;
+        & > button.down
+            border-radius:          0em;
+        & > button.up
+            border-radius:          0em 2em 2em 0em;
+
+    &.vertical
+        & > button.down
+            border-radius:          0em 0em 2em 2em;
+        & > button.up
+            border-radius:          2em 2em 0em 0em;
+        & > entry
+            border-radius:          0em;
+            padding:                0.125em;
+
 
 /* COLUMN-HEADER - Governs the title buttons at the top of sortable lists. */
-column-header
-    .button
-        @extends .button.flat
+treeview
+    margin:                         0em;
+    padding:                        0em;
+
+    button
+        @extends button.flat
         background-color:   gloss-color(lighter, faded);
         background-clip:    padding-box;
         border:             none;
         border-radius:      0px
         border-top:         1px solid transparent;
 
-    &:first-child .button
+    &:first-child button
         border-radius:      2.5px 0px 0px 0px;
         border-left:        1px solid transparent;
-    &:last-child .button
+    &:last-child button
         border-radius:      0px 2.5px 0px 0px;
         border-right:       1px solid transparent;
 
 /* TITLEBUTTON - Governs the standard close, maximize, and minimize buttons for CSD windows. */
 .csd, .solid-csd
-    .titlebar.header-bar
+    .titlebar, headerbar
 
-        .stack-switcher
-            margin-top:         0.5em;
+        // stackswitcher
+        //     margin-top:     0.5em;
+        background-color:   inherit;
 
-        .button.titlebutton
+        button.titlebutton
             blank();
             padding:        0px;
 
@@ -159,5 +183,5 @@ column-header
                 image:      "../unity/Core/Minimize.svg";
                 &:hover     { image: "../unity/Core/MinimizeHover.svg"; }
 
-            GtkImage
-                color:          transparent;
+            image
+                color:      black;

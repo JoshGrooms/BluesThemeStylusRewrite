@@ -3,9 +3,7 @@
  */
 
 
-.notebook,
-GtkNotebook,
-GtkNotebook.notebook
+notebook
     -GtkNotebook-arrow-spacing: 5;
     -GtkNotebook-has-tab-gap:   false;
     -GtkNotebook-initial-gap:   10;
@@ -16,61 +14,48 @@ GtkNotebook.notebook
     padding-top:                0.25em;
 
     /* HEADER - Governs the area where tabs are located for the notebook. */
-    &.header
+    header
         deep-inset();
-        border-radius:          0.25em;
+        border-radius:          0.125em;
 
-    /* TAB - Governs the individual tabs for a notebook control.
-     *
-     *      Official documentation suggests that this class is deprecated, but as far as I can tell there's no other way to
-     *      select for these objects.
-     *
-     *      The transparent border of this class is part of a trick that ends up providing the appearance of a tab glowing
-     *      from one of its sides.
-     */
-    tab
-        flat();
-        border:         2px solid transparent;
-        padding:        0.75em;
+        /* TAB - Governs the individual tabs for a notebook control. */
+        tab
+            flat();
+            border:                 2px solid transparent;
+            padding:                0.5em;
 
-        /* ACTIVE - Governs the active tab page for the notebook. */
-        &:active
-            &.right, &.left
-                box-shadow: inset -7px 0px 3px -6px SelectionColor,
-                            inset -1px 0px 1px SelectionColor;
-                &:backdrop
-                    box-shadow: inset -1px 0px 1px HighlightColor;
-
-            &.top, &.bottom
-                box-shadow:     inset 0px -7px 3px -6px SelectionColor,
-                                inset 0px -1px 1px SelectionColor;
-                &:backdrop
-                    box-shadow: inset 0px -1px 1px HighlightColor;
-
-
-        /* ACTIVE-PAGE - Governs the active tab page for the notebook. */
-        .active-page
-            .button,
-            .button.flat
+            &:checked button,
+            &:checked button.flat
                 flat();
-                > GtkImage                  { color: SelectionColor; }
-                &:backdrop > GtkImage       { color: HighlightColor; }
-                &:hover > GtkImage          { color: Red; }
+                > image                     { color: SelectionColor; }
+                &:backdrop > image          { color: HighlightColor; }
+                &:hover > image             { color: Red; }
 
-            GtkLabel
+            &:checked label
                 color:                      SelectionColor;
                 border-color:               SelectionColor;
                 &:backdrop
                     color:                  HighlightColor;
                     border-color:           HighlightColor;
 
-        .button,
-        .button.flat
+        &.right, &.left
+            tab:checked
+                box-shadow:                 inset -7px 0px 3px -6px SelectionColor,
+                                            inset -1px 0px 1px SelectionColor;
+                &:backdrop
+                    box-shadow:             inset -1px 0px 1px HighlightColor;
+
+        &.top, &.bottom
+            tab:checked
+                box-shadow:                 inset 0px -7px 3px -6px SelectionColor,
+                                            inset 0px -1px 1px SelectionColor;
+                &:backdrop
+                    box-shadow:             inset 0px -1px 1px HighlightColor;
+
+        button,
+        button.flat
             flat();
             padding:                        1px;
-            > GtkImage                      { color: TextColor; }
-            &:backdrop > GtkImage           { color: TextColorDim; }
-            &:hover > GtkImage              { color: Red; }
-
-        GtkLabel.active-page
-            @extends .notebook tab .active-page GtkLabel;
+            > image                         { color: TextColor; }
+            &:backdrop > image              { color: TextColorDim; }
+            &:hover > image                 { color: Red; }

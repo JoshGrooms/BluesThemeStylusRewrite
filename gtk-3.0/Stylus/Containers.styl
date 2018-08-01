@@ -3,50 +3,59 @@
 
 
 .background,
+.csd,
+.window,
 GtkApplicationWindow,
 GtkWindow
-    -GtkWindow-decoration-button-layout:    "close:";
     -GtkWindow-resize-handle:               5;
 
-    background-color:       WindowColor;
+    background-color:       alpha(WindowColor, 0.99);
     background-clip:        border-box;
     background-image:       none;
+    border-radius:          0em 0em 0.5em 0.5em;
+
+    .titlebar,
+    headerbar
+        background-color:   inherit;
+        border-radius:      0.5em 0.5em 0em 0em;
+        padding:            0.25em;
 
     &:backdrop
-        background-color:   WindowColorDim;
+        background-color:   alpha(WindowColorDim, 0.999);
+
+
 
 
 
 /* CSD - Controls windows that undergo decoration on the client side. */
-.csd
-    @extends .background
+// .csd
+//     @extends .background
 
     /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side. */
-    &.window-frame,
-    &.window-frame:backdrop
-        background-clip:    border-box;
-        bevel:              1px outset;
-        border-radius:      0.5em;
-        box-shadow:         0.25em 0.25em 0.5em shadow-color(normal, semifaded);
+    // &.window-frame,
+    // &.window-frame:backdrop
+        // background-clip:    border-box;
+        // bevel:              1px outset;
+        // border-radius:      0.5em;
+        // box-shadow:         0.25em 0.25em 0.5em shadow-color(normal, semifaded);
+    //
+    // &.background
+    //     bevel:              1px outset;
+    //     // border-radius:      0em 0em 0.5em 0.5em;
+    //     border-top:         none;
 
-    &.background
-        bevel:              1px outset;
-        border-radius:      0em 0em 0.5em 0.5em;
-        border-top:         none;
 
-    .titlebar.header-bar
-        padding:            0.75em 0.75em 0px 0.75em;
-
-.solid-csd
-    @extends .background
-
-    /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side. */
-    &.window-frame,
-    &.window-frame:backdrop
-        bevel:              1px outset;
-        border-radius:      0.5em;
-        box-shadow:         none;
-        margin:             0em 0.25em 0.25em 0.25em;
+//
+// .solid-csd
+//     @extends .background
+//
+//     /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side. */
+//     &.window-frame,
+//     &.window-frame:backdrop
+//         bevel:              1px outset;
+//         border-radius:      0.5em;
+//         box-shadow:         none;
+//         margin:             0em 0.25em 0.25em 0.25em;
 
 .dnd
     border: 1px solid SelectionColor;
@@ -62,30 +71,52 @@ GtkWindow
  *          - 'margin' and 'padding' settings have no effect on this class.
  */
 .popup,
-.popup.background
+.popup.background,
+popover.background
+
     deep-outset();
-    background-color:       MenuColor;
-    border-radius:          0.5em;
+
+    background-color:       alpha(MenuColor, 0.99);
+    border-radius:          0.75em;
     color:                  MenuTextColor;
 
     border-right:           1px solid #232323;
     border-bottom:          1px solid #232323;
 
+    label
+        padding:            0.5em;
+
+dialog.background
+
+    deep-outset();
+    background-color:       alpha(MenuColor, 0.99);
+    background-image:       none;
+    border-radius:          0em 0em 0.75em 0.75em;
+    border-top:             none;
+
+    headerbar.titlebar
+        deep-outset();
+        background-color:   inherit;
+        border-bottom:      none;
 
 
+// window > .titlebar:not(headerbar)
+.solid-csd decoration
+    border:                 4px solid #FF0000;
+    background-color:       Red;
 
 /* POPOVER - Governs windows that behave similarly to 'popup' instances.
  *
  *      So far, I've only seen these used in CSD-type windows.
  */
-.popover,
-.popover.background
-    deep-outset();
-    background-color:       MenuColor;
-    border-radius:          0.5em;
-    color:                  MenuTextColor;
+// popover,
+// popover.background
+//     deep-outset();
+//     background-color:       MenuColor;
+//     border-radius:          0.5em;
+//     color:                  MenuTextColor;
 
 /* TOOLTIP - Controls the appearance of tooltip messages. */
-.tooltip,
-.tooltip.background
+tooltip,
+tooltip.background
     @extends .popup

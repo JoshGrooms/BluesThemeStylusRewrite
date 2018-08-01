@@ -26,8 +26,8 @@ EPreferencesWindow GtkNotebook > GtkAlignment > GtkScrolledWindow
     flat();
 
 // Governs the buttons at the top of each list-view-like element (e.g. e-mail)
-ECanvas.button
-    @extends .button.flat;
+ECanvas button
+    @extends button.flat;
     color: TextColorDark;
     &:backdrop
         color:  TextColorDark;
@@ -37,8 +37,8 @@ ECalendar
     background-image: none;
     background-color: InsetColor;
 
-    .button
-        @extends .button.flat;
+    button
+        @extends button.flat;
         border-radius: 0.125em;
         GtkArrow
             color: TextColor;
@@ -75,7 +75,7 @@ NautilusWindow
 
 
 /** UBUNTU SOFTWARE CENTER **/
-GtkWindow .section-sel-bg.button.flat
+GtkWindow .section-sel-bg button.flat
 
     &:checked
         background-image: gradient(WindowColor, WindowColor);

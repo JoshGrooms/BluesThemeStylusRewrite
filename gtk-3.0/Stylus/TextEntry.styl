@@ -5,9 +5,7 @@
 
 
 /* GTKENTRY - Governs all single-line text entry bars. */
-.entry,
-GtkEntry,
-GtkEntry.entry
+entry
 
     deep-inset();
 
@@ -17,12 +15,18 @@ GtkEntry.entry
     text-shadow:            none;
 
     &:backdrop              { color: TextColorDim; }
-    &:selected
+    selection
         background-color:   HighlightColor;
         color:              TextColorHighlighted;
 
-    &.progressbar
-        background-color:   ProgressBarColor;
+    progress
+        // background-color:   ProgressBarColor;
+        background-clip:    border-box;
+        background-image:   SelectionGradientVertical;
+        background-size:    cover;
+        border-radius:      2em;
+        margin:             0em;
+        padding:            0em;
         &:backdrop          { background-color: ProgressBarColorDim; }
 
     // Occasionally these are linked to other controls, such as buttons.
@@ -35,10 +39,10 @@ GtkEntry.entry
             padding-left:   0.25em;
 
     /* IMAGE - Governs any icons that appear inside of a text entry control. */
-    &.image.left
+    image.left
         padding-left:       0em;
         padding-right:      0.25em;
-    &.image.right
+    image.right
         padding-left:       0.25em;
         padding-right:      0em;
 
@@ -49,13 +53,15 @@ GtkEntry.entry
  *      These particular controls always have the magnifying glass 'Search' icon placed on the left-hand side, which is why
  *      the padding change seen below is necessary.
  */
-GtkSearchEntry,
-GtkSearchEntry.entry
+// GtkSearchEntry,
+// GtkSearchEntry.entry
     // padding: 0.375em;
 
 
-GtkTextView
+// GtkTextView
+textview
     -GtkTextView-error-underline-color: ErrorColor;
+
     color:                  TextColor;
     &:backdrop
         color:              TextColorDim;
@@ -68,7 +74,7 @@ GtkTextView
  *      This control is specific to the Nautilus-based desktop environment and file browser that comes with Ubuntu.
  */
 EelEditableLabel,
-EelEditableLabel.entry
+EelEditableLabel entry
     border-radius:  0.25em;
     color:          TextColorLight;
     padding:        0.125em 0.5em 0.125em 0.5em;

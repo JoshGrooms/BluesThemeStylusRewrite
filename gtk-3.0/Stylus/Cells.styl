@@ -11,8 +11,7 @@
  */
 button-text-color(c)
     color:      c;
-    GtkImage,
-    GtkLabel
+    image, label
         color:  c;
 
 /** INNER WINDOWS & CONTENTS **/
@@ -26,29 +25,29 @@ button-text-color(c)
  *      - The various lists found throughout Unity Tweak Tool
  *      - Files within Nautilus (only when viewing items as a list)
  */
-.view
+view
     @extends                            GtkWidget;
     -GtkTreeView-expander-size:         10;
     -GtkTreeView-indent-expanders:      true;
     -GtkTreeView-vertical-separator:    0;
     padding:                            0.25em;
 
-    .cell,
-    row
-        &:selected
-            background-image:           SelectionGradientVertical;
-            color:                      TextColorSelected;
-            &:backdrop
-                background-color:       HighlightColor;
-                background-image:       none;
-                color:                  TextColorHighlighted;
+.cell,
+row
+    &:selected
+        background-image:               SelectionGradientVertical;
+        color:                          TextColorSelected;
+        &:backdrop
+            background-color:           HighlightColor;
+            background-image:           none;
+            color:                      TextColorHighlighted;
 
 /* GTKPANED - Controls the widget used for separated, multipane UI views.
  *
  *  The GtkPaned widget is often behind multi-view UIs found in explorer-like applications. More specifically, it holds
  *  multiple resizeable member panes that themselves can hold essentially any widget.
  */
-GtkPaned
+paned
     @extends                    GtkWidget;
     -GtkPaned-handle-size:      5;
 
@@ -58,53 +57,55 @@ GtkPaned
  *  it controls a bar or panel that resides on one side (usually the left) of the window.
  */
 .sidebar,
-GtkPlacesSidebar,
-GtkStackSidebar
-    @extends .view;
-    font:                               bold;
+placessidebar,
+stacksidebar
+    @extends view;
+    // flat();
 
-    &.list,
-    .list
-        .sidebar-item,
-        .sidebar-row
-            @extends GtkWidget;
-            button-text-color:          TextColor;
-            &:selected
-                background-image:       SelectionGradientVertical;
-                button-text-color:      TextColorSelected;
+    row
+        // @extends GtkWidget;
+        flat();
+        button-text-color:          TextColor;
+        &:selected
+            background-image:       SelectionGradientVertical;
+            button-text-color:      TextColorSelected;
 
-                &:backdrop
-                    background-color:   HighlightColor;
-                    background-image:   none;
-                    button-text-color:  TextColorHighlighted;
+            &:backdrop
+                background-color:   HighlightColor;
+                background-image:   none;
+                button-text-color:  TextColorHighlighted;
 
-            .label
-                padding:                1em;
+        label
+            font:                   bold;
+            padding:                1em;
 
-            .sidebar-button
-                @extends GtkWidget;
+        .sidebar-button
+            flat();
+            // @extends GtkWidget;
 
-            .sidebar-icon
-                padding-left:           0.5em;
+        .sidebar-icon
+            padding-left:           0.5em;
 
-    GtkScrolledWindow
-        @extends GtkWidget;
+    scrolledwindow
+        flat();
+        // @extends GtkWidget;
 
 
-.list
-    .separator.horizontal,
-    .separator.vertical      { color: transparent; }
+list
+    separator.horizontal,
+    separator.vertical      { color: transparent; }
 
     .list-row,
-    .list-row.button
-        @extends .sidebar .list .sidebar-item .sidebar-button;
+    .list-row button
+        @extends stacksidebar row .sidebar-button;
 
-GtkScrolledWindow
+scrolledwindow
     -GtkScrolledWindow-scrollbar-spacing:           0;
     -GtkScrolledWindow-scrollbars-within-bevel:     true;
+
     deeper-inset();
     border-radius:              0.25em;
-    padding:                    1px;
+    padding:                    0.25em 0.25em;
 
 FooScrollArea,
 GtkDrawingArea
@@ -113,7 +114,7 @@ GtkDrawingArea
         background-color:       WindowColorDimmer;
 
 /* RUBBERBAND - Controls the scalable rectangle drawn when selecting multiple icons using the mouse. */
-.rubberband
+rubberband
     background-color:           alpha(HighlightColor, 0.5);
     border:                     1px solid HighlightColor;
     border-radius:              0.25em;
