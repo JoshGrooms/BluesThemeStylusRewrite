@@ -7,142 +7,111 @@
 /* TROUGH - Governs the inset area that appears underneath many bar-like controls. */
 trough
     shallow-inset();
-    background-image:   none;
-    border-radius:      2em;
-    padding:            0.125em;
+    background-image:               none;
+    border-radius:                  2em;
+    min-height:                     1em;
+    min-width:                      1em;
 
     row:selected:focused
-        background-color:   WindowColorDimmer;
-        background-image:   none;
-        color:              TextColor;
+        background-color:           WindowColorDimmer;
+        background-image:           none;
+        color:                      TextColor;
 
 /* GTKPROGRESSBAR - Governs ordinary vertical and horizontal progress bar controls. */
 progressbar
-    -GtkProgressBar-min-horizontal-bar-height:  15;
-    -GtkProgressBar-min-vertical-bar-width:     15;
 
-    &:backdrop trough progress
-        background-color:       ProgressBarColorDim;
-        background-image:       none;
-        color:                  TextColorHighlighted;
+    progress
+        border-radius:              2em;
+        min-height:                 1em;
+        min-width:                  1em;
 
-    &.horizontal trough progress
-        background-image:       ProgressBarGradientVertical;
+    &.horizontal progress
+        background-image:           ProgressBarGradientVertical;
         &:backdrop
-            background-color:   ProgressBarColorDim;
-            background-image:   none;
-        trough, trough:backdrop
-            @extends trough;
-    &.vertical trough progress
-        background-image:       ProgressBarGradientHorizontal;
+            background-color:       ProgressBarColorDim;
+            background-image:       none;
+
+    &.vertical progress
+        background-image:           ProgressBarGradientHorizontal;
         &:backdrop
-            background-color:   ProgressBarColorDim;
-            background-image:   none;
-        trough, trough:backdrop
-            @extends trough;
+            background-color:       ProgressBarColorDim;
+            background-image:       none;
 
-    trough progress
-        border-radius:          2em;
-
-/* GTKLEVELBAR - Governs progress-bar-like controls generally meant for displaying discretized levels or statuses.
- *
- *      Password strength indicators are probably the most common example of this control.
- */
 levelbar
 
+    block.empty
+        flat();
+
+    block.filled
+        border:                     2px solid transparent;
+
+        &.high                      { background-image:       vgradient(NominalColor); }
+        &.low                       { background-image:       vgradient(ErrorColor); }
+        &.high:backdrop,
+        &.low:backdrop
+            background-color:       HighlightColor;
+            background-image:       none;
+
+    &.continuous
+        block.filled
+            border-radius:          2em;
+
+    &.discrete block.filled
+        &:first-child
+            border-radius:          2em 0em 0em 2em;
+        &:last-child
+            border-radius:          0.25em 2em 2em 0.25em;
+
+toolbar
     &.horizontal
-        -GtkLevelBar-min-block-height:      15;
-        -GtkLevelBar-min-block-width:       3;
+        border-image:               -gtk-scaled(url("Icons/Separator-Horizontal.svg")) 0 0 2 0 / 0px 0px 2px 0px stretch;
     &.vertical
-        -GtkLevelBar-min-block-height:      3;
-        -GtkLevelBar-min-block-width:       15;
-
-    /* These behave pretty much exactly like progress bars, as far as I can tell. */
-    &.indicator-continuous
-        &.fill-block
-            border-radius:                  2em;
-            &.horizontal
-                background-image:           ProgressBarGradientVertical;
-                &:backdrop
-                    background-color:       ProgressBarColorDim;
-                    background-image:       none;
-                &.empty-fill-block
-                    flat();
-
-    /* These are the discretized level meters. */
-    &.indicator-discrete
-        &.fill-block
-            @extends trough;
-            &.horizontal
-                &.level-high        { background-image: vgradient(NominalColor); }
-                &.level-low         { background-image: vgradient(ErrorColor); }
-                &.empty-fill-block,
-                &.empty-fill-block:backdrop
-                    background-image: none;
-            &.vertical
-                &.level-high        { background-image: hgradient(NominalColor); }
-                &.level-low         { background-image: hgradient(ErrorColor); }
-                &.empty-fill-block,
-                &.empty-fill-block:backdrop
-                    background-image: none;
-        &.trough
-            flat();
-            padding: 0px;
-
-    trough, block.empty
-        @extends trough;
-
-        min-height:                         0.75em;
-        min-width:                          0.75em;
-        padding:                            0.125em;
-
-    block.filled.high
-        background-image:                   vgradient(NominalColor);
-        border-radius:                      2em;
-
-toolbar.horizontal
-    border-bottom-color:    transparent;
-    border-image:           -gtk-scaled(url("Icons/Separator-Horizontal.svg")) 0 0 2 0 / 0px 0px 2px 0px stretch;
+        border-image:               -gtk-scaled(url("Icons/Separator-Vertical.svg")) 0 2 0 0 / 0px 2px 0px 0px stretch;
 
 scale
 
-    -GtkRange-slider-width:         20;
-    -GtkRange-trough-border:        0;
-    -GtkScale-slider-length:        20;
-    -GtkWidget-focus-line-width:    0;
+    padding:                        0.25em 0em;
 
-    &:backdrop trough
+    &.horizontal, &.vertical
         highlight:backdrop
             background-color:       HighlightColor;
             background-image:       none;
-        slider
+        slider:backdrop
             image:                  "Icons/Slider-Backdrop.svg";
 
-    &.horizontal trough highlight
+    &.horizontal highlight
         background-image:           SelectionGradientVerticalInverted;
         border-radius:              2em 0em 0em 2em;
 
-    &.vertical trough highlight
+        &.bottom
+            border-radius:          0em 2em 2em 0em;
+
+    &.vertical highlight
         background-image:           SelectionGradientHorizontalInverted;
         border-radius:              2em 2em 0em 0em;
 
-    trough
-        @extends trough;
+        &.bottom
+            border-radius:          0em 0em 2em 2em;
 
-        slider
-            background-color:       transparent;
-            background-size:        100% 100%;
-            min-width:              1em;
-            min-height:             1em;
-            image:                  "Icons/Slider.svg";
+    slider
+        background-color:           transparent;
+        background-size:            100% 100%;
+        min-width:                  1em;
+        min-height:                 1em;
+        image:                      "Icons/Slider.svg";
 
 separator
-    border-style:                   solid;
-    min-height:                     1px;
-    min-width:                      1px;
+    image:                          "Icons/Separator-Horizontal.svg";
+    min-height:                     2px;
+    min-width:                      2px;
 
-    &.horizontal
-        // image:                      -gtk-scaled(url("Icons/Separator-Horizontal.svg")) 2 0 2 0 / 5px 0px 5px 0px stretch;
-        border-image:   -gtk-scaled(url("Icons/Separator-Horizontal.svg")) 1 0 1 0 / 1px 0px 1px 0px stretch;
     &.vertical
-        border-image:   -gtk-scaled(url("Icons/Separator-Vertical.svg")) 0 1 0 1 / 0px 1px 0px 1px stretch;
+        image:                      "Icons/Separator-Vertical.svg";
+
+    menu &
+        background-repeat:          repeat-x;
+        image:                      "Icons/Separator-Horizontal.svg";
+        margin:                     0.25em;
+
+    paned.horizontal > &
+        image:                      "Icons/Separator-Vertical.svg";

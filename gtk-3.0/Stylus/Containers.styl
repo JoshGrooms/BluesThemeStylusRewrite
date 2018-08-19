@@ -3,120 +3,91 @@
 
 
 .background,
-.csd,
-.window,
-GtkApplicationWindow,
-GtkWindow
-    -GtkWindow-resize-handle:               5;
+window
+    -GtkWindow-resize-handle:   5;
 
-    background-color:       alpha(WindowColor, 0.99);
-    background-clip:        border-box;
-    background-image:       none;
-    border-radius:          0em 0em 0.5em 0.5em;
+    background-clip:            border-box;
+    background-image:           none;
 
     .titlebar,
     headerbar
-        background-color:   inherit;
-        border-radius:      0.5em 0.5em 0em 0em;
-        padding:            0.25em;
+        background-color:       inherit;
+        padding:                0.25em 0em;
 
-    &:backdrop
-        background-color:   alpha(WindowColorDim, 0.999);
+    &:not(.csd):not(popover):not(.popup)
+        background-color:       WindowColor;
+        &:backdrop              { background-color: WindowColorDim; }
 
+        .titlebar,
+        headerbar
+            background-color:   transparent;
+            button.titlebutton
+                padding:        0.25em 0em;
 
-
-
-
-/* CSD - Controls windows that undergo decoration on the client side. */
-// .csd
-//     @extends .background
-
-    /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side. */
-    // &.window-frame,
-    // &.window-frame:backdrop
-        // background-clip:    border-box;
-        // bevel:              1px outset;
-        // border-radius:      0.5em;
-        // box-shadow:         0.25em 0.25em 0.5em shadow-color(normal, semifaded);
-    //
-    // &.background
-    //     bevel:              1px outset;
-    //     // border-radius:      0em 0em 0.5em 0.5em;
-    //     border-top:         none;
-
-
-//
-// .solid-csd
-//     @extends .background
-//
-//     /* WINDOW-FRAME - Controls the outer window frame of applications decorated on the client side. */
-//     &.window-frame,
-//     &.window-frame:backdrop
-//         bevel:              1px outset;
-//         border-radius:      0.5em;
-//         box-shadow:         none;
-//         margin:             0em 0.25em 0.25em 0.25em;
+        > decoration            { background-color: WindowColor; }
+        > decoration:backdrop   { background-color: WindowColorDim; }
 
 .dnd
-    border: 1px solid SelectionColor;
+    border:                     1px solid SelectionColor;
 
 /* OVERSHOOT - Governs decorations drawn on the sides of GtkScrolledWindow controls when attempting to scroll too far. */
 .overshoot,
 .undershoot
     flat();
 
-/* POPUP - Controls the base windows used for context, drop-down, and combo-box menus.
- *
- *      NOTES:
- *          - 'margin' and 'padding' settings have no effect on this class.
- */
+/* POPUP - Controls the base windows used for context, drop-down, and combo-box menus. */
 .popup,
 .popup.background,
+tooltip,
+tooltip.background
+
+    flat();
+    color:                      MenuTextColor;
+
+popover,
 popover.background
 
     deep-outset();
+    background-color:           MenuColor;
+    border-radius:              0.5em;
 
-    background-color:       alpha(MenuColor, 0.99);
-    border-radius:          0.75em;
-    color:                  MenuTextColor;
+decoration
 
-    border-right:           1px solid #232323;
-    border-bottom:          1px solid #232323;
+    background-color:           WindowColor;
+    bevel:                      2px outset semilight;
+    border-radius:              0.5em;
+    box-shadow:                 0px 0px 0px 1px shadow-color(normal, semitranslucent),
+                                5px 5px 7px shadow-color(normal, normal);
+    margin:                     10px;
+    padding:                    0em 0.25em 0.25em 0.25em;
 
-    label
-        padding:            0.5em;
+    &:backdrop
+        background-color:       WindowColorDim;
 
-dialog.background
+    .maximized > &
+        background-color:       WindowColor;
+        border-radius:          0px;
+        box-shadow:             none;
+        margin:                 0px;
+        padding:                0px;
 
-    deep-outset();
-    background-color:       alpha(MenuColor, 0.99);
-    background-image:       none;
-    border-radius:          0em 0em 0.75em 0.75em;
-    border-top:             none;
+    .popup > &
+        background-color:       MenuColor;
+        background-image:       none;
+        padding:                0em;
 
-    headerbar.titlebar
-        deep-outset();
-        background-color:   inherit;
-        border-bottom:      none;
+    .tiled > &
+        border-radius:          0px;
 
+    tooltip > &
+        background-color:       TooltipColor;
+        padding:                0px;
 
-// window > .titlebar:not(headerbar)
-.solid-csd decoration
-    border:                 4px solid #FF0000;
-    background-color:       Red;
+scrolledwindow
 
-/* POPOVER - Governs windows that behave similarly to 'popup' instances.
- *
- *      So far, I've only seen these used in CSD-type windows.
- */
-// popover,
-// popover.background
-//     deep-outset();
-//     background-color:       MenuColor;
-//     border-radius:          0.5em;
-//     color:                  MenuTextColor;
+    deeper-inset();
+    border-radius:              0.25em;
+    padding:                    1px;
 
-/* TOOLTIP - Controls the appearance of tooltip messages. */
-tooltip,
-tooltip.background
-    @extends .popup
+    .sidebar > &
+        flat();

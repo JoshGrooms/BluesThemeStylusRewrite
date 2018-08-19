@@ -2,73 +2,31 @@
  * Written by Josh Grooms on 20151205
  */
 
-.context-menu,
-menu
+
+
+menuitem,
+popover modelbutton
+
     flat();
-    -GtkMenu-horizontal-offset: -1;
-
-    color:      MenuTextColor;
-    padding:    0.125em;
-
-menuitem
-    flat();
-
-    -GtkMenuItem-arrow-scaling:     0.6;
     border-radius:                  0.25em;
-    background-clip:                border-box;
-    padding:                        0.75em;
+    padding:                        0.5em;
 
-    label
+    > label
         color:                      MenuTextColor;
-
-    /* ACCELERATOR - Governs the shortcut text found adjacent to certain individual menu items. */
-    accelerator
-        color:                      MenuAcceleratorColor;
+        > accelerator
+            color:                  MenuAcceleratorColor;
 
     &:hover
         background-image:           SelectionGradientVertical;
-        accelerator, label
+        > label,
+        > label > accelerator
             color:                  TextColorSelected;
 
-    // Governs inactive menu items that cannot be selected.
     &:disabled
-        accelerator, label
+        > label,
+        > label > accelerator
             color:                  TextColorDisabled;
 
-    separator
-        @extends separator;
-
-// Governs the very first menu items, which is what is displayed on menu bars.
-menubar
-
-        // border-radius:              0.125em;
-        // color:                      MenuTextColor;
+    menubar > &
+        border-radius:              0.125em;
         padding:                    0.25em 0.5em;
-        // text-shadow:                none;
-
-        // background-color:           Red;
-
-        // &:backdrop
-        //     color:                  TextColorDim;
-
-        > menuitem
-            @extends menuitem;
-
-            border-radius:          0.125em;
-            padding:                0.25em 0.5em;
-
-            &:hover
-                background-color:   Red;
-                menuitem
-                    @extends menuitem;
-
-            // &:hover
-            //     background-image:       HighlightGradientVertical;
-                // color:                  TextColorHighlighted;
-
-
-button:checked menuitem,
-menuitem:hover menuitem,
-menuitem button.flat
-    &, &:active, &:checked, &:active:checked
-        @extends menuitem;

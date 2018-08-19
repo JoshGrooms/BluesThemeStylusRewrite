@@ -26,7 +26,7 @@ button.popup
     background-color:               transparent;
     background-image:               vgradient(ButtonGlossTop, ButtonGlossBottom);
     bevel:                          1px inset;
-    border-radius:                  0.5em;
+    border-radius:                  0.375em;
     box-shadow:                     inset 0px 0px 2px shadow-color(normal, semifaded);
     padding:                        0.5em;
 
@@ -55,17 +55,26 @@ button.popup
             background-image:       none;
             box-shadow:             none;
 
-    &:focus
-        button-text-color:          TextColorFocused;
-
     &:hover
         background-image:           HighlightGradientVertical;
         button-text-color:          TextColorHighlighted;
         box-shadow:                 inset 0px 0px 2px shadow-color(darker, semiopaque);
 
-    // &.popup
-    //     flat();
-        // background-color:           Red;
+    // Governs linked button groups that are horizontally oriented
+    .linked > &,
+    .horizontal.linked > &
+        border-radius:              0em;
+        border-width:               1px 0.25px;
+
+        &:first-child
+            border-radius:          0.375em 0em 0em 0.375em;
+            border-left-width:      1px;
+        &:last-child
+            border-radius:          0px 0.375em 0.375em 0px;
+            border-right-width:     1px;
+        &:only-child
+            border-radius:          0.375em;
+            border-width:           1px;
 
     // Governs linked button groups that are vertically oriented
     .vertical.linked > &
@@ -77,34 +86,17 @@ button.popup
             background-image:       HighlightGradientHorizontal;
 
         &:first-child
-            border-radius:          0.5em 0.5em 0em 0em;
+            border-radius:          0.375em 0.375em 0em 0em;
             border-top-width:       1px;
         &:last-child
-            border-radius:          0em 0em 0.5em 0.5em;
+            border-radius:          0em 0em 0.375em 0.375em;
             border-bottom-width:    1px;
         &:only-child
-            border-radius           0.5em;
+            border-radius           0.375em;
             border-width:           1px;
 
-    // Governs linked button groups that are horizontally oriented
-    .linked > &,
-    .horizontal.linked > &
-        border-radius:              0em;
-        border-width:               1px 0.25px;
-
-        &:first-child
-            border-radius:          0.5em 0em 0em 0.5em;
-            border-left-width:      1px;
-        &:last-child
-            border-radius:          0px 0.5em 0.5em 0px;
-            border-right-width:     1px;
-        &:only-child
-            border-radius:          0.5em;
-            border-width:           1px;
-
-    notebook &
+    notebook tab &
         padding:                    0.75em;
-
 
 spinbutton
     flat();
@@ -112,15 +104,17 @@ spinbutton
     box-shadow:                     none;
     padding:                        0em;
 
-    &:hover
+    &:hover *
         color:                      SelectionColor;
         &:backdrop                  { color: HighlightColor; }
-    &:last-child
-        border-radius:              0em 2em 2em 0em;
 
     &.horizontal
+        entry, button
+            padding:                0.5em 0.5em;
+
         & > entry
             border-radius:          2em 0em 0em 2em;
+            padding-left:           0.75em;
         & > button.down
             border-radius:          0em;
         & > button.up
@@ -139,49 +133,43 @@ spinbutton
 /* COLUMN-HEADER - Governs the title buttons at the top of sortable lists. */
 treeview
     margin:                         0em;
-    padding:                        0em;
 
-    button
+    header button
         @extends button.flat
-        background-color:   gloss-color(lighter, faded);
-        background-clip:    padding-box;
-        border:             none;
-        border-radius:      0px
-        border-top:         1px solid transparent;
+        background-color:           gloss-color(lighter, faded);
+        background-clip:            padding-box;
+        border:                     none;
+        border-radius:              0px
+        border-top:                 1px solid transparent;
 
-    &:first-child button
-        border-radius:      2.5px 0px 0px 0px;
-        border-left:        1px solid transparent;
-    &:last-child button
-        border-radius:      0px 2.5px 0px 0px;
-        border-right:       1px solid transparent;
+        &:first-child
+            border-radius:      2.5px 0px 0px 0px;
+            border-left:        1px solid transparent;
+        &:last-child
+            border-radius:      0px 2.5px 0px 0px;
+            border-right:       1px solid transparent;
 
 /* TITLEBUTTON - Governs the standard close, maximize, and minimize buttons for CSD windows. */
-.csd, .solid-csd
-    .titlebar, headerbar
+button.titlebutton
+    blank();
+    padding:        0px;
 
-        // stackswitcher
-        //     margin-top:     0.5em;
-        background-color:   inherit;
+    image:          "../unity/Core/Button.svg";
 
-        button.titlebutton
-            blank();
-            padding:        0px;
+    &.close, &.maximize, &.minimize
+        &:backdrop
+            image:  "../unity/Core/Button.svg";
 
-            &.close, &.maximize, &.minimize
-                &:backdrop
-                    image:  "../unity/Core/Button.svg";
+    &.close
+        image:      "../unity/Core/Close.svg";
+        &:hover     { image: "../unity/Core/CloseHover.svg"; }
 
-            &.close
-                image:      "../unity/Core/Close.svg";
-                &:hover     { image: "../unity/Core/CloseHover.svg"; }
+    &.maximize
+        image:      "../unity/Core/Maximize.svg";
+        &:hover     { image: "../unity/Core/MaximizeHover.svg"; }
+    &.minimize
+        image:      "../unity/Core/Minimize.svg";
+        &:hover     { image: "../unity/Core/MinimizeHover.svg"; }
 
-            &.maximize
-                image:      "../unity/Core/Maximize.svg";
-                &:hover     { image: "../unity/Core/MaximizeHover.svg"; }
-            &.minimize
-                image:      "../unity/Core/Minimize.svg";
-                &:hover     { image: "../unity/Core/MinimizeHover.svg"; }
-
-            image
-                color:      black;
+    image
+        color:      black;

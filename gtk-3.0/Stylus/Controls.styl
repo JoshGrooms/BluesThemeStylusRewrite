@@ -1,12 +1,14 @@
 
 
 arrow
-    -GtkArrow-arrow-scaling: 0.6;
-    color: TextColor;
-    &:hover
-        color: TextColorHighlighted;
 
-// GtkCalendar
+    color:                      TextColor;
+    min-height:                 1em;
+    min-width:                  1em;
+
+    :hover &
+        color:                  TextColorHighlighted;
+
 calendar
     border-radius:              2em;
     color:                      TextColor;
@@ -55,18 +57,9 @@ calendar
                 color-stop(1.0, HighlightColor));
             color:              TextColorDim;
 
-// GtkComboBox
 combobox
-    // &.combobox-entry
-    //     .entry
-    //         border-radius:      2em 0em 0em 2em;
-    //     .button
-    //         deep-inset();
-    //         border-radius:      0em 2em 2em 0em;
-    //         padding:            0.375em;
 
     box.linked > button.combo:only-child
-        // flat();
         shallow-inset();
         background-image:           none;
         border-radius:              0.125em;
@@ -79,82 +72,17 @@ combobox
             cellview
                 color:              TextColorHighlighted;
 
+
+
+    box.linked.horizontal > button.combo:not(:only-child):last-child
+        @extends combobox box.linked > button.combo:only-child;
+        border-radius:              0em 2em 2em 0em;
+
     menuitem:hover cellview
         color:                      TextColorSelected;
 
-    // menuitem
-    //     cellview
-    //         color:                  TextColorSelected;
-    //     &:hover label
-    //         color:                  TextColorSelected;
-    //     // background-color:       Red;
-    //
-    //     &:hover
-    //         color:                  TextColorSelected;
-        // cellview label
-        //     color:                  Red;
-
-        // menuitem:hover cellview
-        //     color:                  Red;
-
-
-
-
-        // menuitem:hover label
-        //     color:                  TextColorHighlighted;
-
-
-            // box cellview
-            //     color:              TextColorHighlighted;
-
-        // > box cellview
-        //     border-radius:          0em;
-        //     color:                  TextColor;
-
-        // cellview
-        //     deep-inset();
-        //     border-radius:          0em;
-        //     padding:                0.25em;
-        //
-        // &:hover
-        //     flat();
-        //     cellview
-        //         background-color:   HighlightColor;
-        //         color:              TextHighlightColor;
-
-
-    // entry
-    //     deep-inset();
-    //     border-radius:          0em;
-    //     padding:                0.25em;
-        // cellview
-        //     flat();
-        //     border-radius:      0em;
-    //
-    // notebook &
-    //     padding:            0.25em;
-
-    // &:hover, &:prelight
-    //     background-color:   HighlightColor;
-    //     background-image:   none;
-
-    // .horizontal.linked button,
-    // .vertical.linked button
-    //     @extends combobox;
-    //
-    //     &:first-child,
-    //     &:last-child,
-    //     &:only-child
-    //         @extends combobox;
-    //
-    // // Governs the selected entry in the combobox (i.e. while it is still collapsed)
-    // .cell:hover
-    //     color:                  TextColorHighlighted;
-    // // Governs the available combobox options (i.e. while it is expanded)
-    // //
-    // //      Unfortunately, for the time being, this appears to be the only way to manipulate text within the combobox menu.
-    // .menuitem:hover *
-    //     color:                  TextColorSelected;
+    arrow
+        -gtk-icon-source:           -gtk-icontheme("pan-down-symbolic");
 
 check
     icon:                               "Icons/Checkbox.svg";
@@ -201,7 +129,6 @@ expander
 scrollbar
     -GtkScrollbar-has-backward-stepper:     false;
     -GtkScrollbar-has-forward-stepper:      false;
-    -GtkScrollbar-min-slider-length:        30;
 
     border:                                 1px solid transparent;
 
@@ -211,67 +138,53 @@ scrollbar
         border:                             2px solid transparent;
         border-radius:                      2em;
 
-    &.horizontal, &.horizontal:hover
-        .slider, slider
-            background-image:               vgradient(ScrollbarColor);
-            &:backdrop
-                background-color:           ScrollbarColorDim;
-                background-image:           none;
+    &.horizontal slider:backdrop,
+    &.vertical slider:backdrop
+        background-color:                   ScrollbarColorDim;
+        background-image:                   none;
 
-    &.vertical, &.vertical:hover
-        .slider, slider
-            background-image:               hgradient(ScrollbarColor);
-            &:backdrop
-                background-color:           ScrollbarColorDim;
-                background-image:           none;
+    &.horizontal slider
+        background-image:                   vgradient(ScrollbarColor);
+
+    &.vertical slider
+        background-image:                   hgradient(ScrollbarColor);
 
     trough
-        shallow-inset();
-        border-radius:                      2em;
+        min-width:                          0.5em;
+        min-height:                         0.5em;
 
-
-
-.scrollbars-junction,
-.scrollbars-junction:backdrop
-    flat();
-
-
-/* SWITCH */
 switch
-    -GtkSwitch-slider-width:    48;
 
-    // background-size:                        100%;
-    background-repeat:                      no-repeat;
-    background-size:                        contain;
-    image:                                  "Icons/Switch-Trough.svg";
-    padding:                                0em;
+    shallow-inset();
+    border-radius:                          5em;
+    padding:                                0.125em 0.25em;
+
+    label
+        debug();
 
     slider
+        background-clip:                    border-box;
+        background-position:                left center;
         background-repeat:                  no-repeat;
-        background-size:                    contain;
-        image:                              "Icons/Switch-Slider.svg";
-
-    &:backdrop, &:backdrop:checked
-    &:disabled, &:disabled:checked
-        image:                              "Icons/Switch-Trough.svg";
-        slider
-            image:                          "Icons/Switch-Slider.svg";
+        border-radius:                      5em;
+        background-color:                   DarkSilver;
+        // background-size:                    auto;
+        // image:                              "Icons/Switch-Slider.svg";
+        // padding:                            1px;
 
     &:checked
-        image:                              "Icons/Switch-Trough-On.svg";
+        background-color:                   SelectionColor;
+        color:                              TextColorSelected;
+
+        &:backdrop
+            background-color:               HighlightColor;
+            color:                          TextColorHighlighted;
+
         slider
-            image:                          "Icons/Switch-Slider-On.svg";
-            padding:                        0em;
-
-        // &:checked
-        //     image:      "Icons/Switch-Slider-On.svg";
-        //     &:backdrop  { image: "Icons/Switch-Slider.svg"; }
-
-    // &.trough
-    //     image:          "Icons/Switch-Trough.svg";
-    //     &:checked
-    //         image:      "Icons/Switch-Trough-On.svg";
-    //         &:backdrop  { image: "Icons/Switch-Trough-On-Backdrop.svg"; }
+            background-position:            right center;
+    //     image:                              "Icons/Switch-Trough-On.svg";
+    //     slider
+    //         image:                          "Icons/Switch-Slider-On.svg";
 
 
 radio
@@ -286,3 +199,12 @@ radio
         icon:                       "Icons/Radio-Inactive.svg";
         &:checked                   { icon: "Icons/Radio-Checked-Inactive.svg"; }
         &:inconsistent              { icon: "Icons/Radio-Checked-Partial-Inactive.svg"; }
+
+radiobutton
+    radio, label
+        padding-left:               0.5em;
+        padding-right:              0.5em;
+
+checkbutton
+    check, label
+        @extends radiobutton radio;

@@ -38,6 +38,14 @@ notebook
                     color:                  HighlightColor;
                     border-color:           HighlightColor;
 
+            button,
+            button.flat
+                flat();
+                padding:                    1px;
+                > image                     { color: TextColor; }
+                &:backdrop > image          { color: TextColorDim; }
+                &:hover > image             { color: Red; }
+
         &.right, &.left
             tab:checked
                 box-shadow:                 inset -7px 0px 3px -6px SelectionColor,
@@ -51,11 +59,3 @@ notebook
                                             inset 0px -1px 1px SelectionColor;
                 &:backdrop
                     box-shadow:             inset 0px -1px 1px HighlightColor;
-
-        button,
-        button.flat
-            flat();
-            padding:                        1px;
-            > image                         { color: TextColor; }
-            &:backdrop > image              { color: TextColorDim; }
-            &:hover > image                 { color: Red; }

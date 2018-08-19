@@ -11,7 +11,7 @@ entry
 
     border-radius:          2em;
     color:                  TextColor;
-    padding:                0.375em 0.75em 0.375em 0.75em;
+    padding:                0.5em 0.75em 0.5em 0.75em;
     text-shadow:            none;
 
     &:backdrop              { color: TextColorDim; }
@@ -20,7 +20,6 @@ entry
         color:              TextColorHighlighted;
 
     progress
-        // background-color:   ProgressBarColor;
         background-clip:    border-box;
         background-image:   SelectionGradientVertical;
         background-size:    cover;
@@ -46,26 +45,18 @@ entry
         padding-left:       0.25em;
         padding-right:      0em;
 
-
-
-/* GTKSEARCHENTRY - Governs text entry bars that are meant for performing searches.
- *
- *      These particular controls always have the magnifying glass 'Search' icon placed on the left-hand side, which is why
- *      the padding change seen below is necessary.
- */
-// GtkSearchEntry,
-// GtkSearchEntry.entry
-    // padding: 0.375em;
-
-
-// GtkTextView
 textview
     -GtkTextView-error-underline-color: ErrorColor;
 
+    background-color:       shadow-color(light, normal);
+    border:                 none;
+    // border:                 2px solid shadow-color(light, normal);
     color:                  TextColor;
+
     &:backdrop
         color:              TextColorDim;
-    &:selected
+
+    text > selection
         background-color:   HighlightColor;
         color:              TextColorHighlighted;
 
