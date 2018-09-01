@@ -41,6 +41,22 @@ window headerbar {
   background-color: inherit;
   padding: 0.25em 0em;
 }
+.background.maximized,
+window.maximized,
+.background.maximized .titlebar,
+window.maximized .titlebar,
+.background.maximized headerbar,
+window.maximized headerbar {
+  background-color: #4b4b4b;
+}
+.background.maximized:backdrop,
+window.maximized:backdrop,
+.background.maximized .titlebar:backdrop,
+window.maximized .titlebar:backdrop,
+.background.maximized headerbar:backdrop,
+window.maximized headerbar:backdrop {
+  background-color: #3e3e3e;
+}
 .background:not(.csd):not(popover):not(.popup),
 window:not(.csd):not(popover):not(.popup) {
   background-color: #4b4b4b;

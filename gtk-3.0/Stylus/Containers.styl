@@ -14,6 +14,11 @@ window
         background-color:       inherit;
         padding:                0.25em 0em;
 
+    &.maximized
+        &, .titlebar, headerbar
+            background-color:   WindowColor;
+            &:backdrop          { background-color: WindowColorDim; }
+
     &:not(.csd):not(popover):not(.popup)
         background-color:       WindowColor;
         &:backdrop              { background-color: WindowColorDim; }
