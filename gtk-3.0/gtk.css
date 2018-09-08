@@ -18,7 +18,7 @@ button.popup {
   border-image: none;
   border-radius: 0em;
   box-shadow: none;
-  color: #a2a2a2;
+  color: #bbb;
   outline-color: transparent;
   outline-offset: 0px;
 }
@@ -207,11 +207,11 @@ row:selected:backdrop label {
   border: none;
   box-shadow: none;
   text-shadow: none;
-  color: #a2a2a2;
+  color: #bbb;
 }
 .sidebar row image,
 .sidebar row label {
-  color: #a2a2a2;
+  color: #bbb;
 }
 .sidebar row:selected {
   background-color: #00c8ff;
@@ -273,7 +273,7 @@ trough {
 trough row:selected:focused {
   background-color: #323232;
   background-image: none;
-  color: #a2a2a2;
+  color: #bbb;
 }
 progressbar progress {
   border-radius: 2em;
@@ -749,7 +749,7 @@ button.titlebutton image {
   color: #000;
 }
 arrow {
-  color: #a2a2a2;
+  color: #bbb;
   min-height: 1em;
   min-width: 1em;
 }
@@ -758,7 +758,7 @@ arrow {
 }
 calendar {
   border-radius: 2em;
-  color: #a2a2a2;
+  color: #bbb;
   padding: 0.125em;
 /* INCONSISTENT - Governs any days present on the calendar that do not belong to the currently selected month. */
 /* HEADER - Governs the calendar bar containing the month and year selection controls. */
@@ -889,7 +889,7 @@ expander {
   color: #c8c8c8;
 }
 expander:backdrop {
-  color: #a2a2a2;
+  color: #bbb;
 }
 scrollbar {
   -GtkScrollbar-has-backward-stepper: false;
@@ -994,7 +994,7 @@ entry {
   background-color: rgba(24,24,24,0.25);
   box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
   border-radius: 2em;
-  color: #a2a2a2;
+  color: #bbb;
   padding: 0.5em 0.75em 0.5em 0.75em;
   text-shadow: none;
 /* IMAGE - Governs any icons that appear inside of a text entry control. */
@@ -1037,7 +1037,7 @@ textview {
   -GtkTextView-error-underline-color: #f00;
   background-color: rgba(24,24,24,0.5);
   border: none;
-  color: #a2a2a2;
+  color: #bbb;
 }
 textview:backdrop {
   color: #898989;
@@ -1161,7 +1161,7 @@ notebook header tab button.flat {
 }
 notebook header tab button > image,
 notebook header tab button.flat > image {
-  color: #a2a2a2;
+  color: #bbb;
 }
 notebook header tab button:backdrop > image,
 notebook header tab button.flat:backdrop > image {
@@ -1284,7 +1284,7 @@ ECalendar button {
   border-radius: 0.125em;
 }
 ECalendar button GtkArrow {
-  color: #a2a2a2;
+  color: #bbb;
 }
 ECalendar button:hover GtkArrow {
   color: #323232;
