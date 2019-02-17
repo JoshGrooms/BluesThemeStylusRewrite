@@ -1,0 +1,155 @@
+.modal-dialog {
+  background-clip: border-box;
+  border-color: rgba(198,198,198,0.125);
+  border-bottom-color: rgba(36,36,36,0.125);
+  border-right-color: rgba(36,36,36,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(162,162,162,0.5);
+  box-shadow: 0px 0px 0px 1px #292929, -1px -1px 0px rgba(36,36,36,0.875), 3px 3px 5px rgba(0,0,0,0.25);
+  background-color: #252525;
+}
+.popup-menu.panel-menu {
+  -boxpointer-gap: 2px;
+  background-color: #252525;
+  border: 2px solid rgba(75,75,75,0.125);
+  border-radius: 0.5em;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.375);
+  padding: 0px;
+}
+.popup-menu.panel-menu .popup-menu-content {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+.popup-menu .popup-menu-content {
+  background-color: #252525;
+  background-clip: border-box;
+  border-color: rgba(75,75,75,0.125);
+  border-bottom-color: semitransparent;
+  border-right-color: semitransparent;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 0.5em;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.375);
+}
+.popup-menu .popup-menu-item:active,
+.popup-menu .popup-menu-item:checked,
+.popup-menu .popup-menu-item.selected {
+  background-color: #4b4b4b;
+}
+.popup-menu .popup-menu-item:hover {
+  background-color: rgba(0,200,255,0.625);
+  border-radius: 0.125em;
+}
+.popup-menu .popup-sub-menu {
+  background-color: rgba(0,0,0,0.25);
+  background-clip: padding-box;
+  border-color: rgba(36,36,36,0.125);
+  border-bottom-color: rgba(198,198,198,0.125);
+  border-right-color: rgba(198,198,198,0.125);
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.375);
+}
+.candidate-popup-boxpointer,
+.popup-menu-boxpointer {
+  -arrow-background-color: transparent;
+  -arrow-base: 0;
+  -arrow-border-color: transparent;
+  -arrow-border-radius: 0px;
+  -arrow-border-with: 0px;
+  -arrow-box-shadow: none;
+  -arrow-rise: 0;
+  border-width: 0px;
+  box-shadow: none;
+  margin: 0px;
+  border-radius: 0em;
+}
+.popup-separator-menu-item {
+  height: 2px;
+  background-color: transparent;
+  background-image: url("Icons/Separator-Horizontal.svg");
+  margin: 0px;
+}
+.background-menu {
+  -arrow-rise: 0;
+  border: 1px solid #f00;
+  background-color: #00f;
+  background-image: none;
+  color: #0f0;
+}
+#panel {
+  background-color: #252525;
+  background-gradient-direction: none;
+  border: none;
+  box-shadow: 0px 0px 3px #000;
+}
+#panel .panel-button:active {
+  background-color: #646464;
+  box-shadow: inset 0.5px 1px 2px #000;
+}
+#dash {
+  background-color: #252525;
+}
+#dash .dash-label {
+  border: 1px solid #f00;
+  background-color: #00f;
+  background-image: none;
+  color: #0f0;
+}
+.icon-grid .overview-icon,
+.icon-grid StIcon {
+  icon-shadow: 0px 0px 5px #000;
+}
+.tile-preview,
+.tile-preview-left,
+.tile-preview-left.on-primary {
+  border: 1px solid #f00;
+  background-color: #00f;
+  background-image: none;
+  color: #0f0;
+}
+.switcher-list {
+  background-color: #252525;
+  background-gradient-direction: none;
+  background-image: none;
+  border: 2px solid rgba(75,75,75,0.125);
+  border-radius: 0.5em;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.375);
+}
+.switcher-list .item-box,
+.switcher-list .thumbnail-box {
+  background-color: transparent;
+  border: none;
+}
+.switcher-list .item-box:selected,
+.switcher-list .thumbnail-box:selected {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(24,24,24,0.375);
+  box-shadow: inset 5px 5px 5px -5px rgba(0,0,0,0.5);
+  background-color: #00c8ff;
+}
+.switcher-list .item-box:outlined,
+.switcher-list .thumbnail-box:outlined {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(24,24,24,0.25);
+  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
+  background-color: #646464;
+}
+.switcher-list .item-box StIcon,
+.switcher-list .thumbnail-box StIcon {
+  icon-shadow: 0px 0px 5px #000;
+}

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+stylus -o ./gnome-shell.css ./Stylus/Main.styl

@@ -26,12 +26,15 @@ row
         &:backdrop
             background-color:   HighlightColor;
             background-image:   none;
-            color:              TextColorSelected;
-            image, label        { color: TextColorHighlighted; }
+            button-text-color:  TextColorHighlighted;
 
 .sidebar row
     flat();
     button-text-color:          TextColor;
+
+    &:backdrop
+        button-text-color:      TextColorDim;
+
     &:selected
         background-color:       SelectionColor;
         button-text-color:      TextColorSelected;

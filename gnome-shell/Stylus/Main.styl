@@ -1,0 +1,157 @@
+@import 'Standards/Colors/ColorNames';
+@import 'Standards/Colors/UI';
+@import 'Standards/UI/Styles';
+
+
+.modal-dialog
+
+    deep-outset();
+
+    background-color:               MenuColor;
+
+
+
+.popup-menu
+
+    &.panel-menu
+
+        -boxpointer-gap:            2px;
+
+        background-color:           MenuColor;
+        border:                     2px solid alpha(WindowColor, 0.125);
+        border-radius:              0.5em;
+        box-shadow:                 1px 2px 3px shadow-color(normal, semifaded);
+        padding:                    0px;
+
+        .popup-menu-content
+            flat();
+
+    .popup-menu-content
+        background-color:           MenuColor;
+        bevel:                      2px solid alpha(WindowColor, 0.125);
+        border-radius:              0.5em;
+        box-shadow:                 1px 2px 3px shadow-color(normal, semifaded);
+
+    .popup-menu-item
+
+        &:active,
+        &:checked,
+        &.selected
+            background-color:       Gray;;
+
+        &:hover
+            background-color:       alpha(SelectionColor, 0.625);
+            border-radius:          0.125em;
+
+    .popup-sub-menu
+        background-color:           InsetColor;
+        bevel:                      1px inset lighter;
+        box-shadow:                 inset 1px 2px 3px shadow-color(normal, semifaded);
+
+.candidate-popup-boxpointer,
+.popup-menu-boxpointer
+
+    -arrow-background-color:        transparent;
+    -arrow-base:                    0;
+    -arrow-border-color:            transparent;
+    -arrow-border-radius:           0px;
+    -arrow-border-with:             0px;
+    -arrow-box-shadow:              none;
+    -arrow-rise:                    0;
+
+    border-width:                   0px;
+    box-shadow:                     none;
+    margin:                         0px;
+    border-radius:                  0em;
+
+.popup-separator-menu-item
+
+    height:                         2px;
+    background-color:               transparent;
+    background-image:               url("Icons/Separator-Horizontal.svg");
+    margin:                         0px;
+
+.background-menu
+
+    // -boxpointer-gap:                64px;
+    -arrow-rise:                    0;
+    debug();
+
+#panel
+
+    background-color:               UnityPanelColor;
+    background-gradient-direction:  none;
+    border:                         none;
+    box-shadow:                     0px 0px 3px Black;
+
+    .panel-button:active
+        background-color:           LightGray;
+        box-shadow:                 inset 0.5px 1px 2px Black;
+
+
+    // &:overview
+    //     debug();
+
+    
+#dash
+
+    background-color:               UnityLauncherColor;
+
+    .dash-label
+        debug();
+
+
+// .app-view-control
+//
+//     debug();
+
+.icon-grid
+
+    .overview-icon,
+    StIcon
+        icon-shadow:    0px 0px 5px Black;
+
+
+.tile-preview,
+.tile-preview-left,
+.tile-preview-left.on-primary
+
+    debug();
+
+
+// .switcher-popup
+//
+//     padding:            1em;
+//     spacing:            1em;
+
+.switcher-list
+
+    background-color:   MenuColor;
+    background-gradient-direction:  none;
+    background-image:   none;
+    border:             2px solid alpha(WindowColor, 0.125);
+    border-radius:      0.5em;
+    box-shadow:         1px 2px 3px shadow-color(normal, semifaded);
+
+    .item-box,
+    .thumbnail-box
+        background-color:           transparent;
+        border:                     none;
+
+        &:selected
+            deeper-inset();
+            background-color:       SelectionColor;
+
+        &:outlined
+            deep-inset();
+            background-color:       LightGray;
+
+        StIcon
+            icon-shadow:    0px 0px 5px Black;
+
+
+// .switcher-list-item-container
+    // padding:            0px;
+//
+//     margin:             0.5em;
+//     padding:            0.25em 0em 0.25em 0em;
