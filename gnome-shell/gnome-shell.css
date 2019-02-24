@@ -1,20 +1,16 @@
-.modal-dialog {
-  background-clip: border-box;
-  border-color: rgba(198,198,198,0.125);
-  border-bottom-color: rgba(36,36,36,0.125);
-  border-right-color: rgba(36,36,36,0.125);
-  border-style: solid;
-  border-width: 1px;
-  background-color: rgba(162,162,162,0.5);
-  box-shadow: 0px 0px 0px 1px #292929, -1px -1px 0px rgba(36,36,36,0.875), 3px 3px 5px rgba(0,0,0,0.25);
+#dash {
   background-color: #252525;
+}
+#dash .app-well-app.focused > StWidget > StBin {
+  border: 1px solid transparent;
+  border-radius: 0em;
+}
+.popup-menu {
+  min-height: 32px;
 }
 .popup-menu.panel-menu {
   -boxpointer-gap: 2px;
-  background-color: #252525;
-  border: 2px solid rgba(75,75,75,0.125);
-  border-radius: 0.5em;
-  box-shadow: 1px 2px 3px rgba(0,0,0,0.375);
+  border-image: url("Stylus/Icons/Menu.svg") 8 8 8 8/8px 8px 8px 8px;
   padding: 0px;
 }
 .popup-menu.panel-menu .popup-menu-content {
@@ -23,59 +19,99 @@
   border: none;
   box-shadow: none;
   text-shadow: none;
+  padding: 4px 2px;
 }
 .popup-menu .popup-menu-content {
-  background-color: #252525;
-  background-clip: border-box;
-  border-color: rgba(75,75,75,0.125);
-  border-bottom-color: semitransparent;
-  border-right-color: semitransparent;
-  border-style: solid;
-  border-width: 2px;
+  border-image: url("Stylus/Icons/Menu.svg") 8 8 8 8/8px 8px 8px 8px;
   border-radius: 0.5em;
-  box-shadow: 1px 2px 3px rgba(0,0,0,0.375);
+  padding: 4px;
+}
+.popup-menu .popup-menu-item {
+  color: #bbb;
 }
 .popup-menu .popup-menu-item:active,
-.popup-menu .popup-menu-item:checked,
-.popup-menu .popup-menu-item.selected {
-  background-color: #4b4b4b;
-}
-.popup-menu .popup-menu-item:hover {
-  background-color: rgba(0,200,255,0.625);
-  border-radius: 0.125em;
-}
-.popup-menu .popup-sub-menu {
-  background-color: rgba(0,0,0,0.25);
+.popup-menu .popup-menu-item:checked {
   background-clip: padding-box;
   border-color: rgba(36,36,36,0.125);
   border-bottom-color: rgba(198,198,198,0.125);
   border-right-color: rgba(198,198,198,0.125);
   border-style: solid;
   border-width: 1px;
+  background-color: rgba(36,36,36,0.25);
+  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.375);
+  background-color: rgba(162,162,162,0.875);
+  border: none;
+  border-radius: 0.125em 0.125em 0em 0em;
+  color: #323232;
+}
+.popup-menu .popup-menu-item:active:hover,
+.popup-menu .popup-menu-item:checked:hover {
+  border-radius: 0.125em 0.125em 0em 0em;
+}
+.popup-menu .popup-menu-item:hover,
+.popup-menu .popup-menu-item.selected {
+  background-clip: padding-box;
+  border-color: rgba(36,36,36,0.125);
+  border-bottom-color: rgba(198,198,198,0.125);
+  border-right-color: rgba(198,198,198,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(36,36,36,0.25);
+  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.375);
+  border: none;
+  background-color: rgba(162,162,162,0.625);
+  border-radius: 0.125em;
+  color: #323232;
+}
+.popup-menu .popup-sub-menu {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(24,24,24,0.25);
+  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.25);
+  border: 1px solid rgba(75,75,75,0.125);
+  border-radius: 0em 0em 0.125em 0.125em;
   box-shadow: inset 1px 2px 3px rgba(0,0,0,0.375);
 }
-.candidate-popup-boxpointer,
+.popup-menu .popup-sub-menu .popup-menu-item {
+  border: 2px solid transparent;
+}
+.popup-menu .popup-sub-menu .popup-menu-item:hover {
+  border-color: #252525;
+  border-radius: 0.125em;
+  box-shadow: none;
+}
+.popup-menu-ornament {
+  height: 4px;
+  width: 4px;
+}
+.candidate-popup-boxpointer {
+  border: 1px solid #f00;
+  background-color: #00f;
+  background-image: none;
+  color: #0f0;
+}
 .popup-menu-boxpointer {
   -arrow-background-color: transparent;
-  -arrow-base: 0;
+  -arrow-base: 64px;
   -arrow-border-color: transparent;
-  -arrow-border-radius: 0px;
+  -arrow-border-radius: 0.375em;
   -arrow-border-with: 0px;
   -arrow-box-shadow: none;
-  -arrow-rise: 0;
-  border-width: 0px;
-  box-shadow: none;
-  margin: 0px;
-  border-radius: 0em;
+  -arrow-margin: 0px;
+  -arrow-padding: 0px;
+  -arrow-rise: 0px;
 }
 .popup-separator-menu-item {
-  height: 2px;
   background-color: transparent;
-  background-image: url("Icons/Separator-Horizontal.svg");
+  border-image: url("Stylus/Icons/Separator-Horizontal.svg") 0 0 2 0/0px 0px 2px 0px stretch;
   margin: 0px;
 }
-.background-menu {
-  -arrow-rise: 0;
+.search-section-separator {
   border: 1px solid #f00;
   background-color: #00f;
   background-image: none;
@@ -88,21 +124,54 @@
   box-shadow: 0px 0px 3px #000;
 }
 #panel .panel-button:active {
-  background-color: #646464;
+  background-color: rgba(162,162,162,0.875);
   box-shadow: inset 0.5px 1px 2px #000;
 }
-#dash {
-  background-color: #252525;
+#panel .panel-button:active:hover {
+  icon-shadow: none;
 }
-#dash .dash-label {
-  border: 1px solid #f00;
-  background-color: #00f;
-  background-image: none;
-  color: #0f0;
+.modal-dialog {
+  background-color: #f00;
+  border-image: url("Stylus/Icons/Modal.svg") 8 8 8 8/8px 8px 8px 8px;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.375);
+}
+.modal-dialog .modal-dialog-linked-button {
+  background-color: #646464;
+  border-radius: 2em;
+  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.25);
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.25);
+  margin: 0.5em 1em;
+}
+.message-list .message-list-clear-button {
+  border-radius: 2em;
+  background-color: #323232;
+  border-color: rgba(75,75,75,0.125);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+}
+.message-list .message-list-clear-button:hover {
+  background-color: #4b4b4b;
+}
+.message-list .message {
+  border-radius: 0.125em;
+  border: 1px solid transparent;
+}
+.message-list .message:hover {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(24,24,24,0.25);
+  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
+  background-color: rgba(162,162,162,0.25);
+  border-radius: 0.25em;
+  color: #323232;
 }
 .icon-grid .overview-icon,
 .icon-grid StIcon {
-  icon-shadow: 0px 0px 5px #000;
+  icon-shadow: 0px 0px 4px #000;
 }
 .tile-preview,
 .tile-preview-left,
@@ -112,13 +181,29 @@
   background-image: none;
   color: #0f0;
 }
-.switcher-list {
+StEntry {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(24,24,24,0.25);
+  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
+  border-radius: 2em;
+  padding: 0.25em 0.5em;
+}
+#overview StEntry {
   background-color: #252525;
-  background-gradient-direction: none;
-  background-image: none;
-  border: 2px solid rgba(75,75,75,0.125);
+}
+.switcher-arrow:highlighted {
+  color: #00c8ff;
+}
+.switcher-list {
+  -boxpointer-gap: 64px;
+  background-color: #252525;
+  border-image: url("Stylus/Icons/Menu.svg") 8 8 8 8/8px 8px 8px 8px;
   border-radius: 0.5em;
-  box-shadow: 1px 2px 3px rgba(0,0,0,0.375);
 }
 .switcher-list .item-box,
 .switcher-list .thumbnail-box {
@@ -133,9 +218,10 @@
   border-right-color: rgba(162,162,162,0.125);
   border-style: solid;
   border-width: 1px;
-  background-color: rgba(24,24,24,0.375);
-  box-shadow: inset 5px 5px 5px -5px rgba(0,0,0,0.5);
+  background-color: rgba(24,24,24,0.25);
+  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
   background-color: #00c8ff;
+  color: #323232;
 }
 .switcher-list .item-box:outlined,
 .switcher-list .thumbnail-box:outlined {
@@ -148,6 +234,7 @@
   background-color: rgba(24,24,24,0.25);
   box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
   background-color: #646464;
+  color: #bbb;
 }
 .switcher-list .item-box StIcon,
 .switcher-list .thumbnail-box StIcon {

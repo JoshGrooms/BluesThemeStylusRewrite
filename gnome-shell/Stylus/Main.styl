@@ -2,103 +2,49 @@
 @import 'Standards/Colors/UI';
 @import 'Standards/UI/Styles';
 
+@import 'Dash';
+@import 'Menus';
+@import 'Panel';
+
+
 
 .modal-dialog
 
-    deep-outset();
+    background-color:               Red;
+    border-image:                   url("Stylus/Icons/Modal.svg") 8 8 8 8 / 8px 8px 8px 8px;
+    border-radius:                  0.5em;
+    box-shadow:                     1px 1px 8px shadow-color(normal, semifaded);
 
-    background-color:               MenuColor;
+    .modal-dialog-linked-button
+        background-color:           WindowColorLight;
+        border-radius:              2em;
+        box-shadow:                 inset 0px 0px 2px shadow-color(darker, faded);
+        box-shadow:                 0px 0px 2px shadow-color(darker, faded);
+        margin:                     0.5em 1em;
 
+.message-list
 
-
-.popup-menu
-
-    &.panel-menu
-
-        -boxpointer-gap:            2px;
-
-        background-color:           MenuColor;
-        border:                     2px solid alpha(WindowColor, 0.125);
-        border-radius:              0.5em;
-        box-shadow:                 1px 2px 3px shadow-color(normal, semifaded);
-        padding:                    0px;
-
-        .popup-menu-content
-            flat();
-
-    .popup-menu-content
-        background-color:           MenuColor;
-        bevel:                      2px solid alpha(WindowColor, 0.125);
-        border-radius:              0.5em;
-        box-shadow:                 1px 2px 3px shadow-color(normal, semifaded);
-
-    .popup-menu-item
-
-        &:active,
-        &:checked,
-        &.selected
-            background-color:       Gray;;
+    .message-list-clear-button
+        border-radius:              2em;
+        background-color:           WindowColorDimmer;
+        border-color:               alpha(WindowColor, 0.125);
+        box-shadow:                 1px 1px 3px shadow-color(normal, faded);
 
         &:hover
-            background-color:       alpha(SelectionColor, 0.625);
-            border-radius:          0.125em;
+            background-color:       WindowColor;
 
-    .popup-sub-menu
-        background-color:           InsetColor;
-        bevel:                      1px inset lighter;
-        box-shadow:                 inset 1px 2px 3px shadow-color(normal, semifaded);
+    .message
 
-.candidate-popup-boxpointer,
-.popup-menu-boxpointer
+        border-radius:              0.125em;
+        border:                     1px solid transparent;
 
-    -arrow-background-color:        transparent;
-    -arrow-base:                    0;
-    -arrow-border-color:            transparent;
-    -arrow-border-radius:           0px;
-    -arrow-border-with:             0px;
-    -arrow-box-shadow:              none;
-    -arrow-rise:                    0;
-
-    border-width:                   0px;
-    box-shadow:                     none;
-    margin:                         0px;
-    border-radius:                  0em;
-
-.popup-separator-menu-item
-
-    height:                         2px;
-    background-color:               transparent;
-    background-image:               url("Icons/Separator-Horizontal.svg");
-    margin:                         0px;
-
-.background-menu
-
-    // -boxpointer-gap:                64px;
-    -arrow-rise:                    0;
-    debug();
-
-#panel
-
-    background-color:               UnityPanelColor;
-    background-gradient-direction:  none;
-    border:                         none;
-    box-shadow:                     0px 0px 3px Black;
-
-    .panel-button:active
-        background-color:           LightGray;
-        box-shadow:                 inset 0.5px 1px 2px Black;
+        &:hover
+            deep-inset();
+            background-color:       alpha(HighlightColor, 0.25);
+            border-radius:          0.25em;
+            color:                  TextColorHighlighted;
 
 
-    // &:overview
-    //     debug();
-
-    
-#dash
-
-    background-color:               UnityLauncherColor;
-
-    .dash-label
-        debug();
 
 
 // .app-view-control
@@ -109,7 +55,7 @@
 
     .overview-icon,
     StIcon
-        icon-shadow:    0px 0px 5px Black;
+        icon-shadow:                0px 0px 4px Black;
 
 
 .tile-preview,
@@ -123,31 +69,46 @@
 //
 //     padding:            1em;
 //     spacing:            1em;
+StEntry
+    deep-inset();
+    border-radius:                      2em;
+    padding:                            0.25em 0.5em;
+
+    #overview &
+        background-color:               MenuColor;
+
+.switcher-arrow
+
+    &:highlighted
+        color:                          SelectionColor;
 
 .switcher-list
 
-    background-color:   MenuColor;
-    background-gradient-direction:  none;
-    background-image:   none;
-    border:             2px solid alpha(WindowColor, 0.125);
-    border-radius:      0.5em;
-    box-shadow:         1px 2px 3px shadow-color(normal, semifaded);
+    -boxpointer-gap:                    64px;
+    background-color:                   MenuColor;
+    // border:                             2px solid alpha(WindowColor, 0.125);
+    border-image:                       url("Stylus/Icons/Menu.svg") 8 8 8 8 / 8px 8px 8px 8px;
+    border-radius:                      0.5em;
+    // box-shadow:                         1px 2px 8px shadow-color(normal, semifaded);
+    // box-shadow:                         1px 1px 1px Black;
 
     .item-box,
     .thumbnail-box
-        background-color:           transparent;
-        border:                     none;
+        background-color:               transparent;
+        border:                         none;
 
         &:selected
-            deeper-inset();
-            background-color:       SelectionColor;
+            deep-inset();
+            background-color:           SelectionColor;
+            color:                      TextColorSelected;
 
         &:outlined
             deep-inset();
-            background-color:       LightGray;
+            background-color:           LightGray;
+            color:                      TextColor;
 
         StIcon
-            icon-shadow:    0px 0px 5px Black;
+            icon-shadow:                0px 0px 5px Black;
 
 
 // .switcher-list-item-container

@@ -1,0 +1,109 @@
+.popup-menu
+
+    min-height:                 32px;
+
+    &.panel-menu
+
+        -boxpointer-gap:            2px;
+
+        // background-color:           MenuColor;
+        border-image:               url("Stylus/Icons/Menu.svg") 8 8 8 8 / 8px 8px 8px 8px;
+        // box-shadow:                 1px 2px 3px shadow-color(normal, semifaded);
+        padding:                    0px;
+        // margin:                     0em;
+
+        .popup-menu-content
+            flat();
+            padding:                4px 2px;
+
+    .popup-menu-content
+        // background-color:           MenuColor;
+        // border-color:               Red;
+        border-image:               url("Stylus/Icons/Menu.svg") 8 8 8 8 / 8px 8px 8px 8px;
+        // background-image:           url("Stylus/Icons/Menu.svg");
+        // background-size:            cover;
+        // background-repeat:          repeat;
+        border-radius:              0.5em;
+        // box-shadow:                 1px 2px 3px shadow-color(normal, semifaded);
+        // box-shadow:                 1px 2px 3px Black;
+        padding:                    4px;
+
+    .popup-menu-item
+
+        color:                      TextColor;
+
+        &:active,
+        &:checked
+            shallow-inset();
+            background-color:       alpha(HighlightColor, 0.875);
+            border:                 none;
+            border-radius:          0.125em 0.125em 0em 0em;
+            color:                  TextColorSelected;
+
+            &:hover
+                border-radius:      0.125em 0.125em 0em 0em;
+
+        &:hover,
+        &.selected
+            shallow-inset();
+            border:                 none;
+            background-color:       alpha(HighlightColor, 0.625);
+            border-radius:          0.125em;
+            color:                  TextColorHighlighted;
+
+    .popup-sub-menu
+        deep-inset();
+        background-color:           InsetColor;
+        border:                     1px solid alpha(WindowColor, 0.125);
+        border-radius:              0em 0em 0.125em 0.125em;
+        box-shadow:                 inset 1px 2px 3px shadow-color(normal, semifaded);
+
+        .popup-menu-item
+            border:                 2px solid transparent;
+            &:hover
+                border-color:       MenuColor;
+                border-radius:      0.125em;
+                box-shadow:         none;
+
+// .aggregate-menu
+//     debug();
+
+// .popup-menu-box
+//     debug();
+
+.popup-menu-ornament
+    // debug();
+    height:                         4px;
+    width:                          4px;
+
+
+.candidate-popup-boxpointer
+    debug();
+
+.popup-menu-boxpointer
+
+    -arrow-background-color:        transparent;
+    -arrow-base:                    64px;
+    -arrow-border-color:            transparent;
+    -arrow-border-radius:           0.375em;
+    -arrow-border-with:             0px;
+    -arrow-box-shadow:              none;
+    -arrow-margin:                  0px;
+    -arrow-padding:                 0px;
+    -arrow-rise:                    0px;
+
+.popup-separator-menu-item
+
+    background-color:               transparent;
+    border-image:                   url("Stylus/Icons/Separator-Horizontal.svg") 0 0 2 0 / 0px 0px 2px 0px stretch;
+    margin:                         0px;
+
+.search-section-separator
+    debug();
+
+// .background-menu
+//
+//     // -boxpointer-gap:                64px;
+//     // -arrow-rise:                    0;
+//
+//     debug();
