@@ -19,12 +19,13 @@ row
     image
         color:                  SelectionColor;
     &:selected
-        background-color:       SelectionColor;
+        // background-color:       SelectionColor;
+        background-color:       HighlightColor;
         color:                  TextColorSelected;
         image, label            { color: TextColorSelected; }
 
         &:backdrop
-            background-color:   HighlightColor;
+            background-color:   HighlightColorDim;
             background-image:   none;
             button-text-color:  TextColorHighlighted;
 

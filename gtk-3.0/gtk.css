@@ -161,7 +161,7 @@ row image {
 }
 .cell:selected,
 row:selected {
-  background-color: #00c8ff;
+  background-color: #a2a2a2;
   color: #323232;
 }
 .cell:selected image,
@@ -172,7 +172,7 @@ row:selected label {
 }
 .cell:selected:backdrop,
 row:selected:backdrop {
-  background-color: #a2a2a2;
+  background-color: rgba(162,162,162,0.625);
   background-image: none;
   color: #323232;
 }
@@ -361,12 +361,6 @@ menu separator {
 }
 paned.horizontal > separator {
   background-image: -gtk-scaled(url("Icons/Separator-Vertical.svg"));
-}
-#panel {
-  border: 1px solid #f00;
-  background-color: #00f;
-  background-image: none;
-  color: #0f0;
 }
 button,
 button.popup {
