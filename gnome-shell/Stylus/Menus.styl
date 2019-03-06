@@ -1,31 +1,20 @@
 .popup-menu
 
-    min-height:                 32px;
+    flat();
 
     &.panel-menu
 
         -boxpointer-gap:            2px;
-
-        // background-color:           MenuColor;
-        border-image:               url("Stylus/Icons/Menu.svg") 8 8 8 8 / 8px 8px 8px 8px;
-        // box-shadow:                 1px 2px 3px shadow-color(normal, semifaded);
         padding:                    0px;
-        // margin:                     0em;
 
         .popup-menu-content
-            flat();
             padding:                4px 2px;
 
     .popup-menu-content
-        // background-color:           MenuColor;
-        // border-color:               Red;
-        border-image:               url("Stylus/Icons/Menu.svg") 8 8 8 8 / 8px 8px 8px 8px;
-        // background-image:           url("Stylus/Icons/Menu.svg");
-        // background-size:            cover;
-        // background-repeat:          repeat;
+        border-image:               url("Stylus/Icons/Menu.svg") 16;
+        background-color:           MenuColor;
         border-radius:              0.5em;
-        // box-shadow:                 1px 2px 3px shadow-color(normal, semifaded);
-        // box-shadow:                 1px 2px 3px Black;
+        box-shadow:                 1px 1px 3px shadow-color(normal, semifaded);
         padding:                    4px;
 
     .popup-menu-item
@@ -65,20 +54,9 @@
                 border-radius:      0.125em;
                 box-shadow:         none;
 
-// .aggregate-menu
-//     debug();
-
-// .popup-menu-box
-//     debug();
-
 .popup-menu-ornament
-    // debug();
     height:                         4px;
     width:                          4px;
-
-
-.candidate-popup-boxpointer
-    debug();
 
 .popup-menu-boxpointer
 
@@ -93,17 +71,9 @@
     -arrow-rise:                    0px;
 
 .popup-separator-menu-item
-
     background-color:               transparent;
     border-image:                   url("Stylus/Icons/Separator-Horizontal.svg") 0 0 2 0 / 0px 0px 2px 0px stretch;
     margin:                         0px;
 
 .search-section-separator
     debug();
-
-// .background-menu
-//
-//     // -boxpointer-gap:                64px;
-//     // -arrow-rise:                    0;
-//
-//     debug();
