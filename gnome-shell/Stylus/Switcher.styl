@@ -1,0 +1,29 @@
+.switcher-arrow
+
+    &:highlighted
+        color:                          SelectionColor;
+
+.switcher-list
+
+    background-color:                   MenuColor;
+    border-radius:                      0.5em;
+    border-image:                       url("Stylus/Icons/Menu.svg") 16;
+    box-shadow:                         1px 2px 3px shadow-color(normal, semifaded);
+
+    .item-box,
+    .thumbnail-box
+        background-color:               transparent;
+        border:                         none;
+
+        &:selected
+            deep-inset();
+            background-color:           SelectionColor;
+            color:                      TextColorSelected;
+
+        &:outlined
+            deep-inset();
+            background-color:           LightGray;
+            color:                      TextColor;
+
+        StIcon
+            icon-shadow:                0px 0px 5px Black;

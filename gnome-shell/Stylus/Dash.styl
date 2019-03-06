@@ -1,3 +1,4 @@
+/* Governs the desktop taskbar that opens the main application menu and holds shortcuts to important programs. */
 #dash
 
     background-color:               MenuColor;
@@ -6,5 +7,21 @@
 
         > StWidget
             > StBin
-                border:                     1px solid transparent;
-                border-radius:              0em;
+                border:             1px solid transparent;
+                border-radius:      0em;
+
+/* Governs the tooltip windows that popup when hovering over a dash icon. */
+.dash-label
+    background-color:               MenuColor;
+    border-image:                   url("Stylus/Icons/Menu.svg") 16;
+    border-radius:                  0.5em;
+    box-shadow:                     1px 1px 1px shadow-color(normal, semifaded);
+    padding:                        0.75em 1em;
+
+/* Governs the array of icons in the main application menu. */
+.icon-grid
+
+    .overview-icon,
+    StIcon
+        icon-shadow:                0px 0px 4px Black;
+        icon-size:                  1em;

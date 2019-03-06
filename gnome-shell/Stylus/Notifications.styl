@@ -1,0 +1,70 @@
+
+.message-list
+
+    .message
+        border-radius:              0.125em;
+        border:                     1px solid transparent;
+
+        &:hover
+            deep-inset();
+            background-color:       alpha(HighlightColor, 0.25);
+            border-radius:          0.25em;
+            box-shadow:             inset 1px 1px 4px shadow-color(normal, normal);
+            color:                  TextColorHighlighted;
+
+        StIcon
+            icon-size:              2em;
+            icon-shadow:            0px 0px 4px shadow-color(dark, normal);
+
+    .message-list-clear-button
+        border-radius:              2em;
+        background-color:           WindowColorDimmer;
+        border-color:               alpha(WindowColor, 0.125);
+        box-shadow:                 1px 1px 3px shadow-color(dark, normal);
+        margin-bottom:              1em;
+
+        &:hover
+            background-color:       WindowColor;
+
+    .message-media-control
+        background-color:           WindowColorDimmer;
+        border:                     1px solid alpha(WindowColor, 0.25);
+        border-radius:              0em;
+        box-shadow:                 1px 1px 3px shadow-color(dark, normal);
+        margin:                     1em 0em;
+
+        &:first-child
+            border-radius:          0.375em 0em 0em 0.375em;
+        &:hover
+            background-color:       alpha(HighlightColor, 0.25);
+            box-shadow:             1px 1px 3px shadow-color(dark, normal);
+        &:last-child
+            border-radius:          0em 0.375em 0.375em 0em;
+            margin-right:           1em;
+
+
+
+.modal-dialog,
+.notification-banner,
+.osd-window
+    border-image:                   url("Stylus/Icons/Menu.svg") 16;
+    border-radius:                  0.5em;
+    box-shadow:                     1px 1px 8px shadow-color(normal, normal);
+
+.modal-dialog
+    border-image:                   url("Stylus/Icons/Modal.svg") 16;
+
+.modal-dialog-linked-button
+    background-color:               WindowColorLight;
+    box-shadow:                     1px 1px 3px shadow-color(dark, normal);
+    margin:                         0.5em 1em;
+
+    &:first-child
+        border-radius:              0.375em 0em 0em 0.375em;
+        &:last-child
+            border-radius:          0.375em;
+    &:hover
+        background-color:           HighlightColor;
+        color:                      TextColorHighlighted;
+    &:last-child
+        border-radius:              0em 0.375em 0.375em 0em;

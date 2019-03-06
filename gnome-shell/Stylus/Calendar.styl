@@ -1,0 +1,51 @@
+
+.calendar
+    deeper-inset();
+    padding:                        2px;
+
+#calendarArea
+    padding:                        0px;
+
+.calendar-day
+
+    border-radius:                  0.375em;
+
+    &:active,
+    &:selected
+        background-color:           alpha(HighlightColor, 0.625);
+        &:hover
+            background-color:       HighlightColor;
+            color:                  TextColorHighlighted;
+
+    &:hover
+        background-color:           alpha(HighlightColor, 0.375);
+
+    &.calendar-today
+        deeper-inset();
+        background-color:           SelectionColor;
+        border-radius:              2em;
+        color:                      TextColorSelected;
+
+        &:hover
+            background-color:       HighlightColor;
+            color:                  TextColorHighlighted;
+
+.calendar-day-heading
+    border:                         0px solid SelectionColor;
+    border-bottom-width:            1px;
+    border-radius:                  0px;
+    color:                          TextColor;
+    font-weight:                    bold;
+    margin:                         0px;
+
+.calendar-nonwork-day
+    color:                          TextColorDim;
+
+.calendar-other-month-day
+    color:                          TextColorDisabled;
+
+// .datemenu-displays-box
+    // debug();
+
+.datemenu-today-button
+    text-align:                     center;

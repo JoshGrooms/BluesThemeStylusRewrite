@@ -1,3 +1,66 @@
+.calendar {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(24,24,24,0.375);
+  box-shadow: inset 5px 5px 5px -5px rgba(0,0,0,0.5);
+  padding: 2px;
+}
+#calendarArea {
+  padding: 0px;
+}
+.calendar-day {
+  border-radius: 0.375em;
+}
+.calendar-day:active,
+.calendar-day:selected {
+  background-color: rgba(162,162,162,0.625);
+}
+.calendar-day:active:hover,
+.calendar-day:selected:hover {
+  background-color: #a2a2a2;
+  color: #323232;
+}
+.calendar-day:hover {
+  background-color: rgba(162,162,162,0.375);
+}
+.calendar-day.calendar-today {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(24,24,24,0.375);
+  box-shadow: inset 5px 5px 5px -5px rgba(0,0,0,0.5);
+  background-color: #00c8ff;
+  border-radius: 2em;
+  color: #323232;
+}
+.calendar-day.calendar-today:hover {
+  background-color: #a2a2a2;
+  color: #323232;
+}
+.calendar-day-heading {
+  border: 0px solid #00c8ff;
+  border-bottom-width: 1px;
+  border-radius: 0px;
+  color: #bbb;
+  font-weight: bold;
+  margin: 0px;
+}
+.calendar-nonwork-day {
+  color: #898989;
+}
+.calendar-other-month-day {
+  color: #646464;
+}
+.datemenu-today-button {
+  text-align: center;
+}
 #dash {
   background-color: #252525;
 }
@@ -5,25 +68,37 @@
   border: 1px solid transparent;
   border-radius: 0em;
 }
+.dash-label {
+  background-color: #252525;
+  border-image: url("Stylus/Icons/Menu.svg") 16;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.375);
+  padding: 0.75em 1em;
+}
+.icon-grid .overview-icon,
+.icon-grid StIcon {
+  icon-shadow: 0px 0px 4px #000;
+  icon-size: 1em;
+}
 .popup-menu {
-  min-height: 32px;
-}
-.popup-menu.panel-menu {
-  -boxpointer-gap: 2px;
-  border-image: url("Stylus/Icons/Menu.svg") 8 8 8 8/8px 8px 8px 8px;
-  padding: 0px;
-}
-.popup-menu.panel-menu .popup-menu-content {
   background-color: transparent;
   background-image: none;
   border: none;
   box-shadow: none;
   text-shadow: none;
+}
+.popup-menu.panel-menu {
+  -boxpointer-gap: 2px;
+  padding: 0px;
+}
+.popup-menu.panel-menu .popup-menu-content {
   padding: 4px 2px;
 }
 .popup-menu .popup-menu-content {
-  border-image: url("Stylus/Icons/Menu.svg") 8 8 8 8/8px 8px 8px 8px;
+  border-image: url("Stylus/Icons/Menu.svg") 16;
+  background-color: #252525;
   border-radius: 0.5em;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.375);
   padding: 4px;
 }
 .popup-menu .popup-menu-item {
@@ -89,12 +164,6 @@
   height: 4px;
   width: 4px;
 }
-.candidate-popup-boxpointer {
-  border: 1px solid #f00;
-  background-color: #00f;
-  background-image: none;
-  color: #0f0;
-}
 .popup-menu-boxpointer {
   -arrow-background-color: transparent;
   -arrow-base: 64px;
@@ -117,41 +186,6 @@
   background-image: none;
   color: #0f0;
 }
-#panel {
-  background-color: #252525;
-  background-gradient-direction: none;
-  border: none;
-  box-shadow: 0px 0px 3px #000;
-}
-#panel .panel-button:active {
-  background-color: rgba(162,162,162,0.875);
-  box-shadow: inset 0.5px 1px 2px #000;
-}
-#panel .panel-button:active:hover {
-  icon-shadow: none;
-}
-.modal-dialog {
-  background-color: #f00;
-  border-image: url("Stylus/Icons/Modal.svg") 8 8 8 8/8px 8px 8px 8px;
-  border-radius: 0.5em;
-  box-shadow: 1px 1px 8px rgba(0,0,0,0.375);
-}
-.modal-dialog .modal-dialog-linked-button {
-  background-color: #646464;
-  border-radius: 2em;
-  box-shadow: inset 0px 0px 2px rgba(0,0,0,0.25);
-  box-shadow: 0px 0px 2px rgba(0,0,0,0.25);
-  margin: 0.5em 1em;
-}
-.message-list .message-list-clear-button {
-  border-radius: 2em;
-  background-color: #323232;
-  border-color: rgba(75,75,75,0.125);
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-}
-.message-list .message-list-clear-button:hover {
-  background-color: #4b4b4b;
-}
 .message-list .message {
   border-radius: 0.125em;
   border: 1px solid transparent;
@@ -167,43 +201,90 @@
   box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
   background-color: rgba(162,162,162,0.25);
   border-radius: 0.25em;
+  box-shadow: inset 1px 1px 4px rgba(0,0,0,0.5);
   color: #323232;
 }
-.icon-grid .overview-icon,
-.icon-grid StIcon {
-  icon-shadow: 0px 0px 4px #000;
+.message-list .message StIcon {
+  icon-size: 2em;
+  icon-shadow: 0px 0px 4px rgba(0,0,0,0.5);
 }
-.tile-preview,
-.tile-preview-left,
-.tile-preview-left.on-primary {
-  border: 1px solid #f00;
-  background-color: #00f;
-  background-image: none;
-  color: #0f0;
-}
-StEntry {
-  background-clip: padding-box;
-  border-color: rgba(0,0,0,0.125);
-  border-bottom-color: rgba(162,162,162,0.125);
-  border-right-color: rgba(162,162,162,0.125);
-  border-style: solid;
-  border-width: 1px;
-  background-color: rgba(24,24,24,0.25);
-  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
+.message-list .message-list-clear-button {
   border-radius: 2em;
-  padding: 0.25em 0.5em;
+  background-color: #323232;
+  border-color: rgba(75,75,75,0.125);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  margin-bottom: 1em;
 }
-#overview StEntry {
+.message-list .message-list-clear-button:hover {
+  background-color: #4b4b4b;
+}
+.message-list .message-media-control {
+  background-color: #323232;
+  border: 1px solid rgba(75,75,75,0.25);
+  border-radius: 0em;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  margin: 1em 0em;
+}
+.message-list .message-media-control:first-child {
+  border-radius: 0.375em 0em 0em 0.375em;
+}
+.message-list .message-media-control:hover {
+  background-color: rgba(162,162,162,0.25);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.message-list .message-media-control:last-child {
+  border-radius: 0em 0.375em 0.375em 0em;
+  margin-right: 1em;
+}
+.modal-dialog,
+.notification-banner,
+.osd-window {
+  border-image: url("Stylus/Icons/Menu.svg") 16;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+}
+.modal-dialog {
+  border-image: url("Stylus/Icons/Modal.svg") 16;
+}
+.modal-dialog-linked-button {
+  background-color: #646464;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  margin: 0.5em 1em;
+}
+.modal-dialog-linked-button:first-child {
+  border-radius: 0.375em 0em 0em 0.375em;
+}
+.modal-dialog-linked-button:first-child:last-child {
+  border-radius: 0.375em;
+}
+.modal-dialog-linked-button:hover {
+  background-color: #a2a2a2;
+  color: #323232;
+}
+.modal-dialog-linked-button:last-child {
+  border-radius: 0em 0.375em 0.375em 0em;
+}
+#panel {
   background-color: #252525;
+  background-gradient-direction: none;
+  border: none;
+  box-shadow: 0px 0px 3px #000;
+}
+#panel .panel-button:active {
+  background-color: rgba(162,162,162,0.875);
+  box-shadow: inset 1px 1px 2px #000;
+}
+#panel .panel-button:active:hover {
+  icon-shadow: none;
 }
 .switcher-arrow:highlighted {
   color: #00c8ff;
 }
 .switcher-list {
-  -boxpointer-gap: 64px;
   background-color: #252525;
-  border-image: url("Stylus/Icons/Menu.svg") 8 8 8 8/8px 8px 8px 8px;
   border-radius: 0.5em;
+  border-image: url("Stylus/Icons/Menu.svg") 16;
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.375);
 }
 .switcher-list .item-box,
 .switcher-list .thumbnail-box {
@@ -239,4 +320,39 @@ StEntry {
 .switcher-list .item-box StIcon,
 .switcher-list .thumbnail-box StIcon {
   icon-shadow: 0px 0px 5px #000;
+}
+.tile-preview,
+.tile-preview-left,
+.tile-preview-left.on-primary {
+  border: 1px solid #f00;
+  background-color: #00f;
+  background-image: none;
+  color: #0f0;
+}
+StEntry {
+  background-clip: padding-box;
+  border-color: rgba(0,0,0,0.125);
+  border-bottom-color: rgba(162,162,162,0.125);
+  border-right-color: rgba(162,162,162,0.125);
+  border-style: solid;
+  border-width: 1px;
+  background-color: rgba(24,24,24,0.25);
+  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
+  border-radius: 2em;
+  padding: 0.25em 0.5em;
+}
+#overview StEntry {
+  background-color: #252525;
+}
+.slider {
+  margin: 0.25em 0em;
+}
+.system-menu-action {
+  background-color: rgba(0,0,0,0.25);
+  border: none;
+  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.375);
+}
+.system-menu-action:hover {
+  background-color: #a2a2a2;
+  border: none;
 }

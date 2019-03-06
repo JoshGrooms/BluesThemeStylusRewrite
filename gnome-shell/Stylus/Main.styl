@@ -2,47 +2,15 @@
 @import 'Standards/Colors/UI';
 @import 'Standards/UI/Styles';
 
+@import 'Calendar';
 @import 'Dash';
 @import 'Menus';
+@import 'Notifications';
 @import 'Panel';
+@import 'Switcher';
 
 
 
-.modal-dialog
-
-    background-color:               Red;
-    border-image:                   url("Stylus/Icons/Modal.svg") 8 8 8 8 / 8px 8px 8px 8px;
-    border-radius:                  0.5em;
-    box-shadow:                     1px 1px 8px shadow-color(normal, semifaded);
-
-    .modal-dialog-linked-button
-        background-color:           WindowColorLight;
-        border-radius:              2em;
-        box-shadow:                 inset 0px 0px 2px shadow-color(darker, faded);
-        box-shadow:                 0px 0px 2px shadow-color(darker, faded);
-        margin:                     0.5em 1em;
-
-.message-list
-
-    .message-list-clear-button
-        border-radius:              2em;
-        background-color:           WindowColorDimmer;
-        border-color:               alpha(WindowColor, 0.125);
-        box-shadow:                 1px 1px 3px shadow-color(normal, faded);
-
-        &:hover
-            background-color:       WindowColor;
-
-    .message
-
-        border-radius:              0.125em;
-        border:                     1px solid transparent;
-
-        &:hover
-            deep-inset();
-            background-color:       alpha(HighlightColor, 0.25);
-            border-radius:          0.25em;
-            color:                  TextColorHighlighted;
 .tile-preview,
 .tile-preview-left,
 .tile-preview-left.on-primary
@@ -57,42 +25,14 @@ StEntry
     #overview &
         background-color:               MenuColor;
 
-.switcher-arrow
+.slider
+    margin:                             0.25em 0em;
 
-    &:highlighted
-        color:                          SelectionColor;
+.system-menu-action
+    background-color:                   InsetColor;
+    border:                             none;
+    box-shadow:                         inset 1px 2px 3px shadow-color(normal, semifaded);
 
-.switcher-list
-
-    -boxpointer-gap:                    64px;
-    background-color:                   MenuColor;
-    // border:                             2px solid alpha(WindowColor, 0.125);
-    border-image:                       url("Stylus/Icons/Menu.svg") 8 8 8 8 / 8px 8px 8px 8px;
-    border-radius:                      0.5em;
-    // box-shadow:                         1px 2px 8px shadow-color(normal, semifaded);
-    // box-shadow:                         1px 1px 1px Black;
-
-    .item-box,
-    .thumbnail-box
-        background-color:               transparent;
+    &:hover
+        background-color:               HighlightColor;
         border:                         none;
-
-        &:selected
-            deep-inset();
-            background-color:           SelectionColor;
-            color:                      TextColorSelected;
-
-        &:outlined
-            deep-inset();
-            background-color:           LightGray;
-            color:                      TextColor;
-
-        StIcon
-            icon-shadow:                0px 0px 5px Black;
-
-
-// .switcher-list-item-container
-    // padding:            0px;
-//
-//     margin:             0.5em;
-//     padding:            0.25em 0em 0.25em 0em;
