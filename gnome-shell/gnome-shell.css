@@ -1,3 +1,4 @@
+/* STYLES */
 .calendar {
   background-clip: padding-box;
   border-color: rgba(0,0,0,0.125);
@@ -70,9 +71,12 @@
 }
 .dash-label {
   background-color: #252525;
-  border-image: url("Stylus/Icons/Menu.svg") 16;
+  border-bottom: 0px none transparent;
+  border-left: 2px solid #303030;
+  border-right: 0px none transparent;
+  border-top: 2px solid #303030;
   border-radius: 0.5em;
-  box-shadow: 1px 1px 1px rgba(0,0,0,0.375);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   padding: 0.75em 1em;
 }
 .icon-grid .overview-icon,
@@ -95,10 +99,13 @@
   padding: 4px 2px;
 }
 .popup-menu .popup-menu-content {
-  border-image: url("Stylus/Icons/Menu.svg") 16;
   background-color: #252525;
+  border-bottom: 0px none transparent;
+  border-left: 1px solid #303030;
+  border-right: 0px none transparent;
+  border-top: 1px solid #303030;
   border-radius: 0.5em;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.375);
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   padding: 4px;
 }
 .popup-menu .popup-menu-item {
@@ -211,7 +218,10 @@
 .message-list .message-list-clear-button {
   border-radius: 2em;
   background-color: #323232;
-  border-color: rgba(75,75,75,0.125);
+  border-bottom: 0px none transparent;
+  border-left: 1px solid #3c3c3c;
+  border-right: 0px none transparent;
+  border-top: 1px solid #3c3c3c;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   margin-bottom: 1em;
 }
@@ -220,7 +230,10 @@
 }
 .message-list .message-media-control {
   background-color: #323232;
-  border: 1px solid rgba(75,75,75,0.25);
+  border-bottom: 0px none transparent;
+  border-left: 1px solid #3c3c3c;
+  border-right: 0px none transparent;
+  border-top: 1px solid #3c3c3c;
   border-radius: 0em;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   margin: 1em 0em;
@@ -239,20 +252,33 @@
 .modal-dialog,
 .notification-banner,
 .osd-window {
-  border-image: url("Stylus/Icons/Menu.svg") 16;
+  background-color: #252525;
+  border-bottom: 0px none transparent;
+  border-left: 1px solid #303030;
+  border-right: 0px none transparent;
+  border-top: 1px solid #303030;
   border-radius: 0.5em;
   box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
 }
 .modal-dialog {
-  border-image: url("Stylus/Icons/Modal.svg") 16;
+  background-color: #4b4b4b;
+  border-bottom: 0px none transparent;
+  border-left: 1px solid #666;
+  border-right: 0px none transparent;
+  border-top: 1px solid #666;
 }
 .modal-dialog-linked-button {
   background-color: #646464;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-  margin: 0.5em 1em;
+  border-bottom: 0px none transparent;
+  border-left: 1px solid #7b7b7b;
+  border-right: 0px none transparent;
+  border-top: 1px solid #7b7b7b;
+  margin: 0.5em 0em;
 }
 .modal-dialog-linked-button:first-child {
   border-radius: 0.375em 0em 0em 0.375em;
+  margin-left: 1em;
 }
 .modal-dialog-linked-button:first-child:last-child {
   border-radius: 0.375em;
@@ -263,6 +289,7 @@
 }
 .modal-dialog-linked-button:last-child {
   border-radius: 0em 0.375em 0.375em 0em;
+  margin-right: 1em;
 }
 #panel {
   background-color: #252525;
@@ -282,8 +309,11 @@
 }
 .switcher-list {
   background-color: #252525;
+  border-bottom: 0px none transparent;
+  border-left: 1px solid #303030;
+  border-right: 0px none transparent;
+  border-top: 1px solid #303030;
   border-radius: 0.5em;
-  border-image: url("Stylus/Icons/Menu.svg") 16;
   box-shadow: 1px 2px 3px rgba(0,0,0,0.375);
 }
 .switcher-list .item-box,

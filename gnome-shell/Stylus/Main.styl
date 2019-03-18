@@ -2,6 +2,23 @@
 @import 'Standards/Colors/UI';
 @import 'Standards/UI/Styles';
 
+
+
+/* STYLES */
+border-bevel(size, direction, color)
+
+    // lightColor = lighten(color, 7.5%);
+    if (direction == outset)
+        border-bottom:                  0px none transparent;
+        border-left:                    size solid color;
+        border-right:                   0px none transparent;
+        border-top:                     size solid color;
+    else
+        border-bottom:                  size solid color;
+        border-left:                    0px none transparent;
+        border-right:                   size solid color;
+        border-top:                     0px none transparent;
+
 @import 'Calendar';
 @import 'Dash';
 @import 'Menus';

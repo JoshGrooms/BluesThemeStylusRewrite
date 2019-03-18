@@ -19,7 +19,7 @@
     .message-list-clear-button
         border-radius:              2em;
         background-color:           WindowColorDimmer;
-        border-color:               alpha(WindowColor, 0.125);
+        border-bevel:               1px outset lighten(WindowColorDimmer, 5%);
         box-shadow:                 1px 1px 3px shadow-color(dark, normal);
         margin-bottom:              1em;
 
@@ -28,7 +28,7 @@
 
     .message-media-control
         background-color:           WindowColorDimmer;
-        border:                     1px solid alpha(WindowColor, 0.25);
+        border-bevel:               1px outset lighten(WindowColorDimmer, 5%);
         border-radius:              0em;
         box-shadow:                 1px 1px 3px shadow-color(dark, normal);
         margin:                     1em 0em;
@@ -47,20 +47,24 @@
 .modal-dialog,
 .notification-banner,
 .osd-window
-    border-image:                   url("Stylus/Icons/Menu.svg") 16;
+    background-color:               MenuColor;
+    border-bevel:                   1px outset lighten(MenuColor, 5%);
     border-radius:                  0.5em;
-    box-shadow:                     1px 1px 8px shadow-color(normal, normal);
+    box-shadow:                     1px 1px 8px shadow-color(dark, normal);
 
 .modal-dialog
-    border-image:                   url("Stylus/Icons/Modal.svg") 16;
+    background-color:               WindowColor;
+    border-bevel:                   1px outset lighten(WindowColor, 15%);
 
 .modal-dialog-linked-button
     background-color:               WindowColorLight;
     box-shadow:                     1px 1px 3px shadow-color(dark, normal);
-    margin:                         0.5em 1em;
+    border-bevel:                   1px outset lighten(WindowColorLight, 15%);
+    margin:                         0.5em 0em;
 
     &:first-child
         border-radius:              0.375em 0em 0em 0.375em;
+        margin-left:                1em;
         &:last-child
             border-radius:          0.375em;
     &:hover
@@ -68,3 +72,4 @@
         color:                      TextColorHighlighted;
     &:last-child
         border-radius:              0em 0.375em 0.375em 0em;
+        margin-right:               1em;
