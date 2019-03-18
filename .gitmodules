@@ -1,0 +1,3 @@
+[submodule "Standards"]
+	path = Standards
+	url = https://github.com/JoshGrooms/Color-Standards.git

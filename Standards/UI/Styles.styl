@@ -7,11 +7,6 @@
  */
 
 
-blank()
-    flat();
-    background-position:    center center;
-    background-repeat:      no-repeat;
-    color:                  transparent;
 
 /* DEBUG - Styles elements with highly visible colors for easier debugging. */
 debug()
@@ -41,15 +36,10 @@ flat()
     background-color:   transparent;
     background-image:   none;
     border:             none;
-    //border-image:       none;
     box-shadow:         none;
-    text-shadow:        none;
 
 icon(source)
-    -gtk-icon-source:       url(source);
-
-image(source)
-    background-image:       -gtk-scaled(url(source));
+    -gtk-icon-source: url(source);
 
 /* SHADOW - Sets a standardized box shadow style for any widget class or selector.
  *

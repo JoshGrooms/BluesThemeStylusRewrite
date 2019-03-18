@@ -1,0 +1,86 @@
+/* CHANGELOG
+ * Written by Josh Grooms on 20151201
+ */
+
+@import "../Colors/UI"
+
+
+
+/** PRIVATE STYLE UTILITIES **/
+._bevel(inset)    { background-clip: padding-box; }
+._bevel(outset)   { background-clip: border-box; }
+._bevel(@size; @topLeft; @bottomRight)
+{
+    border:                 @size solid @topLeft;
+    border-bottom-color:    @bottomRight;
+    border-right-color:     @bottomRight;
+}
+
+/* BEVEL -
+ *
+ */
+.bevel(inset; @size: 1px; @topLeft: @shadow-color-lighter; @bottomRight: @gloss-color)
+{
+    ._bevel(inset);
+    ._bevel(@size, @topLeft, @bottomRight);
+}
+
+.bevel(outset; @size: 1px; @topLeft: @gloss-color; @bottomRight: @shadow-color-lighter)
+{
+    ._bevel(outset);
+    ._bevel(@size, @topLeft, @botttomRight);
+}
+
+.debug()
+{
+    border:             1px solid @red;
+    background-color:   @blue;
+    background-image:   none;
+    color:              @green;
+}
+
+.deep-inset()
+{
+    .bevel(inset);
+    // .bevel(1px, inset, @shadow-color-lighter, @gloss-color);
+    .shadow(10px, inset, @shadow-color);
+
+    background-color:       @inset-color-dark;
+}
+
+.deep-outset()
+{
+
+}
+
+.flat()
+{
+    background-color:   transparent;
+    background-image:   none;
+    border:             none;
+    box-shadow:         none;
+}
+
+.shadow(@size; @direction: outset; @color: @shadow-color)
+{
+    box-shadow:         @direction @size @size @size (-@size) @color;
+}
+
+.shallow-inset()
+{
+    .bevel(inset);
+    // .bevel(1px, inset, @shadow-color-lighter, @gloss-color);
+
+    background-color:   @inset-color;
+    box-shadow:         inset 1px 2px 3px @shadow-color;
+}
+
+.shallow-outset()
+{
+    .bevel(outset);
+    // .bevel(1px, inset, @gloss-color, @shadow-color-lighter);
+
+    background-color:   @menu-color;
+    box-shadow:         3px 3px 5px @shadow-color,
+                        -1px 1px 1px @shadow-color-dark;
+}
