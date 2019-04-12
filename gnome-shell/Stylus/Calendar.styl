@@ -1,6 +1,8 @@
 
 .calendar
-    deeper-inset();
+    background-color:               InsetColor;
+    box-shadow:                     inset 1px 1px 3px shadow-color(dark, normal);
+    border-bevel:                   1px inset lighten(MenuColor, 5%);
     padding:                        2px;
 
 #calendarArea
@@ -46,6 +48,10 @@
 
 // .datemenu-displays-box
     // debug();
+
+.datemenu-calendar-column
+    border:                         0px solid lighten(MenuColor, 10%);
+    border-left-width:              1px;
 
 .datemenu-today-button
     text-align:                     center;

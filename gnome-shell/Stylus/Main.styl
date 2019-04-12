@@ -7,17 +7,35 @@
 /* STYLES */
 border-bevel(size, direction, color)
 
-    // lightColor = lighten(color, 7.5%);
+    border:                             0px solid color;
     if (direction == outset)
-        border-bottom:                  0px none transparent;
-        border-left:                    size solid color;
-        border-right:                   0px none transparent;
-        border-top:                     size solid color;
+        border-top-width:               size;
+        border-left-width:              size;
     else
-        border-bottom:                  size solid color;
-        border-left:                    0px none transparent;
-        border-right:                   size solid color;
-        border-top:                     0px none transparent;
+        border-bottom-width:            size;
+        border-right-width:             size;
+
+/// @brief Configures a border image for a HTML element that resembles an inset separation line.
+separator(position = bottom)
+
+    if (position == bottom || position == top)  { source = url("Icons/Separator-Horizontal.svg"); }
+    else                                        { source = url("Icons/Separator-Vertical.svg"); }
+
+    if (position == bottom)
+        size    = 0px 0px 2px 0px;
+        slice   = 0 0 2 0;
+    else if (position == left)
+        size    = 0px 0px 0px 2px;
+        slice   = 0 0 0 2;
+    else if (position == right)
+        size    = 0px 2px 0px 0px;
+        slice   = 0 2 0 0;
+    else
+        size    = 2px 0px 0px 0px;
+        slice   = 2 0 0 0;
+
+    border-image:                       source slice / size repeat;
+    border-width:                       size;
 
 @import 'Calendar';
 @import 'Dash';
@@ -36,6 +54,7 @@ border-bevel(size, direction, color)
 
 StEntry
     deep-inset();
+    border-bevel:                       1px inset lighten(MenuColor, 10%);
     border-radius:                      2em;
     padding:                            0.25em 0.5em;
 
