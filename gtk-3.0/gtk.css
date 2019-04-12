@@ -18,7 +18,7 @@ button.popup {
   border-image: none;
   border-radius: 0em;
   box-shadow: none;
-  color: #bbb;
+  color: #a2a2a2;
   outline-color: transparent;
   outline-offset: 0px;
 }
@@ -71,12 +71,6 @@ window:not(.csd):not(popover):not(.popup) .titlebar,
 window:not(.csd):not(popover):not(.popup) headerbar {
   background-color: transparent;
 }
-.background:not(.csd):not(popover):not(.popup) .titlebar button.titlebutton,
-window:not(.csd):not(popover):not(.popup) .titlebar button.titlebutton,
-.background:not(.csd):not(popover):not(.popup) headerbar button.titlebutton,
-window:not(.csd):not(popover):not(.popup) headerbar button.titlebutton {
-  padding: 0.25em 0em;
-}
 .background:not(.csd):not(popover):not(.popup) > decoration,
 window:not(.csd):not(popover):not(.popup) > decoration {
   background-color: #4b4b4b;
@@ -94,7 +88,6 @@ window:not(.csd):not(popover):not(.popup) > decoration:backdrop {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
 }
 decoration {
   background-color: #4b4b4b;
@@ -131,8 +124,7 @@ tooltip > decoration {
   background-color: #252525;
   padding: 0px;
 }
-.rubberband,
-rubberband {
+.rubberband {
   background-color: rgba(162,162,162,0.25);
   border: 1px solid #96c8ff;
 }
@@ -153,7 +145,6 @@ scrolledwindow {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
 }
 .cell image,
 row image {
@@ -172,7 +163,7 @@ row:selected label {
 }
 .cell:selected:backdrop,
 row:selected:backdrop {
-  background-color: rgba(162,162,162,0.625);
+  background-color: HighlightColorDim;
   background-image: none;
   color: #323232;
 }
@@ -187,12 +178,11 @@ row:selected:backdrop label {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
-  color: #bbb;
+  color: #a2a2a2;
 }
 .sidebar row image,
 .sidebar row label {
-  color: #bbb;
+  color: #a2a2a2;
 }
 .sidebar row:backdrop {
   color: #898989;
@@ -226,7 +216,6 @@ row:selected:backdrop label {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
 }
 .sidebar row .sidebar-icon {
   padding-left: 0.5em;
@@ -256,7 +245,7 @@ trough {
 trough row:selected:focused {
   background-color: #323232;
   background-image: none;
-  color: #bbb;
+  color: #a2a2a2;
 }
 progressbar progress {
   border-radius: 2em;
@@ -282,7 +271,6 @@ levelbar block.empty {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
 }
 levelbar block.filled {
   border: 2px solid transparent;
@@ -323,7 +311,7 @@ scale.vertical highlight:backdrop {
 }
 scale.horizontal slider:backdrop,
 scale.vertical slider:backdrop {
-  background-image: -gtk-scaled(url("Icons/Slider-Backdrop.svg"));
+  background-image: url("Icons/Slider-Backdrop.svg");
 }
 scale.horizontal highlight {
   background-image: -gtk-gradient(linear, left top, left bottom, from(#008fb6), to(#49d8ff));
@@ -344,23 +332,23 @@ scale slider {
   background-size: 100% 100%;
   min-width: 1em;
   min-height: 1em;
-  background-image: -gtk-scaled(url("Icons/Slider.svg"));
+  background-image: url("Icons/Slider.svg");
 }
 separator {
-  background-image: -gtk-scaled(url("Icons/Separator-Horizontal.svg"));
+  background-image: url("Icons/Separator-Horizontal.svg");
   min-height: 2px;
   min-width: 2px;
 }
 separator.vertical {
-  background-image: -gtk-scaled(url("Icons/Separator-Vertical.svg"));
+  background-image: url("Icons/Separator-Vertical.svg");
 }
 menu separator {
   background-repeat: repeat-x;
-  background-image: -gtk-scaled(url("Icons/Separator-Horizontal.svg"));
+  background-image: url("Icons/Separator-Horizontal.svg");
   margin: 0.25em;
 }
 paned.horizontal > separator {
-  background-image: -gtk-scaled(url("Icons/Separator-Vertical.svg"));
+  background-image: url("Icons/Separator-Vertical.svg");
 }
 button,
 button.popup {
@@ -379,6 +367,7 @@ button.popup {
      *
      * CHECKED - Controls toggle-like buttons that have been pressed.
      */
+/* TITLEBUTTON - Governs the standard close, maximize, and minimize buttons for CSD windows. */
 }
 button:active,
 button.popup:active,
@@ -552,7 +541,6 @@ ECalendar button {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
   border: 1px solid transparent;
   border-radius: 0.25em;
 }
@@ -606,6 +594,74 @@ button.popup:hover label {
   border-radius: 0.375em;
   border-width: 1px;
 }
+headerbar button.titlebutton,
+headerbar button.popup.titlebutton,
+.titlebar button.titlebutton,
+.titlebar button.popup.titlebutton {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  background-size: 100%;
+  background-image: url("../unity/Core/Button.svg");
+  padding: 0.25em;
+}
+headerbar button.titlebutton.close:backdrop,
+headerbar button.popup.titlebutton.close:backdrop,
+.titlebar button.titlebutton.close:backdrop,
+.titlebar button.popup.titlebutton.close:backdrop,
+headerbar button.titlebutton.maximize:backdrop,
+headerbar button.popup.titlebutton.maximize:backdrop,
+.titlebar button.titlebutton.maximize:backdrop,
+.titlebar button.popup.titlebutton.maximize:backdrop,
+headerbar button.titlebutton.minimize:backdrop,
+headerbar button.popup.titlebutton.minimize:backdrop,
+.titlebar button.titlebutton.minimize:backdrop,
+.titlebar button.popup.titlebutton.minimize:backdrop {
+  background-image: url("../unity/Core/Button.svg");
+}
+headerbar button.titlebutton.close,
+headerbar button.popup.titlebutton.close,
+.titlebar button.titlebutton.close,
+.titlebar button.popup.titlebutton.close {
+  background-image: url("../unity/Core/Close.svg");
+}
+headerbar button.titlebutton.close:hover,
+headerbar button.popup.titlebutton.close:hover,
+.titlebar button.titlebutton.close:hover,
+.titlebar button.popup.titlebutton.close:hover {
+  background-image: url("../unity/Core/CloseHover.svg");
+}
+headerbar button.titlebutton.maximize,
+headerbar button.popup.titlebutton.maximize,
+.titlebar button.titlebutton.maximize,
+.titlebar button.popup.titlebutton.maximize {
+  background-image: url("../unity/Core/Maximize.svg");
+}
+headerbar button.titlebutton.maximize:hover,
+headerbar button.popup.titlebutton.maximize:hover,
+.titlebar button.titlebutton.maximize:hover,
+.titlebar button.popup.titlebutton.maximize:hover {
+  background-image: url("../unity/Core/MaximizeHover.svg");
+}
+headerbar button.titlebutton.minimize,
+headerbar button.popup.titlebutton.minimize,
+.titlebar button.titlebutton.minimize,
+.titlebar button.popup.titlebutton.minimize {
+  background-image: url("../unity/Core/Minimize.svg");
+}
+headerbar button.titlebutton.minimize:hover,
+headerbar button.popup.titlebutton.minimize:hover,
+.titlebar button.titlebutton.minimize:hover,
+.titlebar button.popup.titlebutton.minimize:hover {
+  background-image: url("../unity/Core/MinimizeHover.svg");
+}
+headerbar button.titlebutton image,
+headerbar button.popup.titlebutton image,
+.titlebar button.titlebutton image,
+.titlebar button.popup.titlebutton image {
+  color: #000;
+}
 .vertical.linked > button,
 .vertical.linked > button.popup {
   background-image: -gtk-gradient(linear, left top, right top, from(rgba(198,198,198,0.25)), to(rgba(126,126,126,0.25)));
@@ -640,7 +696,6 @@ spinbutton {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
   border-width: 0px 0px 0px 0.25px;
   box-shadow: none;
   padding: 0em;
@@ -693,46 +748,8 @@ treeview header button:last-child {
   border-radius: 0px 2.5px 0px 0px;
   border-right: 1px solid transparent;
 }
-button.titlebutton {
-  background-color: transparent;
-  background-image: none;
-  border: none;
-  box-shadow: none;
-  text-shadow: none;
-  background-position: center center;
-  background-repeat: no-repeat;
-  color: transparent;
-  padding: 0px;
-  background-image: -gtk-scaled(url("../unity/Core/Button.svg"));
-}
-button.titlebutton.close:backdrop,
-button.titlebutton.maximize:backdrop,
-button.titlebutton.minimize:backdrop {
-  background-image: -gtk-scaled(url("../unity/Core/Button.svg"));
-}
-button.titlebutton.close {
-  background-image: -gtk-scaled(url("../unity/Core/Close.svg"));
-}
-button.titlebutton.close:hover {
-  background-image: -gtk-scaled(url("../unity/Core/CloseHover.svg"));
-}
-button.titlebutton.maximize {
-  background-image: -gtk-scaled(url("../unity/Core/Maximize.svg"));
-}
-button.titlebutton.maximize:hover {
-  background-image: -gtk-scaled(url("../unity/Core/MaximizeHover.svg"));
-}
-button.titlebutton.minimize {
-  background-image: -gtk-scaled(url("../unity/Core/Minimize.svg"));
-}
-button.titlebutton.minimize:hover {
-  background-image: -gtk-scaled(url("../unity/Core/MinimizeHover.svg"));
-}
-button.titlebutton image {
-  color: #000;
-}
 arrow {
-  color: #bbb;
+  color: #a2a2a2;
   min-height: 1em;
   min-width: 1em;
 }
@@ -741,7 +758,7 @@ arrow {
 }
 calendar {
   border-radius: 2em;
-  color: #bbb;
+  color: #a2a2a2;
   padding: 0.125em;
 /* INCONSISTENT - Governs any days present on the calendar that do not belong to the currently selected month. */
 /* HEADER - Governs the calendar bar containing the month and year selection controls. */
@@ -872,7 +889,7 @@ expander {
   color: #c8c8c8;
 }
 expander:backdrop {
-  color: #bbb;
+  color: #a2a2a2;
 }
 scrollbar {
   -GtkScrollbar-has-backward-stepper: false;
@@ -977,7 +994,7 @@ entry {
   background-color: rgba(24,24,24,0.25);
   box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
   border-radius: 2em;
-  color: #bbb;
+  color: #a2a2a2;
   padding: 0.5em 0.75em 0.5em 0.75em;
   text-shadow: none;
 /* IMAGE - Governs any icons that appear inside of a text entry control. */
@@ -1020,7 +1037,7 @@ textview {
   -GtkTextView-error-underline-color: #f00;
   background-color: rgba(24,24,24,0.5);
   border: none;
-  color: #bbb;
+  color: #a2a2a2;
 }
 textview:backdrop {
   color: #898989;
@@ -1041,13 +1058,12 @@ popover modelbutton {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
   border-radius: 0.25em;
   padding: 0.5em;
 }
 menuitem > label,
 popover modelbutton > label {
-  color: #bbb;
+  color: #c8c8c8;
 }
 menuitem > label > accelerator,
 popover modelbutton > label > accelerator {
@@ -1055,7 +1071,7 @@ popover modelbutton > label > accelerator {
 }
 menuitem:hover,
 popover modelbutton:hover {
-  background-image: -gtk-gradient(linear, left top, left bottom, from(#49d8ff), to(#008fb6));
+  background-color: #a2a2a2;
 }
 menuitem:hover > label,
 popover modelbutton:hover > label,
@@ -1082,8 +1098,7 @@ tooltip.background {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
-  color: #bbb;
+  color: #c8c8c8;
 }
 popover,
 popover.background {
@@ -1125,7 +1140,6 @@ notebook header tab {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
   border: 2px solid transparent;
   padding: 0.5em;
 }
@@ -1135,7 +1149,6 @@ notebook header tab:checked button.flat {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
 }
 notebook header tab:checked button > image,
 notebook header tab:checked button.flat > image {
@@ -1163,12 +1176,11 @@ notebook header tab button.flat {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
   padding: 1px;
 }
 notebook header tab button > image,
 notebook header tab button.flat > image {
-  color: #bbb;
+  color: #a2a2a2;
 }
 notebook header tab button:backdrop > image,
 notebook header tab button.flat:backdrop > image {
@@ -1267,7 +1279,6 @@ EShellWindow EShellSwitcher GtkScrolledWindow {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
   padding: 0px;
 }
 EPreferencesWindow GtkNotebook > GtkAlignment > GtkScrolledWindow {
@@ -1275,7 +1286,6 @@ EPreferencesWindow GtkNotebook > GtkAlignment > GtkScrolledWindow {
   background-image: none;
   border: none;
   box-shadow: none;
-  text-shadow: none;
 }
 ECanvas button {
   color: #323232;
@@ -1291,7 +1301,7 @@ ECalendar button {
   border-radius: 0.125em;
 }
 ECalendar button GtkArrow {
-  color: #bbb;
+  color: #a2a2a2;
 }
 ECalendar button:hover GtkArrow {
   color: #323232;

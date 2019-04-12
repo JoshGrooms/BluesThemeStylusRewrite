@@ -76,6 +76,31 @@ button.popup
             border-radius:          0.375em;
             border-width:           1px;
 
+    /* TITLEBUTTON - Governs the standard close, maximize, and minimize buttons for CSD windows. */
+    headerbar &.titlebutton,
+    .titlebar &.titlebutton
+        flat()
+        background-size:            100%;
+        image:                      "../unity/Core/Button.svg";
+        padding:                    0.25em;
+
+        &.close, &.maximize, &.minimize
+            &:backdrop              { image: "../unity/Core/Button.svg"; }
+
+        &.close
+            image:                  "../unity/Core/Close.svg";
+            &:hover                 { image: "../unity/Core/CloseHover.svg"; }
+
+        &.maximize
+            image:                  "../unity/Core/Maximize.svg";
+            &:hover                 { image: "../unity/Core/MaximizeHover.svg"; }
+        &.minimize
+            image:                  "../unity/Core/Minimize.svg";
+            &:hover                 { image: "../unity/Core/MinimizeHover.svg"; }
+
+        image
+            color:                  black;
+
     // Governs linked button groups that are vertically oriented
     .vertical.linked > &
         background-image:           hgradient(ButtonGlossTop, ButtonGlossBottom);
@@ -148,28 +173,3 @@ treeview
         &:last-child
             border-radius:      0px 2.5px 0px 0px;
             border-right:       1px solid transparent;
-
-/* TITLEBUTTON - Governs the standard close, maximize, and minimize buttons for CSD windows. */
-button.titlebutton
-    blank();
-    padding:        0px;
-
-    image:          "../unity/Core/Button.svg";
-
-    &.close, &.maximize, &.minimize
-        &:backdrop
-            image:  "../unity/Core/Button.svg";
-
-    &.close
-        image:      "../unity/Core/Close.svg";
-        &:hover     { image: "../unity/Core/CloseHover.svg"; }
-
-    &.maximize
-        image:      "../unity/Core/Maximize.svg";
-        &:hover     { image: "../unity/Core/MaximizeHover.svg"; }
-    &.minimize
-        image:      "../unity/Core/Minimize.svg";
-        &:hover     { image: "../unity/Core/MinimizeHover.svg"; }
-
-    image
-        color:      black;
