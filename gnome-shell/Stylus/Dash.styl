@@ -23,5 +23,39 @@
 
     .overview-icon,
     StIcon
-        icon-shadow:                0px 0px 4px Black;
+        icon-shadow:                0px 0px 4px black;
         icon-size:                  1em;
+
+#overview
+    background:                     none;
+
+.overview-controls
+    flat();
+
+.window-caption
+    @extend .dash-label;
+
+.window-picker
+    debug();
+
+.window-clone-border
+    border:                         2px solid SelectionColor;
+    border-radius:                  0.5em;
+    box-shadow:                     0px 0px 8px SelectionColor;
+
+
+.window-close
+    image:                          "Icons/Window-Close.svg";
+    &:active                        { image: "Icons/Window-Close-Pressed.svg"; }
+    &:hover                         { image: "Icons/Window-Close-Hover.svg";}
+
+.workspace-thumbnails
+    background-color:               MenuColor;
+    border-bevel:                   2px outset lighten(MenuColor, 5%);
+    border-radius:                  0.5em;
+    box-shadow:                     1px 1px 3px shadow-color(dark, normal);
+
+.workspace-thumbnail-indicator
+    border:                         2px solid SelectionColor;
+    border-radius:                  0.25em;
+    box-shadow:                     0px 0px 4px SelectionColor;
