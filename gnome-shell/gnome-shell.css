@@ -1,13 +1,10 @@
 /* STYLES */
 .calendar {
-  background-clip: padding-box;
-  border-color: rgba(0,0,0,0.125);
-  border-bottom-color: rgba(162,162,162,0.125);
-  border-right-color: rgba(162,162,162,0.125);
-  border-style: solid;
-  border-width: 1px;
-  background-color: rgba(24,24,24,0.375);
-  box-shadow: inset 5px 5px 5px -5px rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.25);
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.5);
+  border: 0px solid #303030;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
   padding: 2px;
 }
 #calendarArea {
@@ -59,6 +56,10 @@
 .calendar-other-month-day {
   color: #646464;
 }
+.datemenu-calendar-column {
+  border: 0px solid #3b3b3b;
+  border-left-width: 1px;
+}
 .datemenu-today-button {
   text-align: center;
 }
@@ -69,12 +70,12 @@
   border: 1px solid transparent;
   border-radius: 0em;
 }
-.dash-label {
+.dash-label,
+.window-caption {
   background-color: #252525;
-  border-bottom: 0px none transparent;
-  border-left: 2px solid #303030;
-  border-right: 0px none transparent;
-  border-top: 2px solid #303030;
+  border: 0px solid #303030;
+  border-top-width: 2px;
+  border-left-width: 2px;
   border-radius: 0.5em;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   padding: 0.75em 1em;
@@ -83,6 +84,48 @@
 .icon-grid StIcon {
   icon-shadow: 0px 0px 4px #000;
   icon-size: 1em;
+}
+#overview {
+  background: none;
+}
+.overview-controls {
+  background-color: transparent;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+.window-picker {
+  border: 1px solid #f00;
+  background-color: #00f;
+  background-image: none;
+  color: #0f0;
+}
+.window-clone-border {
+  border: 2px solid #00c8ff;
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 8px #00c8ff;
+}
+.window-close {
+  background-image: url("Icons/Window-Close.svg");
+}
+.window-close:active {
+  background-image: url("Icons/Window-Close-Pressed.svg");
+}
+.window-close:hover {
+  background-image: url("Icons/Window-Close-Hover.svg");
+}
+.workspace-thumbnails {
+  background-color: #252525;
+  border: 0px solid #303030;
+  border-top-width: 2px;
+  border-left-width: 2px;
+  border-radius: 0.5em;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.workspace-thumbnail-indicator {
+  border: 2px solid #00c8ff;
+  border-radius: 0.25em;
+  box-shadow: 0px 0px 4px #00c8ff;
 }
 .popup-menu {
   background-color: transparent;
@@ -99,12 +142,11 @@
 }
 .popup-menu .popup-menu-content {
   background-color: #252525;
-  border-bottom: 0px none transparent;
-  border-left: 1px solid #303030;
-  border-right: 0px none transparent;
-  border-top: 1px solid #303030;
+  border: 0px solid #303030;
+  border-top-width: 2px;
+  border-left-width: 2px;
   border-radius: 0.5em;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 1px 2px 3px rgba(0,0,0,0.5);
   padding: 4px;
 }
 .popup-menu .popup-menu-item {
@@ -120,7 +162,7 @@
   border-width: 1px;
   background-color: rgba(36,36,36,0.25);
   box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.375);
-  background-color: rgba(162,162,162,0.875);
+  background-color: rgba(162,162,162,0.75);
   border: none;
   border-radius: 0.125em 0.125em 0em 0em;
   color: #323232;
@@ -128,35 +170,21 @@
 .popup-menu .popup-menu-item:active:hover,
 .popup-menu .popup-menu-item:checked:hover {
   border-radius: 0.125em 0.125em 0em 0em;
+  color: #a2a2a2;
 }
 .popup-menu .popup-menu-item:hover,
 .popup-menu .popup-menu-item.selected {
-  background-clip: padding-box;
-  border-color: rgba(36,36,36,0.125);
-  border-bottom-color: rgba(198,198,198,0.125);
-  border-right-color: rgba(198,198,198,0.125);
-  border-style: solid;
-  border-width: 1px;
-  background-color: rgba(36,36,36,0.25);
-  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.375);
   border: none;
-  background-color: rgba(162,162,162,0.625);
+  background-color: rgba(162,162,162,0.25);
   border-radius: 0.125em;
-  color: #323232;
 }
 .popup-menu .popup-sub-menu {
-  background-clip: padding-box;
-  border-color: rgba(0,0,0,0.125);
-  border-bottom-color: rgba(162,162,162,0.125);
-  border-right-color: rgba(162,162,162,0.125);
-  border-style: solid;
-  border-width: 1px;
-  background-color: rgba(24,24,24,0.25);
-  box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
   background-color: rgba(0,0,0,0.25);
-  border: 1px solid rgba(75,75,75,0.125);
+  border: 0px solid #303030;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
   border-radius: 0em 0em 0.125em 0.125em;
-  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.375);
+  box-shadow: inset 1px 1px 3px rgba(0,0,0,0.375);
 }
 .popup-menu .popup-sub-menu .popup-menu-item {
   border: 2px solid transparent;
@@ -183,7 +211,8 @@
 }
 .popup-separator-menu-item {
   background-color: transparent;
-  border-image: url("Stylus/Icons/Separator-Horizontal.svg") 0 0 2 0/0px 0px 2px 0px stretch;
+  border-image: url("Icons/Separator-Horizontal.svg") 0 0 2 0/0px 0px 2px 0px repeat;
+  border-width: 0px 0px 2px 0px;
   margin: 0px;
 }
 .search-section-separator {
@@ -191,6 +220,10 @@
   background-color: #00f;
   background-image: none;
   color: #0f0;
+}
+.message-list {
+  border: 0px solid #1c1c1c;
+  border-right-width: 1px;
 }
 .message-list .message {
   border-radius: 0.125em;
@@ -217,10 +250,9 @@
 .message-list .message-list-clear-button {
   border-radius: 2em;
   background-color: #323232;
-  border-bottom: 0px none transparent;
-  border-left: 1px solid #3c3c3c;
-  border-right: 0px none transparent;
-  border-top: 1px solid #3c3c3c;
+  border: 0px solid #3c3c3c;
+  border-top-width: 1px;
+  border-left-width: 1px;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   margin-bottom: 1em;
 }
@@ -229,10 +261,9 @@
 }
 .message-list .message-media-control {
   background-color: #323232;
-  border-bottom: 0px none transparent;
-  border-left: 1px solid #3c3c3c;
-  border-right: 0px none transparent;
-  border-top: 1px solid #3c3c3c;
+  border: 0px solid #3c3c3c;
+  border-top-width: 1px;
+  border-left-width: 1px;
   border-radius: 0em;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   margin: 1em 0em;
@@ -252,27 +283,24 @@
 .notification-banner,
 .osd-window {
   background-color: #252525;
-  border-bottom: 0px none transparent;
-  border-left: 1px solid #303030;
-  border-right: 0px none transparent;
-  border-top: 1px solid #303030;
+  border: 0px solid #303030;
+  border-top-width: 2px;
+  border-left-width: 2px;
   border-radius: 0.5em;
-  box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 .modal-dialog {
   background-color: #4b4b4b;
-  border-bottom: 0px none transparent;
-  border-left: 1px solid #666;
-  border-right: 0px none transparent;
-  border-top: 1px solid #666;
+  border: 0px solid #666;
+  border-top-width: 1px;
+  border-left-width: 1px;
 }
 .modal-dialog-linked-button {
   background-color: #646464;
   box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-  border-bottom: 0px none transparent;
-  border-left: 1px solid #7b7b7b;
-  border-right: 0px none transparent;
-  border-top: 1px solid #7b7b7b;
+  border: 0px solid #7b7b7b;
+  border-top-width: 1px;
+  border-left-width: 1px;
   margin: 0.5em 0em;
 }
 .modal-dialog-linked-button:first-child {
@@ -308,12 +336,11 @@
 }
 .switcher-list {
   background-color: #252525;
-  border-bottom: 0px none transparent;
-  border-left: 1px solid #303030;
-  border-right: 0px none transparent;
-  border-top: 1px solid #303030;
+  border: 0px solid #303030;
+  border-top-width: 2px;
+  border-left-width: 2px;
   border-radius: 0.5em;
-  box-shadow: 1px 2px 3px rgba(0,0,0,0.375);
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
 }
 .switcher-list .item-box,
 .switcher-list .thumbnail-box {
@@ -330,7 +357,7 @@
   border-width: 1px;
   background-color: rgba(24,24,24,0.25);
   box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
-  background-color: #00c8ff;
+  background-color: #a2a2a2;
   color: #323232;
 }
 .switcher-list .item-box:outlined,
@@ -367,6 +394,9 @@ StEntry {
   border-width: 1px;
   background-color: rgba(24,24,24,0.25);
   box-shadow: inset 0.5px 1px 2px rgba(0,0,0,0.5);
+  border: 0px solid #3b3b3b;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
   border-radius: 2em;
   padding: 0.25em 0.5em;
 }
@@ -378,10 +408,17 @@ StEntry {
 }
 .system-menu-action {
   background-color: rgba(0,0,0,0.25);
-  border: none;
-  box-shadow: inset 1px 2px 3px rgba(0,0,0,0.375);
+  border: 0px solid #303030;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-radius: 2em;
+  padding: 1em;
 }
+.system-menu-action:active,
 .system-menu-action:hover {
-  background-color: #a2a2a2;
-  border: none;
+  background-color: rgba(162,162,162,0.25);
+  border: 0px solid #303030;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+  border-radius: 2em;
 }
