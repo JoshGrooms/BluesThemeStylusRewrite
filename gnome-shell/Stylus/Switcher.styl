@@ -6,9 +6,9 @@
 .switcher-list
 
     background-color:                   MenuColor;
-    border-bevel:                       1px outset lighten(MenuColor, 5%);
+    border-bevel:                       2px outset lighten(MenuColor, 5%);
     border-radius:                      0.5em;
-    box-shadow:                         1px 2px 3px shadow-color(normal, semifaded);
+    box-shadow:                         2px 2px 3px shadow-color(dark, normal);
 
     .item-box,
     .thumbnail-box
@@ -17,7 +17,7 @@
 
         &:selected
             deep-inset();
-            background-color:           SelectionColor;
+            background-color:           HighlightColor;
             color:                      TextColorSelected;
 
         &:outlined

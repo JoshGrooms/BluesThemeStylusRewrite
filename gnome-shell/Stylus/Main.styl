@@ -66,9 +66,12 @@ StEntry
 
 .system-menu-action
     background-color:                   InsetColor;
-    border:                             none;
-    box-shadow:                         inset 1px 2px 3px shadow-color(normal, semifaded);
+    border-bevel:                       1px inset lighten(MenuColor, 5%);
+    border-radius:                      2em;
+    padding:                            1em;
 
+    &:active,
     &:hover
-        background-color:               HighlightColor;
-        border:                         none;
+        background-color:               alpha(HighlightColor, 0.25);
+        border-bevel:                   1px inset lighten(MenuColor, 5%);
+        border-radius:                  2em;

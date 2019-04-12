@@ -12,9 +12,9 @@
 
     .popup-menu-content
         background-color:           MenuColor;
-        border-bevel:               1px outset lighten(MenuColor, 5%);
+        border-bevel:               2px outset lighten(MenuColor, 5%);
         border-radius:              0.5em;
-        box-shadow:                 1px 1px 3px shadow-color(dark, normal);
+        box-shadow:                 1px 2px 3px shadow-color(dark, normal);
         padding:                    4px;
 
     .popup-menu-item
@@ -24,28 +24,26 @@
         &:active,
         &:checked
             shallow-inset();
-            background-color:       alpha(HighlightColor, 0.875);
+            background-color:       alpha(HighlightColor, 0.75);
             border:                 none;
             border-radius:          0.125em 0.125em 0em 0em;
             color:                  TextColorSelected;
 
             &:hover
                 border-radius:      0.125em 0.125em 0em 0em;
+                color:              TextColor;
 
         &:hover,
         &.selected
-            shallow-inset();
             border:                 none;
-            background-color:       alpha(HighlightColor, 0.625);
+            background-color:       alpha(HighlightColor, 0.25);
             border-radius:          0.125em;
-            color:                  TextColorHighlighted;
 
     .popup-sub-menu
-        deep-inset();
         background-color:           InsetColor;
-        border:                     1px solid alpha(WindowColor, 0.125);
+        border-bevel:               1px inset lighten(MenuColor, 5%);
         border-radius:              0em 0em 0.125em 0.125em;
-        box-shadow:                 inset 1px 2px 3px shadow-color(normal, semifaded);
+        box-shadow:                 inset 1px 1px 3px shadow-color(normal, semifaded);
 
         .popup-menu-item
             border:                 2px solid transparent;
@@ -72,7 +70,7 @@
 
 .popup-separator-menu-item
     background-color:               transparent;
-    border-image:                   url("Stylus/Icons/Separator-Horizontal.svg") 0 0 2 0 / 0px 0px 2px 0px stretch;
+    separator:                      bottom;
     margin:                         0px;
 
 .search-section-separator
